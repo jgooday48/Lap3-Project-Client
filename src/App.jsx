@@ -4,7 +4,6 @@ import { NavBar } from './Layout'
 
 import * as Pages from './pages'
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
 import RichTextEditor from './components/RichTextEditor'
 
 function App() {
