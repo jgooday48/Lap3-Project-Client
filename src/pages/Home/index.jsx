@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { FolderSideBar, RichTextEditor } from '../../components'
 
 const HomePage = () => {
@@ -16,3 +17,4 @@ const HomePage = () => {
 }
 
 export default HomePage
+

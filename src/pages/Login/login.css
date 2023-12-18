@@ -1,0 +1,33 @@
+.login, .loginh1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.loginh1 {
+    font-size: 50px;
+    padding: 4px;
+    margin-top: 0px;
+}
+
+#login {
+    background-color: white;
+    width: 420px;
+    height: 5vh;
+    border-radius: 15px;
+    font-size: 20px;
+    top: 100px;
+}
+
+#login:hover {
+    background-color: green;
+    transition-duration: 0.5s;
+    
+}
+
+#bodyLog {
+    height: 90vh;
+}
