@@ -5,8 +5,12 @@
     flex-direction: column;
 }
 
+
+
 .loginh1 {
     font-size: 50px;
+    padding: 4px;
+    margin-top: 0px;
 }
 
 #login {

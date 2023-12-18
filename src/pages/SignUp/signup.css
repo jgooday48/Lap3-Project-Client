@@ -7,6 +7,8 @@
 
 .signinh1 {
     font-size: 50px;
+    padding: 4px;
+    margin-top: 0px;
 }
 
 .signin {
@@ -38,6 +40,6 @@
 }
 
 #signupdiv {
-    height: 90vh;
+    height: 91vh;
 
 }
