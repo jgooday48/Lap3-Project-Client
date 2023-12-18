@@ -4,8 +4,8 @@ import './notfound.css'
 const NotFoundPage = () => {
   return (
     <>
-        <h1 class="head">404 Page not found</h1>
-        <h3 class="head"><Link to="/">Return Home</Link></h3>
+        <h1 className="head">404 Page not found</h1>
+        <h3 className="head"><Link to="/">Return Home</Link></h3>
     </>
   )
 }

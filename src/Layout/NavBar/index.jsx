@@ -28,7 +28,7 @@ const NavBar = () => {
 
 
           <li>
-            <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Sign Up</NavLink>
+            <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Register</NavLink>
           </li>
   
   
