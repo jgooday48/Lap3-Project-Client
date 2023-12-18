@@ -16,6 +16,8 @@ function App() {
       <Route path="/" element={<NavBar />}>
 
         <Route path="/" element={<Pages.Home />}/>
+        <Route path="/login" element={<Pages.Login />}/>
+        <Route path="/register" element={<Pages.SignUp />}/>
         <Route path="*" element={<h1>{location.pathname} page does not exist</h1>} />
 
       </Route>
