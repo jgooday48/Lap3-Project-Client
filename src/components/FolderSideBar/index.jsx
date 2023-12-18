@@ -6,6 +6,7 @@ import './index.css';
 const FolderSideBar = () => {
   const resizerRef = useRef(null);
   const sidebarRef = useRef(null);
+  const isFolder = true; 
 
   useEffect(() => {
     const resizer = resizerRef.current;
@@ -49,9 +50,11 @@ const FolderSideBar = () => {
   return (
     <div className="folderSideBar" ref={sidebarRef}>
       <div className="resizer" ref={resizerRef}></div>
-      <div className="header">
-        <h3>La Fosse</h3>
-      </div>
+      {isFolder &&(
+        <div className="header">
+          <h3>La Fosse</h3>
+        </div>
+      )}
       <ul className="sidebar-menu">
         <li className="menu-item">folder 1</li>
         <li className="menu-item">folder 2</li>
