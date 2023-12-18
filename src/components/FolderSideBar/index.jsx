@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef} from 'react'
 import './index.css'
 import { Sidebar, Menu,  MenuItem} from 'react-pro-sidebar'
 import './index.css';
+import { resizeWidth } from '../../utils/WidthChanger';
 
 const FolderSideBar = () => {
   const resizerRef = useRef(null);
@@ -13,39 +14,10 @@ const FolderSideBar = () => {
     const sidebar = sidebarRef.current;
 
     if (resizer && sidebar) {
-      initResizeFn(resizer, sidebar);
+      resizeWidth(resizer, sidebar);
     }
   }, []);
 
-  function initResizeFn(resizer, sidebar) {
-    let x, w;
-
-    function rs_mousedownHandler(e) {
-      x = e.clientX;
-
-      const sbWidth = window.getComputedStyle(sidebar).width;
-      w = parseInt(sbWidth, 10);
-
-      document.addEventListener('mousemove', rs_mousemoveHandler);
-      document.addEventListener('mouseup', rs_mouseupHandler);
-    }
-
-    function rs_mousemoveHandler(e) {
-      const dx = e.clientX - x;
-
-      const cw = w + dx;
-      if (cw < 700) {
-        sidebar.style.width = `${cw}px`;
-      }
-    }
-
-    function rs_mouseupHandler() {
-      document.removeEventListener('mouseup', rs_mouseupHandler);
-      document.removeEventListener('mousemove', rs_mousemoveHandler);
-    }
-
-    resizer.addEventListener('mousedown', rs_mousedownHandler);
-  }
 
   return (
     <div className="folderSideBar" ref={sidebarRef}>
