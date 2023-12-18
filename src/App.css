@@ -1,9 +1,49 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+  min-height: 100vh;
+  margin-top: 3.5em;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 3fr;
+  margin-top: 3.5em;
+  padding:0;
+  background-color: yellow;
+  width: 100%;
+  max-width: 100vw;
+  overflow-y: hidden;
+  
+
 }
+
+
+body{
+
+  margin: 0;
+  padding:0;
+  background-color:aquamarine;
+  border: 2px solid black;
+
+
+
+}
+.file{
+  grid-column:2;
+    border: 2px solid red;
+}
+
+.folder{
+  grid-column: 1;
+  border: 2px solid green;
+}
+
+
+.editor{
+   grid-column: 3;
+  border: 3px solid blue;
+  }
+
+
+
+
 
 .logo {
   height: 6em;

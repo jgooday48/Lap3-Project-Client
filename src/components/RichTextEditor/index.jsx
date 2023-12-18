@@ -9,7 +9,7 @@ import {
     Toolbar,
     FileManager
 } from '@syncfusion/ej2-react-richtexteditor'
-
+import './index.css'
 
 const RichTextEditor = () => {
 
@@ -48,10 +48,10 @@ const RichTextEditor = () => {
     }
 
     return (
-        <>
-            <RichTextEditorComponent toolbarSettings={customToolbar}>
+        <div className="editor">
+            <RichTextEditorComponent toolbarSettings={customToolbar} height={1000}>
                 <Inject services={[Toolbar, Link, Image, HtmlEditor, FileManager, QuickToolbar]}></Inject>
-                <div style={{textAlign: 'left'}}>
+            
                 <p>The Rich Text Editor is WYSIWYG ("what you see is what you get") editor useful to create and edit content, and return the valid </p>
                 <p><b>Key features:</b></p>
                 <ul>
@@ -64,9 +64,9 @@ const RichTextEditor = () => {
                     <li><p>Allows preview of modified content before saving it.</p></li>
                     <li><p>Handles images, hyperlinks, video, hyperlinks, uploads, etc.</p></li>
                     </ul>
-              </div>
             </RichTextEditorComponent>
-        </>
+        </div>
+    
     )
 }
 

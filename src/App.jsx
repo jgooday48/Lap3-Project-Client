@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import RichTextEditor from './components/RichTextEditor'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
+      <>
+          <div className="folder">
+              <h1>Folders</h1>
+          </div>
+          <div className="file">
+              <h2>Files</h2>
+          </div>
      <RichTextEditor/>
     </>
   )
