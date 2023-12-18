@@ -1,16 +1,28 @@
 import React,{ useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Home, Login } from './pages'
+import { Routes, Route } from 'react-router-dom'
+import { NavBar } from './Layout'
+
+import * as Pages from './pages'
 import './App.css'
 import RichTextEditor from './components/RichTextEditor'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-    <Home />
+    <Routes>
+      
+      <Route path="/" element={<NavBar />}>
+
+        <Route path="/" element={<Pages.Home />}/>
+        <Route path="*" element={<h1>{location.pathname} page does not exist</h1>} />
+
+      </Route>
+
+
+    </Routes>
+    {/* <Home /> */}
      {/* <RichTextEditor/> */}
     </>
   )
