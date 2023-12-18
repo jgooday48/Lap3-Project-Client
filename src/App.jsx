@@ -1,6 +1,8 @@
 import React,{ useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { NavBar } from './Layout'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 import * as Pages from './pages'
 import './App.css'
@@ -11,10 +13,10 @@ function App() {
 
   return (
     <>
+    <ToastContainer />
     <Routes>
-      
+    
       <Route path="/" element={<NavBar />}>
-
         <Route path="/" element={<Pages.Home />}/>
         <Route path="/login" element={<Pages.Login />}/>
         <Route path="/register" element={<Pages.SignUp />}/>
