@@ -33,7 +33,7 @@ const SignUp= () => {
 
       const handleSubmit = (e) => {
         e.preventDefault()
-        setUser(Name)
+
         navigate('/')
       }
 
