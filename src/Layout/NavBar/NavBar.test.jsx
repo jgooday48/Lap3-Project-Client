@@ -26,4 +26,7 @@ describe('NavBar Component', ()=> {
         expect(nav.childNodes.length).toBe(1)
     })
 
+    
+
+
 })
