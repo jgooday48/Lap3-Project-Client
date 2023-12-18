@@ -57,7 +57,7 @@ const SignUp= () => {
         ref={inputRef}
         required
       />
-      <input id="submit" type="submit" />
+      <input id="register" type="submit" value="Register"/>
       </form>
 
 

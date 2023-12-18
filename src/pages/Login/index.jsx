@@ -58,7 +58,7 @@ const Login = () => {
         ref={inputRef}
         required
       />
-      <input id="submit" type="submit" />
+      <input id="submit" type="submit" value="Login"/>
       </form>
 
 

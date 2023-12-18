@@ -10,7 +10,7 @@ expect.extend(matchers);
 import NotFoundPage from '.';
 
 
-describe('Login display', ()=> {
+describe('Not found display', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>

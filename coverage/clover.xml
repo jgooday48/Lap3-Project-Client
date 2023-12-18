@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702903571229" clover="3.2.0">
-  <project timestamp="1702903571229" name="All files">
-    <metrics statements="343" coveredstatements="193" conditionals="24" coveredconditionals="11" methods="24" coveredmethods="9" elements="391" coveredelements="213" complexity="0" loc="343" ncloc="343" packages="13" files="14" classes="14"/>
+<coverage generated="1702907013729" clover="3.2.0">
+  <project timestamp="1702907013729" name="All files">
+    <metrics statements="342" coveredstatements="193" conditionals="23" coveredconditionals="11" methods="23" coveredmethods="9" elements="388" coveredelements="213" complexity="0" loc="342" ncloc="342" packages="12" files="13" classes="13"/>
     <package name="src">
       <metrics statements="48" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="App.jsx" path="C:\Users\Windows\LFA\lap3\project\client\src\App.jsx">
@@ -417,13 +417,6 @@
         <line num="68" count="3" type="stmt"/>
         <line num="69" count="1" type="stmt"/>
         <line num="70" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="src.routes">
-      <metrics statements="1" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\Windows\LFA\lap3\project\client\src\routes\index.jsx">
-        <metrics statements="1" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
       </file>
     </package>
   </project>
