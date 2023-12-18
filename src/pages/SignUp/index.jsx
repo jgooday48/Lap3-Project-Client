@@ -8,6 +8,7 @@ const SignUp= () => {
   }
 
     const [inputValue, setinputValue] = useState('')
+    const [inputName, setinputName] = useState('')
     const [inputValuep, setinputValuep] = useState('')
     const inputRef = useRef()
 
@@ -25,6 +26,11 @@ const SignUp= () => {
         setinputValuep(e.target.value)
       }
 
+      const handleInputName = (e) => {
+        console.log(e.target.value)
+        setinputName(e.target.value)
+      }
+
       const handleSubmit = (e) => {
         e.preventDefault()
         setUser(inputValue)
@@ -32,12 +38,23 @@ const SignUp= () => {
       }
 
   return (
-    <div style={activeStyle} id="signupdiv">
-        <h1 className="signinh1">Register</h1>
+    <div style={activeStyle} id="registerdiv">
+        <h1 className="registerh1">Register</h1>
 
-        <form className="signin" aria-label='sign up'
+        <form className="register" aria-label='register'
       onSubmit={handleSubmit}>
-        
+
+
+        <input
+        type="text"
+        id="name"
+        placeholder='name'
+        autoComplete="off"
+        value={inputName}
+        onChange={handleInputName}
+        ref={inputRef}
+        required
+      />
 
       <input
         type="text"
@@ -56,8 +73,6 @@ const SignUp= () => {
         type="password"
         id="password"
         placeholder='password'
-
-
         autoComplete="off"
         value={inputValuep}
         onChange={handleInputp}
