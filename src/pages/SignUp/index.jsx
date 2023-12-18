@@ -1,6 +1,12 @@
 
 import React, { useState, useEffect, useRef, useContext } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import Loader from '../../components/Loader'
+import { useRegisterMutation } from '../../slices/usersApiSlice'
+import { setCredentials } from '../../slices/authSlice'
+
 
 const SignUp = () => {
   const [name, setName] = useState('')
@@ -9,35 +15,53 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("")
   const inputRef = useRef()
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
+  const [register, { isLoading }] = useRegisterMutation();
+  const { userInfo } = useSelector(state => state.auth);
+  
+  useEffect(() => {
+    if(userInfo){
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if(password !== confirmPassword){
+      toast.error("Passwords do not match")
+    } else {
+      try {
+        const res = await register({name, email, password}).unwrap();
+        dispatch(setCredentials({...res}))
+        navigate("/")
+      } catch (err) {
+        toast.error(err?.data?.message || err.error)
+      }
+    }
+  }
+
   useEffect(() => {
       inputRef.current.focus()
     },[])
   
     const handleNameChange = (e) => {
-      console.log(e.target.value)
       setName(e.target.value)
     }
 
     const handleEmailChange = (e) => {
-      console.log(e.target.value)
       setEmail(e.target.value)
     }
 
     const handlePasswordChange = (e) => {
-      console.log(e.target.value)
       setPassword(e.target.value)
     }
 
     const handleConfirmPasswordChange = (e) => {
-      console.log(e.target.value)
       setConfirmPassword(e.target.value)
-    }
-
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      console.log(name)
-      console.log(email)
-      console.log(password)
     }
 
   return (
@@ -64,6 +88,8 @@ const SignUp = () => {
           <label htmlFor="password" className="mr10">Confirm Password</label>
           <input type="password" id="confirmPassword" autoComplete="off" value={confirmPassword} onChange={handleConfirmPasswordChange} ref={inputRef} required/>
         </ul>
+
+        {isLoading && <Loader />}
 
         <ul>
           <button onClick={handleSubmit}>Sign In</button>

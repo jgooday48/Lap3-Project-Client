@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useLoginMutation } from '../../slices/usersApiSlice'
 import { setCredentials } from '../../slices/authSlice'
 import { toast } from 'react-toastify'
+import Loader from '../../components/Loader'
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -63,6 +64,8 @@ const Login = () => {
             <label htmlFor="password" className="mr10">Password</label>
             <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
           </ul>
+
+          {isLoading && <Loader />}
 
           <ul>
             <button onClick={handleSubmit}>Sign In</button>
