@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import './login.css'
 
 const Login = () => {
+
+  const activeStyle = {
+    backgroundColor: "lightgrey"
+  }
+
+    
     const [inputValue, setinputValue] = useState('')
     const [inputValuep, setinputValuep] = useState('')
     const inputRef = useRef()
@@ -27,17 +34,18 @@ const Login = () => {
       }
 
   return (
-    <>
-        <h1 class="loginh1">Login</h1>
+    <div id='bodyLog' style={activeStyle}>
+        <h1 className="loginh1">Login</h1>
 
         
         <form class="login" aria-label='sign in'
       onSubmit={handleSubmit}>
 
-        <label htmlFor="username" className="mr10">Username</label>
+
       <input
         type="text"
-        id="username"
+        id="email"
+        placeholder='email'
 
 
         autoComplete="off"
@@ -46,10 +54,10 @@ const Login = () => {
         ref={inputRef}
         required
       />
-      <label htmlFor="password" className="mr10">Password</label>
       <input
         type="password"
         id="password"
+        placeholder='password'
 
 
         autoComplete="off"
@@ -58,13 +66,15 @@ const Login = () => {
         ref={inputRef}
         required
       />
-      <input id="submit" type="submit" value="Login"/>
+      <input id="login" type="submit" value="Login"/>
       </form>
+
+      <footer><p>Don't have an account? Register <Link to='/register'>here</Link></p></footer>
 
 
 
     
-    </>
+    </div>
   )
 }
 

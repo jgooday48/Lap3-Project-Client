@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
+import { Link } from 'react-router-dom';
 import './signup.css'
 const SignUp= () => {
+
+  const activeStyle = {
+    backgroundColor: "lightgrey"
+  }
 
     const [inputValue, setinputValue] = useState('')
     const [inputValuep, setinputValuep] = useState('')
@@ -27,16 +32,17 @@ const SignUp= () => {
       }
 
   return (
-    <>
-        <h1 class="signinh1">Sign Up page</h1>
+    <div style={activeStyle} id="signupdiv">
+        <h1 className="signinh1">Register</h1>
 
-        <form class="signin" aria-label='sign up'
+        <form className="signin" aria-label='sign up'
       onSubmit={handleSubmit}>
         
-        <label htmlFor="username" className="mr10">Username</label>
+
       <input
         type="text"
-        id="username"
+        id="email"
+        placeholder='email'
 
 
         autoComplete="off"
@@ -45,10 +51,11 @@ const SignUp= () => {
         ref={inputRef}
         required
       />
-      <label htmlFor="password" className="mr10">Password</label>
+
       <input
         type="password"
         id="password"
+        placeholder='password'
 
 
         autoComplete="off"
@@ -60,10 +67,12 @@ const SignUp= () => {
       <input id="register" type="submit" value="Register"/>
       </form>
 
+      <footer><p>Already have an account? Log in <Link to='/login'>here</Link></p></footer>
+
 
 
     
-    </>
+    </div>
   )
 }
 
