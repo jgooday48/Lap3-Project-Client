@@ -1,14 +1,31 @@
-import React, { useState } from 'react'
-import './App.css'
+
+
+import React,{ useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import RichTextEditor from './components/RichTextEditor'
+import { NavBar } from './Layout'
+
+import * as Pages from './pages'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
 
   return (
     <>
-     <RichTextEditor/>
+      <Routes>
+      
+        <Route path="/" element={<NavBar />}>
+
+          <Route path="/" element={<Pages.Home />}/>
+          <Route path="/login" element={<Pages.Login />}/>
+          <Route path="/register" element={<Pages.SignUp />}/>
+          <Route path="*" element={<Pages.NotFoundPage />} />
+
+        </Route>
+
+
+    </Routes>
     </>
   )
 }

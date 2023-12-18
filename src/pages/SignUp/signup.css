@@ -1,0 +1,45 @@
+.register, .registerh1, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.registerh1 {
+    font-size: 50px;
+    padding: 4px;
+    margin-top: 0px;
+}
+
+.register {
+    border-radius: 20px;
+    font-size: 2cap;
+}
+
+#email, #password, #name {
+    padding: 10px;
+    margin: 20px;
+    width: 400px;
+}
+
+#register {
+    width: 420px;
+    height: 5vh;
+    border-radius: 15px;
+    font-size: 20px;
+    top: 100px;
+    background-color: white;
+    padding: 10px;
+
+}
+
+#register:hover {
+    background-color: green;
+    transition-duration: 0.5s;
+    
+}
+
+#registerdiv {
+    height: 90vh;
+
+}
