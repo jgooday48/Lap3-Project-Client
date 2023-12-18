@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest --reporter verbose",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@syncfusion/ej2-react-buttons": "^20.1.55",
@@ -16,7 +19,9 @@
     "axios": "^1.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+
     "react-pro-sidebar": "^1.1.0-alpha.1",
+
     "react-router-dom": "^6.21.0"
   },
   "devDependencies": {
