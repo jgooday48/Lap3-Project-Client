@@ -8,6 +8,7 @@ This is the repo for the client side of our notes app. The server repo for our a
 - Run `npm i` to install all packages
 - Run `npm run dev` to start the app
 
+
 ## Technologies Used
 - HTML
 - CSS
