@@ -10,13 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@syncfusion/ej2-react-buttons": "^20.1.55",
+    "@syncfusion/ej2-react-dropdowns": "^23.2.7",
+    "@syncfusion/ej2-react-richtexteditor": "^20.1.56",
     "axios": "^1.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.0",
-    "@syncfusion/ej2-react-buttons": "^20.1.55",
-    "@syncfusion/ej2-react-dropdowns": "^23.2.7",
-    "@syncfusion/ej2-react-richtexteditor": "^20.1.56"
+    "react-pro-sidebar": "^1.1.0-alpha.1",
+    "react-router-dom": "^6.21.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",

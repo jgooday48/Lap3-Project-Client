@@ -2,7 +2,6 @@
 
   min-height: 100vh;
   margin-top: 3.5em;
-  display: grid; 
   grid-template-columns: 1fr 1fr 3fr;
   margin-top: 3.5em;
   padding:0;
@@ -21,62 +20,31 @@ body{
   padding:0;
   background-color:aquamarine;
   border: 2px solid black;
-
+  height: 100%; 
+  width: 100%; 
 
 
 }
-.file{
-  grid-column:2;
-    border: 2px solid red;
-}
 
-.folder{
-  grid-column: 1;
-  border: 2px solid green;
+.homepage{
+  display: flex; 
+  flex-direction: row;
 }
 
 
-.editor{
-   grid-column: 3;
-  border: 3px solid blue;
-  }
+
+/* .rs-content{
+flex-grow: 1; 
+padding: 3% 22px; 
+text-align: cneter; 
+background-color: #555;
+} */
 
 
 
 
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}

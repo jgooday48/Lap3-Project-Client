@@ -10,6 +10,8 @@ import {
     FileManager
 } from '@syncfusion/ej2-react-richtexteditor'
 import './index.css'
+import FolderSideBar from '../FolderSideBar'
+import { useRef, useEffect } from 'react'
 
 const RichTextEditor = () => {
 
@@ -43,15 +45,22 @@ const RichTextEditor = () => {
             '|',
             'Undo',
             'Redo'
-        ],
-        textAlign: 'Left'
+        ]
     }
+
+  
+
+
 
     return (
         <div className="editor">
             <RichTextEditorComponent toolbarSettings={customToolbar} height={1000}>
-                <Inject services={[Toolbar, Link, Image, HtmlEditor, FileManager, QuickToolbar]}></Inject>
             
+                    <Inject services={[Toolbar, Link, Image, HtmlEditor, FileManager, QuickToolbar]}></Inject>
+            
+
+    
+                <div>
                 <p>The Rich Text Editor is WYSIWYG ("what you see is what you get") editor useful to create and edit content, and return the valid </p>
                 <p><b>Key features:</b></p>
                 <ul>
@@ -64,6 +73,7 @@ const RichTextEditor = () => {
                     <li><p>Allows preview of modified content before saving it.</p></li>
                     <li><p>Handles images, hyperlinks, video, hyperlinks, uploads, etc.</p></li>
                     </ul>
+                </div>
             </RichTextEditorComponent>
         </div>
     

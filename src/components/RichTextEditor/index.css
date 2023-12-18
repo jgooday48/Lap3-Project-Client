@@ -1,0 +1,26 @@
+
+
+
+
+
+.editor{
+  border: 3px solid blue;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  position:relative;
+  height: 100%; 
+  
+
+  }
+
+  .resizer-left{
+  width: 10px; 
+  top: 0; 
+  left: 0; 
+  cursor: col-resize; 
+  height: 100vh;
+  /* position: absolute;  */
+  background-color:green;
+
+}

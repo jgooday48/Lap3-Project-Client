@@ -1,18 +1,13 @@
 
 import './App.css'
 import RichTextEditor from './components/RichTextEditor'
+import { HomePage } from './pages'
 
 function App() {
 
   return (
       <>
-          <div className="folder">
-              <h1>Folders</h1>
-          </div>
-          <div className="file">
-              <h2>Files</h2>
-          </div>
-     <RichTextEditor/>
+     <HomePage/>
     </>
   )
 }
