@@ -1,68 +1,48 @@
 
 import React, { useState, useEffect, useRef, useContext } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Login = () => {
-    const [inputValue, setinputValue] = useState('')
-    const [inputValuep, setinputValuep] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const inputRef = useRef()
 
     useEffect(() => {
         inputRef.current.focus()
       },[])
     
-      const handleInput = (e) => {
+      const handleEmailChange = (e) => {
         console.log(e.target.value)
-        setinputValue(e.target.value)
+        setEmail(e.target.value)
       }
 
-      const handleInputp = (e) => {
+      const handlePasswordChange = (e) => {
         console.log(e.target.value)
-        setinputValuep(e.target.value)
+        setPassword(e.target.value)
       }
 
       const handleSubmit = (e) => {
         e.preventDefault()
-        setUser(inputValue)
-        navigate('/')
+        console.log(email)
+        console.log(password)
       }
 
   return (
     <>
-        <h1>Login</h1>
+      <h1>Login</h1>
+      <form aria-label='sign in'>
 
+        <label htmlFor="username" className="mr10">Email</label>
+        <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
 
-        <form aria-label='sign in'
-      onSubmit={handleSubmit}>
+        <label htmlFor="password" className="mr10">Password</label>
+        <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
         
-        <label htmlFor="username" className="mr10">Username</label>
-      <input
-        type="text"
-        id="username"
-
-
-        autoComplete="off"
-        value={inputValue}
-        onChange={handleInput}
-        ref={inputRef}
-        required
-      />
-      <label htmlFor="password" className="mr10">Password</label>
-      <input
-        type="password"
-        id="password"
-
-
-        autoComplete="off"
-        value={inputValuep}
-        onChange={handleInputp}
-        ref={inputRef}
-        required
-      />
-      </form>
-
-
-
-    
+        <button onClick={handleSubmit}>Sign In</button>
+      </form> 
+      <p>New User?   
+        <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Register</NavLink>
+      </p>
     </>
   )
 }

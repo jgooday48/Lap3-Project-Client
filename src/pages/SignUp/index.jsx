@@ -1,66 +1,58 @@
+
 import React, { useState, useEffect, useRef, useContext } from 'react'
+import { NavLink } from 'react-router-dom'
 
-const SignUp= () => {
+const SignUp = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const inputRef = useRef()
 
-    const [inputValue, setinputValue] = useState('')
-    const [inputValuep, setinputValuep] = useState('')
-    const inputRef = useRef()
+  useEffect(() => {
+      inputRef.current.focus()
+    },[])
+  
+    const handleNameChange = (e) => {
+      console.log(e.target.value)
+      setName(e.target.value)
+    }
 
-    useEffect(() => {
-        inputRef.current.focus()
-      },[])
-    
-      const handleInput = (e) => {
-        console.log(e.target.value)
-        setinputValue(e.target.value)
-      }
+    const handleEmailChange = (e) => {
+      console.log(e.target.value)
+      setEmail(e.target.value)
+    }
 
-      const handleInputp = (e) => {
-        console.log(e.target.value)
-        setinputValuep(e.target.value)
-      }
+    const handlePasswordChange = (e) => {
+      console.log(e.target.value)
+      setPassword(e.target.value)
+    }
 
-      const handleSubmit = (e) => {
-        e.preventDefault()
-        setUser(inputValue)
-        navigate('/')
-      }
+    const handleSubmit = (e) => {
+      e.preventDefault()
+      console.log(name)
+      console.log(email)
+      console.log(password)
+    }
 
   return (
     <>
-        <h1>Sign Up page</h1>
+      <h1>Sign Up</h1>
+      <form aria-label='sign up'>
+        <label htmlFor="username" className="mr10">Name</label>
+        <input type="text" id="name" autoComplete="off" value={name} onChange={handleNameChange} ref={inputRef} required/>
 
-        <form aria-label='sign up'
-      onSubmit={handleSubmit}>
-        
-        <label htmlFor="username" className="mr10">Username</label>
-      <input
-        type="text"
-        id="username"
+        <label htmlFor="email" className="mr10">Email</label>
+        <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
 
+        <label htmlFor="password" className="mr10">Password</label>
+        <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
 
-        autoComplete="off"
-        value={inputValue}
-        onChange={handleInput}
-        ref={inputRef}
-        required
-      />
-      <label htmlFor="password" className="mr10">Password</label>
-      <input
-        type="password"
-        id="password"
-
-
-        autoComplete="off"
-        value={inputValuep}
-        onChange={handleInputp}
-        ref={inputRef}
-        required
-      />
-      </form>
-
-
-    
+        <button onClick={handleSubmit}>Sign In</button>
+      </form> 
+      <p>Already have an account?   
+        <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Login</NavLink>
+      </p>
     </>
   )
 }
