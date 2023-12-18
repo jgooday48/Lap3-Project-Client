@@ -1,22 +1,22 @@
-.signin, .signinh1, footer {
+.register, .registerh1, footer {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.signinh1 {
+.registerh1 {
     font-size: 50px;
     padding: 4px;
     margin-top: 0px;
 }
 
-.signin {
+.register {
     border-radius: 20px;
     font-size: 2cap;
 }
 
-#email, #password {
+#email, #password, #name {
     padding: 10px;
     margin: 20px;
     width: 400px;
@@ -39,7 +39,7 @@
     
 }
 
-#signupdiv {
-    height: 91vh;
+#registerdiv {
+    height: 90vh;
 
 }

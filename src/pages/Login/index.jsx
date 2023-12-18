@@ -9,8 +9,8 @@ const Login = () => {
   }
 
     
-    const [inputValue, setinputValue] = useState('')
-    const [inputValuep, setinputValuep] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
     const inputRef = useRef()
 
     useEffect(() => {
@@ -19,17 +19,17 @@ const Login = () => {
     
       const handleInput = (e) => {
         console.log(e.target.value)
-        setinputValue(e.target.value)
+        setEmail(e.target.value)
       }
 
       const handleInputp = (e) => {
         console.log(e.target.value)
-        setinputValuep(e.target.value)
+        setPassword(e.target.value)
       }
 
       const handleSubmit = (e) => {
         e.preventDefault()
-        setUser(inputValue)
+
         navigate('/')
       }
 
@@ -49,7 +49,7 @@ const Login = () => {
 
 
         autoComplete="off"
-        value={inputValue}
+        value={email}
         onChange={handleInput}
         ref={inputRef}
         required
@@ -61,7 +61,7 @@ const Login = () => {
 
 
         autoComplete="off"
-        value={inputValuep}
+        value={password}
         onChange={handleInputp}
         ref={inputRef}
         required

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
 }
 
 
@@ -20,6 +21,7 @@
     border-radius: 15px;
     font-size: 20px;
     top: 100px;
+
 }
 
 #login:hover {

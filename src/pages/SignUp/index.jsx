@@ -7,8 +7,9 @@ const SignUp= () => {
     backgroundColor: "lightgrey"
   }
 
-    const [inputValue, setinputValue] = useState('')
-    const [inputValuep, setinputValuep] = useState('')
+    const [email, setemail] = useState('')
+    const [name, setName] = useState('')
+    const [password, setpassword] = useState('')
     const inputRef = useRef()
 
     useEffect(() => {
@@ -17,27 +18,43 @@ const SignUp= () => {
     
       const handleInput = (e) => {
         console.log(e.target.value)
-        setinputValue(e.target.value)
+        setemail(e.target.value)
       }
 
       const handleInputp = (e) => {
         console.log(e.target.value)
-        setinputValuep(e.target.value)
+        setpassword(e.target.value)
+      }
+
+      const handleInputName = (e) => {
+        console.log(e.target.value)
+        setName(e.target.value)
       }
 
       const handleSubmit = (e) => {
         e.preventDefault()
-        setUser(inputValue)
+
         navigate('/')
       }
 
   return (
-    <div style={activeStyle} id="signupdiv">
-        <h1 className="signinh1">Register</h1>
+    <div style={activeStyle} id="registerdiv">
+        <h1 className="registerh1">Register</h1>
 
-        <form className="signin" aria-label='sign up'
+        <form className="register" aria-label='register'
       onSubmit={handleSubmit}>
-        
+
+
+        <input
+        type="text"
+        id="name"
+        placeholder='name'
+        autoComplete="off"
+        value={name}
+        onChange={handleInputName}
+        ref={inputRef}
+        required
+      />
 
       <input
         type="text"
@@ -46,7 +63,7 @@ const SignUp= () => {
 
 
         autoComplete="off"
-        value={inputValue}
+        value={email}
         onChange={handleInput}
         ref={inputRef}
         required
@@ -56,10 +73,8 @@ const SignUp= () => {
         type="password"
         id="password"
         placeholder='password'
-
-
         autoComplete="off"
-        value={inputValuep}
+        value={password}
         onChange={handleInputp}
         ref={inputRef}
         required
