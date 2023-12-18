@@ -1,3 +1,4 @@
+
 import React,{ useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { NavBar } from './Layout'
@@ -5,8 +6,10 @@ import { NavBar } from './Layout'
 import * as Pages from './pages'
 import './App.css'
 import RichTextEditor from './components/RichTextEditor'
+import { HomePage } from './pages'
 
 function App() {
+
 
 
   return (
@@ -24,7 +27,6 @@ function App() {
 
 
     </Routes>
-
     </>
   )
 }
