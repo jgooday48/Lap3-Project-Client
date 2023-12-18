@@ -32,13 +32,20 @@ const Login = () => {
       <h1>Login</h1>
       <form aria-label='sign in'>
 
-        <label htmlFor="username" className="mr10">Email</label>
-        <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
+        <ul>
+          <label htmlFor="username" className="mr10">Email</label>
+          <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
+        </ul>
 
-        <label htmlFor="password" className="mr10">Password</label>
-        <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
+        <ul>
+          <label htmlFor="password" className="mr10">Password</label>
+          <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
+        </ul>
+
+        <ul>
+          <button onClick={handleSubmit}>Sign In</button>
+        </ul>
         
-        <button onClick={handleSubmit}>Sign In</button>
       </form> 
       <p>New User?   
         <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Register</NavLink>
