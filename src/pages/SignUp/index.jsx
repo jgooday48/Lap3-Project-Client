@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react'
-
+import './signup.css'
 const SignUp= () => {
 
     const [inputValue, setinputValue] = useState('')
@@ -28,9 +28,9 @@ const SignUp= () => {
 
   return (
     <>
-        <h1>Sign Up page</h1>
+        <h1 class="signinh1">Sign Up page</h1>
 
-        <form aria-label='sign up'
+        <form class="signin" aria-label='sign up'
       onSubmit={handleSubmit}>
         
         <label htmlFor="username" className="mr10">Username</label>
@@ -57,7 +57,9 @@ const SignUp= () => {
         ref={inputRef}
         required
       />
+      <input id="submit" type="submit" />
       </form>
+
 
 
     

@@ -1,0 +1,7 @@
+.signin, .signinh1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
