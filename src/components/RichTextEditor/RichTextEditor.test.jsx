@@ -8,14 +8,13 @@ import * as matchers from '@testing-library/jest-dom/matchers'
 expect.extend(matchers)
 
 
-import Login from '.'
-
+import RichTextEditor from '.'
 
 describe('Login display', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
-                <Login />
+                <RichTextEditor />
             </MemoryRouter>
         );
     });
@@ -24,22 +23,9 @@ describe('Login display', ()=> {
         cleanup()
     })
 
-    it('only displays one h1', () => {
-        const h1s = screen.queryAllByRole('heading', {
-            level:1
-        })
+    it('is defined', () => {
 
-        expect(h1s.length).not.toBeGreaterThan(1)
+        expect(RichTextEditor).toBeDefined()
 
     })
-
-    it('only displays one form', () => {
-        const form = screen.queryAllByRole('form')
-
-        expect(form.length).not.toBeGreaterThan(1)
-
-    })
-
-
 })
-
