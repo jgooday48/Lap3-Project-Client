@@ -38,7 +38,7 @@ const Login = () => {
         <h1 className="loginh1">Login</h1>
 
         
-        <form class="login" aria-label='sign in'
+        <form className="login" aria-label='sign in'
       onSubmit={handleSubmit}>
 
 
