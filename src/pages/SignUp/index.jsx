@@ -92,7 +92,7 @@ const SignUp = () => {
         {isLoading && <Loader />}
 
         <ul>
-          <button onClick={handleSubmit}>Sign In</button>
+          <button onClick={handleSubmit}>Sign Up</button>
         </ul>
         
       </form> 
