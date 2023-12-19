@@ -6,6 +6,8 @@ import { toast } from 'react-toastify'
 import Loader from '../../components/Loader'
 import { setCredentials } from '../../slices/authSlice'
 import { useUpdateUserMutation } from '../../slices/usersApiSlice'
+import { useLogoutMutation } from '../../slices/usersApiSlice'
+import { logout } from '../../slices/authSlice'
 
 
 const Profile = () => {
@@ -21,6 +23,7 @@ const Profile = () => {
    
   const { userInfo } = useSelector(state => state.auth);
 
+  const [logoutApiCall] = useLogoutMutation();
   const [updateProfile, { isLoading }] = useUpdateUserMutation();
   
   useEffect(() => {
@@ -35,9 +38,15 @@ const Profile = () => {
       toast.error("Passwords do not match")
     } else {
       try {
-        const res = await updateProfile({_id: userInfo._id, name, email, password}).unwrap
-        dispatch(setCredentials({...res}));
-        // toast.success("Profile Updated!")
+        console.log(userInfo._id)
+        const res = await updateProfile({ _id: userInfo._id, name, email, password }).unwrap();
+        
+        console.log(res)
+        dispatch(setCredentials({res}));
+        toast.success("Profile Updated!")
+        await logoutApiCall().unwrap();
+        dispatch(logout());
+        navigate("/login");
       } catch (err) {
         toast.error(err?.data?.message || err.error)
       }

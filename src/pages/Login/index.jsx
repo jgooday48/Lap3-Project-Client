@@ -43,6 +43,7 @@ const Login = () => {
       e.preventDefault()
       try {
         const res = await login({email, password}).unwrap();
+        localStorage.setItem("jwt", res.token);
         dispatch(setCredentials({...res}))
         navigate("/")
       } catch (err) {

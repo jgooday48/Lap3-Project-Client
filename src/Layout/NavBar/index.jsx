@@ -39,7 +39,7 @@ const NavBar = () => {
           <>
             <li title={userInfo.name} id="username">
               <NavLink to="/profile">
-                {userInfo.name}
+                My profile
               </NavLink>
             </li>
             <li>
