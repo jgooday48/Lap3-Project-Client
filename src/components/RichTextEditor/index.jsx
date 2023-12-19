@@ -57,14 +57,16 @@ const RichTextEditor = () => {
     }
     
     useEffect(() => {
-console.log("content: ", content)
+console.log("content: ", content.toString())
 })
 
     const handleSave = () => {
+      
         if (content.length > 0) {
+            console.log("inside handleSave")
                 fetch('http://localhost:3000/notes', {
                 method: 'POST',
-                body: JSON.stringify({Title: "Hi", Content: {content}.toString(), IsImportant: false, Section: "Test"}),
+                body: JSON.stringify({Title: "Test", Content: content}),
                 headers: {
                     'Content-type': 'application/json; charset=UTF-8',
                     // 'Authorization': `Bearer ${user.token}`
@@ -86,19 +88,20 @@ console.log("content: ", content)
             });
         }
     
-}
+    }
+    
+
+    const fetchAData = ()
 
     return (
         <div className="editor">
             <RichTextEditorComponent toolbarSettings={customToolbar} height={1000} change={ handleContentChange}>
             
                     <Inject services={[Toolbar, Link, Image, HtmlEditor, FileManager, QuickToolbar]}></Inject>
-            
-                         
-    
-                <div>
+               
+                
                   {content}
-                </div>
+            
             </RichTextEditorComponent>
               <button onClick={handleSave}>Save to Backend</button>
         </div>
