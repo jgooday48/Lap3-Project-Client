@@ -44,6 +44,9 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li>
+            <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
+          </li>
+            <li>
               <button onClick={logoutHandler}>
                 Logout
               </button>
@@ -61,9 +64,7 @@ const NavBar = () => {
           </>
           )}
           
-          <li>
-            <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
-          </li>
+
 
 
 
