@@ -5,7 +5,9 @@
     width: 20vw;
     background-color: #eee;
     position:relative;
-}
+    /* display: flex; 
+    flex-direction: row;*/
+} 
 
 .resizer{
   width: 5px; 
