@@ -48,6 +48,9 @@ const NavBar = () => {
                 Logout
               </button>
             </li>
+            <li>
+            <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
+          </li>
           </>
           ) : (
           <>
@@ -61,9 +64,7 @@ const NavBar = () => {
           </>
           )}
           
-          <li>
-            <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
-          </li>
+
 
 
 
