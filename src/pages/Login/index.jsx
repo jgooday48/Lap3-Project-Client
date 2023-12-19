@@ -9,6 +9,10 @@ import Loader from '../../components/Loader'
 import './login.css'
 
 const Login = () => {
+
+    const activeStyle = {
+      backgroundColor: "lightgrey"
+    }
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const inputRef = useRef()
@@ -53,18 +57,18 @@ const Login = () => {
     }
 
     return (
-      <>
+      <div style={activeStyle} id="registerdiv">
         <h1 className='loginh1'>Login</h1>
         <form aria-label='sign in' className='login'>
 
           <ul>
-            <label htmlFor="email" className="mr10">Email</label>
-            <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
+            <label htmlFor="email" className="mr10"></label>
+            <input type="email" id="email" autoComplete="off" placeholder='email' value={email} onChange={handleEmailChange} ref={inputRef} required/>
           </ul>
 
           <ul>
-            <label htmlFor="password" className="mr10">Password</label>
-            <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
+            <label htmlFor="password" className="mr10"></label>
+            <input type="password" id="password" autoComplete="off" placeholder='password' value={password} onChange={handlePasswordChange} ref={inputRef} required/>
           </ul>
 
           {isLoading && <Loader />}
@@ -79,7 +83,7 @@ const Login = () => {
           <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Register</NavLink>
         </p>
         </footer>
-      </>
+      </div>
     )
 }
 

@@ -9,6 +9,11 @@ import { setCredentials } from '../../slices/authSlice'
 import './signup.css'
 
 const SignUp = () => {
+
+  const activeStyle = {
+    backgroundColor: "lightgrey"
+  }
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -65,28 +70,28 @@ const SignUp = () => {
     }
 
   return (
-    <>
-      <h1 className='registerh1'>Sign Up</h1>
+    <div style={activeStyle} id="registerdiv">
+      <h1 className='registerh1'>Register</h1>
       <form aria-label='sign up' className='register'>
 
         <ul>
-          <label htmlFor="username" className="mr10">Name</label>
-          <input type="text" id="name" autoComplete="off" value={name} onChange={handleNameChange} ref={inputRef} required/>
+          <label htmlFor="username" className="mr10"></label>
+          <input type="text" id="name" autoComplete="off" value={name} onChange={handleNameChange} ref={inputRef} placeholder='name' required/>
         </ul>
 
         <ul>
-          <label htmlFor="email" className="mr10" id="email">Email</label>
-          <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
+          <label htmlFor="email" className="mr10"></label>
+          <input type="email" id="email" autoComplete="off" value={email} placeholder='email' onChange={handleEmailChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10" id="password">Password</label>
-          <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
+          <label htmlFor="password" className="mr10"></label>
+          <input type="password" id="password" autoComplete="off" placeholder='password' value={password} onChange={handlePasswordChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10" id="password">Confirm Password</label>
-          <input type="password" id="confirmPassword" autoComplete="off" value={confirmPassword} onChange={handleConfirmPasswordChange} ref={inputRef} required/>
+          <label htmlFor="password" className="mr10"></label>
+          <input type="password" id="confirmPassword" autoComplete="off" value={confirmPassword} onChange={handleConfirmPasswordChange} placeholder='confirm password' ref={inputRef} required/>
         </ul>
 
         {isLoading && <Loader />}
@@ -101,7 +106,7 @@ const SignUp = () => {
         <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Login</NavLink>
       </p>
       </footer>
-    </>
+    </div>
   )
 }
 
