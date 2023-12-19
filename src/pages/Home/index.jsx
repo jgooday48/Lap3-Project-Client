@@ -1,10 +1,20 @@
 import React from 'react'
-
+import { useDispatch, useSelector } from 'react-redux'
 import { FolderSideBar, RichTextEditor } from '../../components'
 import { NavLink} from 'react-router-dom'
 import './Home.css'
 const HomePage = () => {
+  const { userInfo } =  useSelector(state => state.auth)
+
+  const alt = (
+    <div>
+          <h1>Notes App</h1>
+              <p>Welcome to the notes app. You may view, edit and delete your notes</p>
+    </div>
+  )
   return (
+    <>
+    {!userInfo ? (
       <div className="homepage">
            {/* <FolderSideBar />
           <FolderSideBar/> 
@@ -21,11 +31,16 @@ const HomePage = () => {
                   <NavLink to="/register">Register</NavLink>
                 </li>
               </ul>
-
-            
-      
-      
       </div>
+    
+    ) : (    
+    <div>
+      <h1>Notes App</h1>
+          <p>Welcome to the notes app. You may view, edit and delete your notes</p>
+    </div>
+
+    )}
+    </>
   )
 }
 
