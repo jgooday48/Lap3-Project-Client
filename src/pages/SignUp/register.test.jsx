@@ -68,6 +68,8 @@ describe('Register display', ()=> {
         fireEvent.change(confirmPasswordInput, { target: { value: 'password123' } });
         expect(confirmPasswordInput.value).toBe('password123');
       });
+
+
     
       it('should submit the form', async () => {
 

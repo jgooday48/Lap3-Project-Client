@@ -79,8 +79,8 @@ const Login = () => {
 
         </form> 
         <footer>
-        <p>New User?   
-          <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Register</NavLink>
+        <p>
+          New User? <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>  Register</NavLink>
         </p>
         </footer>
       </div>

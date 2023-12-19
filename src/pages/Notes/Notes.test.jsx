@@ -8,13 +8,13 @@ import * as matchers from '@testing-library/jest-dom/matchers'
 expect.extend(matchers)
 
 
-import RichTextEditor from '.'
+import Notes from '.'
 
-describe('Rich text editor display', ()=> {
+describe('Notes', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
-                <RichTextEditor />
+                <Notes />
             </MemoryRouter>
         );
     });
@@ -25,7 +25,8 @@ describe('Rich text editor display', ()=> {
 
     it('is defined', () => {
 
-        expect(RichTextEditor).toBeDefined()
+        expect(Notes).toBeDefined()
 
     })
+
 })

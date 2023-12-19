@@ -25,6 +25,7 @@ function App() {
         <Route path="/" element={<Pages.Home />}/>
         <Route path="/login" element={<Pages.Login />}/>
         <Route path="/register" element={<Pages.SignUp />}/>
+        <Route path="/notes" element={<Pages.Notes />}/>
         {/* Private routes */}
         <Route path="" element={<PrivateRoute />}>
           <Route path="/profile" element={<Pages.Profile />}/>
