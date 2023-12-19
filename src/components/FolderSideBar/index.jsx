@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useRef} from 'react'
 import './index.css'
 import { Sidebar, Menu,  MenuItem} from 'react-pro-sidebar'
-import './index.css';
 import { resizeWidth } from '../../utils/WidthChanger';
+import NoteSideBar from '../NoteSideBar';
 
-const FolderSideBar = () => {
+const FolderSideBar = ({data}) => {
   const resizerRef = useRef(null);
   const sidebarRef = useRef(null);
-  const isFolder = true; 
+    const [notesData, setNotesData] = useState([])
+
 
   useEffect(() => {
     const resizer = resizerRef.current;
@@ -19,30 +20,40 @@ const FolderSideBar = () => {
   }, []);
 
 
+
+  useEffect(() => {
+     getAllNotesByFolder
+  }, [notesData])
+
+  
+  const getAllNotesByFolder = async (folderId) => {
+    const api = `http://localhost:3000/notes/folder/${folderId}`
+      const response = await fetch(api)
+    const data = await response.json()
+    setNotesData(data)
+  }
+
+
+
   return (
     <div className="folderSideBar" ref={sidebarRef}>
       <div className="resizer" ref={resizerRef}></div>
-      {isFolder &&(
+    <div>
         <div className="header">
           <h3>La Fosse</h3>
         </div>
-      )}
+    
       <ul className="sidebar-menu">
-        <li className="menu-item">folder 1</li>
-        <li className="menu-item">folder 2</li>
-        <li className="menu-item">folder 3</li>
-        <li className="menu-item">folder 4</li>
-        <li className="menu-item">folder 5</li>
-        <li className="menu-item">folder 6</li>
-        <li className="menu-item">folder 7</li>
-           <li className="menu-item">folder 1</li>
-        <li className="menu-item">folder 2</li>
-        <li className="menu-item">folder 3</li>
-        <li className="menu-item">folder 4</li>
-        <li className="menu-item">folder 5</li>
-        <li className="menu-item">folder 6</li>
-        <li className="menu-item">folder 7</li>
+        {data && data.map((folder, idx) =>
+          
+          <li className="menu-item" key={idx} onClick={() => getAllNotesByFolder(folder._id)}>{folder.Name}</li>
+        )}
       </ul>
+      </div>
+      <div>
+        <NoteSideBar data={notesData} />
+        </div>
+      
     </div>
   );
 };
