@@ -76,32 +76,28 @@ const Profile = () => {
   return (
     <>
       <h1>Update profile</h1>
-      <form aria-label='sign up'>
+      <form aria-label='sign up' className='update'>
 
         <ul>
-          <label htmlFor="username" className="mr10">Name</label>
-          <input type="text" id="name" autoComplete="off" value={name} onChange={handleNameChange} ref={inputRef} required/>
+          <input type="text" id="name" autoComplete="off" value={name} placeholder='name' onChange={handleNameChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="email" className="mr10">Email</label>
-          <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
+          <input type="email" id="email" autoComplete="off" placeholder='email' value={email} onChange={handleEmailChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10">Password</label>
-          <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
+          <input type="password" id="password" autoComplete="off" placeholder='password' value={password} onChange={handlePasswordChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10">Confirm Password</label>
-          <input type="password" id="confirmPassword" autoComplete="off" value={confirmPassword} onChange={handleConfirmPasswordChange} ref={inputRef} required/>
+          <input type="password" id="confirmPassword" autoComplete="off" placeholder='Confirm Password' value={confirmPassword} onChange={handleConfirmPasswordChange} ref={inputRef} required/>
         </ul>
 
         {isLoading && <Loader />}
 
         <ul>
-          <button onClick={handleSubmit}>Update</button>
+          <button onClick={handleSubmit} id='updateb'>Update</button>
         </ul>
         
       </form> 

@@ -62,12 +62,12 @@ const Login = () => {
         <form aria-label='sign in' className='login'>
 
           <ul>
-            <label htmlFor="email" className="mr10"></label>
+
             <input type="email" id="email" autoComplete="off" placeholder='email' value={email} onChange={handleEmailChange} ref={inputRef} required/>
           </ul>
 
           <ul>
-            <label htmlFor="password" className="mr10"></label>
+
             <input type="password" id="password" autoComplete="off" placeholder='password' value={password} onChange={handlePasswordChange} ref={inputRef} required/>
           </ul>
 
@@ -79,8 +79,8 @@ const Login = () => {
 
         </form> 
         <footer>
-        <p>New User?   
-          <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Register</NavLink>
+        <p>
+          New User? <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>  Register</NavLink>
         </p>
         </footer>
       </div>

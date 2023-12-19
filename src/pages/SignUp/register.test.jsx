@@ -41,6 +41,10 @@ describe('Register display', ()=> {
         expect(form.length).not.toBeGreaterThan(1)
 
     })
+
+    it('is defined', () => {
+        expect(SignUp).toBeDefined()
+    })
     it('should handle name inputs', () => {
 
         const nameInput = screen.getByPlaceholderText('name');
@@ -68,6 +72,8 @@ describe('Register display', ()=> {
         fireEvent.change(confirmPasswordInput, { target: { value: 'password123' } });
         expect(confirmPasswordInput.value).toBe('password123');
       });
+
+
     
       it('should submit the form', async () => {
 
