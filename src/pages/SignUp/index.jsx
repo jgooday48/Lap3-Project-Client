@@ -1,92 +1,107 @@
+
 import React, { useState, useEffect, useRef, useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import Loader from '../../components/Loader'
+import { useRegisterMutation } from '../../slices/usersApiSlice'
+import { setCredentials } from '../../slices/authSlice'
 import './signup.css'
-const SignUp= () => {
+
+const SignUp = () => {
 
   const activeStyle = {
     backgroundColor: "lightgrey"
   }
 
-    const [email, setemail] = useState('')
-    const [name, setName] = useState('')
-    const [password, setpassword] = useState('')
-    const inputRef = useRef()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const inputRef = useRef()
 
-    useEffect(() => {
-        inputRef.current.focus()
-      },[])
-    
-      const handleInput = (e) => {
-        console.log(e.target.value)
-        setemail(e.target.value)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
+  const [register, { isLoading }] = useRegisterMutation();
+  const { userInfo } = useSelector(state => state.auth);
+  
+  useEffect(() => {
+    if(userInfo){
+      navigate("/");
+    }
+  }, [navigate, userInfo]);
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if(password !== confirmPassword){
+      toast.error("Passwords do not match")
+    } else {
+      try {
+        const res = await register({name, email, password}).unwrap();
+        dispatch(setCredentials({...res}))
+        navigate("/")
+      } catch (err) {
+        toast.error(err?.data?.message || err.error)
       }
+    }
+  }
 
-      const handleInputp = (e) => {
-        console.log(e.target.value)
-        setpassword(e.target.value)
-      }
+  useEffect(() => {
+      inputRef.current.focus()
+    },[])
+  
+    const handleNameChange = (e) => {
+      setName(e.target.value)
+    }
 
-      const handleInputName = (e) => {
-        console.log(e.target.value)
-        setName(e.target.value)
-      }
+    const handleEmailChange = (e) => {
+      setEmail(e.target.value)
+    }
 
-      const handleSubmit = (e) => {
-        e.preventDefault()
+    const handlePasswordChange = (e) => {
+      setPassword(e.target.value)
+    }
 
-        navigate('/')
-      }
+    const handleConfirmPasswordChange = (e) => {
+      setConfirmPassword(e.target.value)
+    }
 
   return (
     <div style={activeStyle} id="registerdiv">
-        <h1 className="registerh1">Register</h1>
+      <h1 className='registerh1'>Register</h1>
+      <form aria-label='sign up' className='register'>
 
-        <form className="register" aria-label='register'
-      onSubmit={handleSubmit}>
+        <ul>
+          <input type="text" id="name" autoComplete="off" value={name} onChange={handleNameChange} ref={inputRef} placeholder='name' required/>
+        </ul>
 
+        <ul>
+          <input type="email" id="email" autoComplete="off" value={email} placeholder='email' onChange={handleEmailChange} ref={inputRef} required/>
+        </ul>
 
-        <input
-        type="text"
-        id="name"
-        placeholder='name'
-        autoComplete="off"
-        value={name}
-        onChange={handleInputName}
-        ref={inputRef}
-        required
-      />
+        <ul>
+          <input type="password" id="password" autoComplete="off" placeholder='password' value={password} onChange={handlePasswordChange} ref={inputRef} required/>
+        </ul>
 
-      <input
-        type="text"
-        id="email"
-        placeholder='email'
+        <ul>
+          <input type="password" id="confirmPassword" autoComplete="off" value={confirmPassword} onChange={handleConfirmPasswordChange} placeholder='confirm password' ref={inputRef} required/>
+        </ul>
 
+        {isLoading && <Loader />}
 
-        autoComplete="off"
-        value={email}
-        onChange={handleInput}
-        ref={inputRef}
-        required
-      />
-
-      <input
-        type="password"
-        id="password"
-        placeholder='password'
-        autoComplete="off"
-        value={password}
-        onChange={handleInputp}
-        ref={inputRef}
-        required
-      />
-      <input id="register" type="submit" value="Register"/>
-      </form>
-
-      <footer><p>Already have an account? Log in <Link to='/login'>here</Link></p></footer>
-
-
-
-    
+        <ul>
+          <button onClick={handleSubmit} id="register">Sign Up</button>
+        </ul>
+        
+      </form> 
+      <footer>
+      <p>Already have an account?   
+        <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Login</NavLink>
+      </p>
+      </footer>
     </div>
   )
 }
