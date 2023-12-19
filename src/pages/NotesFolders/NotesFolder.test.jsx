@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { screen, render, cleanup } from '@testing-library/react';
+import { screen, render, cleanup, fireEvent, waitFor, getByLabelText, getByText } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 import store from "../../store.js"
@@ -9,28 +9,23 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
 
-import Profile from '.';
+import NotesFolder from '.';
 
-describe('Profile Component', ()=> {
+describe('Notes Folder Component', ()=> {
 
     beforeEach(() => {
         render(
             <MemoryRouter>
                 <Provider store={store}>
-                <Profile />
+                <NotesFolder />
                 </Provider>
             </MemoryRouter>
         );
     });
 
-
-    it.skip('is defined', () => {
-        expect(Profile).toBeDefined()
+    it('is defined', () => {
+        expect(NotesFolder).toBeDefined()
     })
-
- 
-    
 
 
 })
-

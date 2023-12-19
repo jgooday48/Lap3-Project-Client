@@ -3,7 +3,8 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
-
+import store from "../../store.js"
+import { Provider } from "react-redux"
 import * as matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
@@ -15,7 +16,9 @@ describe('Home display', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
+                <Provider store={store}>
                 <Home />
+                </Provider>
             </MemoryRouter>
         );
     });
@@ -32,3 +35,8 @@ describe('Home display', ()=> {
 
     })
 })
+
+
+  
+ 
+

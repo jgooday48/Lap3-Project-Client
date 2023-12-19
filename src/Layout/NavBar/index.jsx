@@ -43,7 +43,7 @@ const NavBar = () => {
                 My profile
               </NavLink>
             </li>
-            <li>
+          <li>
             <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
           </li>
             <li>
@@ -64,7 +64,6 @@ const NavBar = () => {
           </>
           )}
           
-
 
 
 

@@ -8,8 +8,8 @@ const HomePage = () => {
 
   const alt = (
     <div>
-          <h1>Notes App</h1>
-              <p>Welcome to the notes app. You may view, edit and delete your notes</p>
+        <h1>Notes App</h1>
+        <p>Welcome to the notes app. You may view, edit and delete your notes</p>
     </div>
   )
   return (
