@@ -6,6 +6,7 @@ import { useLoginMutation } from '../../slices/usersApiSlice'
 import { setCredentials } from '../../slices/authSlice'
 import { toast } from 'react-toastify'
 import Loader from '../../components/Loader'
+import './login.css'
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -53,8 +54,8 @@ const Login = () => {
 
     return (
       <>
-        <h1>Login</h1>
-        <form aria-label='sign in'>
+        <h1 className='loginh1'>Login</h1>
+        <form aria-label='sign in' className='login'>
 
           <ul>
             <label htmlFor="email" className="mr10">Email</label>
@@ -69,13 +70,15 @@ const Login = () => {
           {isLoading && <Loader />}
 
           <ul>
-            <button onClick={handleSubmit}>Sign In</button>
+            <button onClick={handleSubmit} id="login">Sign In</button>
           </ul>
 
         </form> 
+        <footer>
         <p>New User?   
           <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Register</NavLink>
         </p>
+        </footer>
       </>
     )
 }

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import Loader from '../../components/Loader'
 import { useRegisterMutation } from '../../slices/usersApiSlice'
 import { setCredentials } from '../../slices/authSlice'
-
+import './signup.css'
 
 const SignUp = () => {
   const [name, setName] = useState('')
@@ -66,8 +66,8 @@ const SignUp = () => {
 
   return (
     <>
-      <h1>Sign Up</h1>
-      <form aria-label='sign up'>
+      <h1 className='registerh1'>Sign Up</h1>
+      <form aria-label='sign up' className='register'>
 
         <ul>
           <label htmlFor="username" className="mr10">Name</label>
@@ -75,30 +75,32 @@ const SignUp = () => {
         </ul>
 
         <ul>
-          <label htmlFor="email" className="mr10">Email</label>
+          <label htmlFor="email" className="mr10" id="email">Email</label>
           <input type="email" id="email" autoComplete="off" value={email} onChange={handleEmailChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10">Password</label>
+          <label htmlFor="password" className="mr10" id="password">Password</label>
           <input type="password" id="password" autoComplete="off" value={password} onChange={handlePasswordChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10">Confirm Password</label>
+          <label htmlFor="password" className="mr10" id="password">Confirm Password</label>
           <input type="password" id="confirmPassword" autoComplete="off" value={confirmPassword} onChange={handleConfirmPasswordChange} ref={inputRef} required/>
         </ul>
 
         {isLoading && <Loader />}
 
         <ul>
-          <button onClick={handleSubmit}>Sign Up</button>
+          <button onClick={handleSubmit} id="register">Sign Up</button>
         </ul>
         
       </form> 
+      <footer>
       <p>Already have an account?   
         <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Login</NavLink>
       </p>
+      </footer>
     </>
   )
 }
