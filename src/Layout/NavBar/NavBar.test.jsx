@@ -25,4 +25,8 @@ describe('NavBar Component', ()=> {
         expect(nav).toBeInTheDocument()
         expect(nav.childNodes.length).toBe(1)
     })
+
+    
+
+
 })

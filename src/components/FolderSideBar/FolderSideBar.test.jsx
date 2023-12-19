@@ -8,14 +8,13 @@ import * as matchers from '@testing-library/jest-dom/matchers'
 expect.extend(matchers)
 
 
-import Login from '.'
+import FolderSideBar from '.'
 
-
-describe('Login display', ()=> {
+describe('Sidebar', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
-                <Login />
+                <FolderSideBar />
             </MemoryRouter>
         );
     });
@@ -24,22 +23,14 @@ describe('Login display', ()=> {
         cleanup()
     })
 
-    it('only displays one h1', () => {
-        const h1s = screen.queryAllByRole('heading', {
-            level:1
-        })
+    it('is defined', () => {
 
-        expect(h1s.length).not.toBeGreaterThan(1)
+        expect(FolderSideBar).toBeDefined()
 
     })
 
-    it('only displays one form', () => {
-        const form = screen.queryAllByRole('form')
-
-        expect(form.length).not.toBeGreaterThan(1)
-
-    })
-
-
+      it('renders the header when isFolder is true', () => {
+    const headerElement = screen.getByText('La Fosse');
+    expect(headerElement).toBeInTheDocument();
+  });
 })
-

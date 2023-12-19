@@ -5,21 +5,20 @@ import { screen, render, cleanup } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
 import * as matchers from '@testing-library/jest-dom/matchers'
-expect.extend(matchers)
+expect.extend(matchers);
 
 
-import Login from '.'
+import SignUp from '.'
 
 
-describe('Login display', ()=> {
+describe('Register display', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
-                <Login />
+                <SignUp />
             </MemoryRouter>
-        );
-    });
-
+        )
+    })
     afterEach(() => {
         cleanup()
     })
@@ -42,4 +41,3 @@ describe('Login display', ()=> {
 
 
 })
-

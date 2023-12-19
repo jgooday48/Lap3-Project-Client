@@ -7,18 +7,18 @@ import { MemoryRouter } from 'react-router-dom';
 import * as matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
+import NotFoundPage from '.';
 
-import SignUp from '.';
 
-
-describe('Sign up display', ()=> {
+describe('Not found display', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
-                <SignUp />
+                <NotFoundPage />
             </MemoryRouter>
         );
     });
+
     afterEach(() => {
         cleanup()
     })
@@ -32,12 +32,7 @@ describe('Sign up display', ()=> {
 
     })
 
-    it('only displays one form', () => {
-        const form = screen.queryAllByRole('form')
 
-        expect(form.length).not.toBeGreaterThan(1)
-
-    })
 
 
 })

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">87.65% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>60/70</span>
+                <span class='fraction'>71/81</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">87.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>60/70</span>
+                <span class='fraction'>71/81</span>
             </div>
         
             
@@ -133,10 +133,28 @@
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
 <a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -160,6 +178,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -203,12 +225,19 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-import React, { useState, useEffect, useRef, useContext } from 'react'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useEffect, useRef, useContext } from 'react'
+import { Link } from 'react-router-dom'
+import './login.css'
 &nbsp;
 const Login = () =&gt; {
-    const [inputValue, setinputValue] = useState('')
-    const [inputValuep, setinputValuep] = useState('')
+&nbsp;
+  const activeStyle = {
+    backgroundColor: "lightgrey"
+  }
+&nbsp;
+    
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
     const inputRef = useRef()
 &nbsp;
     useEffect(() =&gt; {
@@ -217,58 +246,62 @@ const Login = () =&gt; {
     
       const handleInput = <span class="fstat-no" title="function not covered" >(e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        console.log(e.target.value)</span>
-<span class="cstat-no" title="statement not covered" >        setinputValue(e.target.value)</span>
+<span class="cstat-no" title="statement not covered" >        setEmail(e.target.value)</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 &nbsp;
       const handleInputp = <span class="fstat-no" title="function not covered" >(e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        console.log(e.target.value)</span>
-<span class="cstat-no" title="statement not covered" >        setinputValuep(e.target.value)</span>
+<span class="cstat-no" title="statement not covered" >        setPassword(e.target.value)</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 &nbsp;
       const handleSubmit = <span class="fstat-no" title="function not covered" >(e) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        e.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >        setUser(inputValue)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        navigate('/')</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 &nbsp;
   return (
-    &lt;&gt;
-        &lt;h1&gt;Login&lt;/h1&gt;
+    &lt;div id='bodyLog' style={activeStyle}&gt;
+        &lt;h1 className="loginh1"&gt;Login&lt;/h1&gt;
 &nbsp;
-&nbsp;
-        &lt;form aria-label='sign in'
-      onSubmit={handleSubmit}&gt;
         
-        &lt;label htmlFor="username" className="mr10"&gt;Username&lt;/label&gt;
+        &lt;form className="login" aria-label='sign in'
+      onSubmit={handleSubmit}&gt;
+&nbsp;
+&nbsp;
       &lt;input
         type="text"
-        id="username"
+        id="email"
+        placeholder='email'
 &nbsp;
 &nbsp;
         autoComplete="off"
-        value={inputValue}
+        value={email}
         onChange={handleInput}
         ref={inputRef}
         required
       /&gt;
-      &lt;label htmlFor="password" className="mr10"&gt;Password&lt;/label&gt;
       &lt;input
         type="password"
         id="password"
+        placeholder='password'
 &nbsp;
 &nbsp;
         autoComplete="off"
-        value={inputValuep}
+        value={password}
         onChange={handleInputp}
         ref={inputRef}
         required
       /&gt;
+      &lt;input id="login" type="submit" value="Login"/&gt;
       &lt;/form&gt;
+&nbsp;
+      &lt;footer&gt;&lt;p&gt;Don't have an account? Register &lt;Link to='/register'&gt;here&lt;/Link&gt;&lt;/p&gt;&lt;/footer&gt;
 &nbsp;
 &nbsp;
 &nbsp;
     
-    &lt;/&gt;
+    &lt;/div&gt;
   )
 }
 &nbsp;
@@ -280,7 +313,7 @@ export default Login
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-18T12:03:46.828Z
+                at 2023-12-18T17:38:51.235Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

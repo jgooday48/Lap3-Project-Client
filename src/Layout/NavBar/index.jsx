@@ -35,6 +35,7 @@ const NavBar = () => {
             <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Home</NavLink>
           </li>
 
+
           {userInfo ? (
           <>
             <li title={userInfo.name} id="username">
@@ -60,6 +61,12 @@ const NavBar = () => {
           </>
           )}
           
+          <li>
+            <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
+          </li>
+
+
+
         </ul>
       </nav>
   
