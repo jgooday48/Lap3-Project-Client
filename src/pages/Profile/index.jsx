@@ -8,7 +8,7 @@ import { setCredentials } from '../../slices/authSlice'
 import { useUpdateUserMutation } from '../../slices/usersApiSlice'
 import { useLogoutMutation } from '../../slices/usersApiSlice'
 import { logout } from '../../slices/authSlice'
-
+import './profile.css'
 
 const Profile = () => {
   const [name, setName] = useState('')
