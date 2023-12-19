@@ -2,6 +2,7 @@ import React from 'react'
 
 import { FolderSideBar, RichTextEditor } from '../../components'
 import { NavLink} from 'react-router-dom'
+import './Home.css'
 const HomePage = () => {
   return (
       <div className="homepage">
