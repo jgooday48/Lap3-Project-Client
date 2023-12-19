@@ -43,9 +43,9 @@ useEffect(() => {
     <div className="folderSideBar" ref={sidebarRef}>
       <div className="resizer" ref={resizerRef}></div>
       <ul className="sidebar-menu">
-        {data && data.map((note, idx) =>
+        {data && data.map((note) =>
           
-          <li className="menu-item" key={note._id} onClick={() => { setContent(note.Content); setNoteId(note._id) }}>{note.Name}</li>
+          <li role="menuitem" className="menu-item" key={note._id} onClick={() => { setContent(note.Content); setNoteId(note._id) }}>{note.Name}</li>
         )}
       </ul>
       {noteId && 
