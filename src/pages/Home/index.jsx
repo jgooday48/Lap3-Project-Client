@@ -5,10 +5,10 @@ import { FolderSideBar, RichTextEditor } from '../../components'
 const HomePage = () => {
   return (
       <div className="homepage">
-           <FolderSideBar />
+           {/* <FolderSideBar />
           <FolderSideBar/> 
           
-              <RichTextEditor />
+              <RichTextEditor /> */}
             
       
       

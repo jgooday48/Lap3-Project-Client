@@ -1,7 +1,8 @@
 import React from 'react'
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import { screen, render, cleanup } from '@testing-library/react'
-
+import store from "../../store.js"
+import { Provider } from "react-redux"
 import { MemoryRouter } from 'react-router-dom'
 
 import * as matchers from '@testing-library/jest-dom/matchers'
@@ -15,7 +16,9 @@ describe('Login display', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
+                <Provider store={store}>
                 <Login />
+                </Provider>
             </MemoryRouter>
         );
     });
