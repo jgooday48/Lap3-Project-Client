@@ -17,7 +17,7 @@ describe('Register display', ()=> {
         render(
             <MemoryRouter>
                 <Provider store={store}>
-                <SignUp />
+                    <SignUp />
                 </Provider>
             </MemoryRouter>
         )
