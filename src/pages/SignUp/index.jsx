@@ -75,22 +75,18 @@ const SignUp = () => {
       <form aria-label='sign up' className='register'>
 
         <ul>
-          <label htmlFor="username" className="mr10"></label>
           <input type="text" id="name" autoComplete="off" value={name} onChange={handleNameChange} ref={inputRef} placeholder='name' required/>
         </ul>
 
         <ul>
-          <label htmlFor="email" className="mr10"></label>
           <input type="email" id="email" autoComplete="off" value={email} placeholder='email' onChange={handleEmailChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10"></label>
           <input type="password" id="password" autoComplete="off" placeholder='password' value={password} onChange={handlePasswordChange} ref={inputRef} required/>
         </ul>
 
         <ul>
-          <label htmlFor="password" className="mr10"></label>
           <input type="password" id="confirmPassword" autoComplete="off" value={confirmPassword} onChange={handleConfirmPasswordChange} placeholder='confirm password' ref={inputRef} required/>
         </ul>
 
