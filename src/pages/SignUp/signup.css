@@ -16,9 +16,9 @@
     font-size: 2cap;
 }
 
-#email, #password, #name {
+#email, #password, #name, #confirmPassword {
     padding: 10px;
-    margin: 20px;
+
     width: 400px;
 }
 
