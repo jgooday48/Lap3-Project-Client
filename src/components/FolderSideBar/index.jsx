@@ -39,6 +39,7 @@ const FolderSideBar = ({data}) => {
       const response = await fetch(api)
     const data = await response.json()
     setNotesData(data)
+    setFolderId(folderId)
 
   }
 
@@ -99,7 +100,7 @@ const FolderSideBar = ({data}) => {
         </div>
       </div>
       <div>
-        <NoteSideBar data={notesData}  />
+        <NoteSideBar data={notesData} getAllNotesByFolder={getAllNotesByFolder} folderId={folderId} />
         </div>
       
     </div>

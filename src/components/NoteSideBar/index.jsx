@@ -4,7 +4,7 @@ import { resizeWidth } from '../../utils/WidthChanger';
 import RichTextEditor from '../RichTextEditor';
 
 
-const NoteSideBar = ({data}) => {
+const NoteSideBar = ({data, getAllNotesByFolder, folderId}) => {
   const resizerRef = useRef(null);
   const sidebarRef = useRef(null);
     // const [notesData, setNotesData] = useState([])
@@ -47,7 +47,9 @@ useEffect(() => {
             })
         }
             const response = await fetch(`http://localhost:3000/notes/${noteId}`, options);
-            console.log("update happpend")
+            
+            getAllNotesByFolder(folderId)
+
         // const data = await response.json();
         // setContent(data?.content);
     } catch (error) {
@@ -62,6 +64,7 @@ useEffect(() => {
 
 
 return (
+  <>
   <div className="folderSideBar" ref={sidebarRef}>
     <div className="resizer" ref={resizerRef}></div>
 
@@ -77,13 +80,14 @@ return (
         </React.Fragment>
       ))}
     </ul>
+    </div>
     <div>
     {noteId && (
       <RichTextEditor key={noteId} content={content} setContent={setContent} id={noteId} updateNote={updateNote} updateContent={updateContent} />
       )}
     </div>
 
-  </div>
+    </>
 );
 
 

@@ -63,6 +63,9 @@ ul li:hover{
 
 .sidebar-menu{
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+
 }
 
 /* .rs-content{
