@@ -5,8 +5,8 @@
     width: 20vw;
     background-color: #eee;
     position:relative;
-    /* display: flex; 
-    flex-direction: row;*/
+    display: flex; 
+    flex-direction: row;
 } 
 
 .resizer{
