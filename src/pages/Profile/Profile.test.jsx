@@ -25,10 +25,15 @@ describe('Profile Component', ()=> {
 
 
     it.skip('is defined', () => {
-        const setName ='Joel'
         expect(Profile).toBeDefined()
     })
 
+    //  it('renders the Register link', () => {
+    //     const registerLink = screen.getByRole('button', { name: /register/i });
+    //     expect(registerLink).toBeInTheDocument();
+    // });
+
+ 
     
 
 

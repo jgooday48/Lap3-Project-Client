@@ -34,6 +34,18 @@ describe('App', ()=> {
 
     })
 
+    it('renders the Home page by default', () => {
+        const { getByText } = render(
+
+            <div>
+                <h1>Notes App</h1>
+                <p>Welcome to the notes app. Please log in or register to view and post notes</p>
+            </div>
+          )
+    });
+
+    
+
 
 
 })
