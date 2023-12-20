@@ -8,13 +8,13 @@ import * as matchers from '@testing-library/jest-dom/matchers'
 expect.extend(matchers)
 
 
-import Notes from '.'
+import AddFolder from '.'
 
-describe('Notes', ()=> {
+describe('Sidebar', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
-                <Notes />
+                <AddFolder />
             </MemoryRouter>
         );
     });
@@ -25,7 +25,7 @@ describe('Notes', ()=> {
 
     it('is defined', () => {
 
-        expect(Notes).toBeDefined()
+        expect(AddFolder).toBeDefined()
 
     })
 

@@ -80,7 +80,7 @@ const Profile = () => {
     }
 
   return (
-    <div style={activeStyle}>
+    <div className='profilePage' style={activeStyle}>
       <h1>Update profile</h1>
       <form aria-label='update' className='update'>
 
