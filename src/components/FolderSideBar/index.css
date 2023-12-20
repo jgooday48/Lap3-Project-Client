@@ -1,13 +1,18 @@
 
 
 .folderSideBar{
-    height:100%;
-    width: 20vw;
+    height:100vh;
+    width: 100%;
     background-color: #eee;
-    position:relative;
     display: flex; 
     flex-direction: row;
 } 
+
+.sidebar{
+  width:20vw;
+  border: 1px solid black;
+  position: relative;
+}
 
 .resizer{
   width: 5px; 
@@ -65,6 +70,9 @@ ul li:hover{
     overflow: auto;
 }
 
+
+
+
 /* .rs-content{
 flex-grow: 1; 
 padding: 3% 22px; 
@@ -81,3 +89,8 @@ background-color: #555;
   background: gray;
 }
  */
+
+ .sidebar-menu{
+  display: flex;
+  flex-direction: column;
+ }

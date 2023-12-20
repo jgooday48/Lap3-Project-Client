@@ -9,6 +9,7 @@ import { NavBar } from './Layout'
 import PrivateRoute from './components/PrivateRoute';
 
 import * as Pages from './pages'
+import { FolderDataProvider } from './context/FolderDataContext';
 
 
 function App() {
@@ -18,14 +19,19 @@ function App() {
   return (
     <>
 
-    <ToastContainer />
+      <ToastContainer />
+      <FolderDataProvider>
     <Routes>
     
       <Route path="/" element={<NavBar />}>
         <Route path="/" element={<Pages.Home />}/>
         <Route path="/login" element={<Pages.Login />}/>
-        <Route path="/register" element={<Pages.SignUp />}/>
-        <Route path="/notes" element={<Pages.Notes />}/>
+          <Route path="/register" element={<Pages.SignUp />} />
+        
+            <Route path="/folders" element={<Pages.FolderPage />} />
+            <Route path="/createNote/:folderId" element={<Pages.CreateNote />} />
+            <Route path="/note/:noteId" element={<Pages.NotePage/>}/>
+  
         {/* Private routes */}
         <Route path="" element={<PrivateRoute />}>
           <Route path="/profile" element={<Pages.Profile />}/>
@@ -35,7 +41,9 @@ function App() {
         </Route>
 
 
-    </Routes>
+        </Routes>
+        </FolderDataProvider>
+    
 
     </>
 
