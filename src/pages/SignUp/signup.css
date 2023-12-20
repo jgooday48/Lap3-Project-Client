@@ -1,56 +1,60 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    /* font-family: "Poppins", sans-serif; */
-  }
-  
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 
-.register, .registerh1, footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@500;700&family=Nunito:wght@200;400;600&family=Prompt:ital,wght@0,500;1,300&family=Red+Hat+Display:wght@300;400&family=Space+Mono&family=Vast+Shadow&family=Work+Sans:wght@400;800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Nunito", sans-serif;
 }
 
-
-  .register {
-    padding: 30px;
-    border-radius: 8px;
-    margin: 0 auto;
-    background-color: #36343469;
-    box-shadow: 14px 14px 20px rgba(54, 54, 54, 0.376)
-  }
-
-  
-
-  .register input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
-    background: hwb(40 96% 0% / 0.973);
-  }
-
-.registerh1 {
-    font-size: 50px;
-    padding: 4px;
-    margin-bottom: 25px;
-    margin-top: -25px;
+.register,
+.registerh1,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .register {
-    border-radius: 20px;
-    font-size: 2cap;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: #36343469;
+  box-shadow: 14px 14px 20px rgba(54, 54, 54, 0.376);
 }
 
-#email, #password, #name, #confirmPassword {
-    padding: 10px;
-    width: 400px;
+.register input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  background: hwb(40 96% 0% / 0.973);
+}
+
+.registerh1 {
+  font-size: 50px;
+  padding: 4px;
+  margin-bottom: 25px;
+  margin-top: -25px;
+}
+
+.register {
+  border-radius: 20px;
+  font-size: 2cap;
+}
+
+#email,
+#password,
+#name,
+#confirmPassword {
+  padding: 10px;
+  width: 400px;
 }
 
 #register {
@@ -67,7 +71,6 @@
   font-size: 20px;
   top: 100px;
   border: none;
-
 }
 
 #register:hover {
@@ -84,17 +87,16 @@
 }
 
 #registerdiv {
-    background-color: rgb(42 42 42);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 90vh;
-    justify-content: center;
-    background-image: url("../../../src/assets/img.jpg");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+  background-color: rgb(42 42 42);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-image: url("../../../src/assets/img.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .box {
@@ -107,10 +109,6 @@
 }
 
 .footer-Register {
-    font-size: 24px;
-    margin-top: 20px;
-
+  font-size: 24px;
+  margin-top: 20px;
 }
-
-
-
