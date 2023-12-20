@@ -97,7 +97,7 @@ const SignUp = () => {
         </ul>
         
       </form> 
-      <footer className='footerLogin'>
+      <footer className='footer-Register'>
       <p>Already have an account?   
         <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Login</NavLink>
       </p>
