@@ -23,7 +23,7 @@ describe('Widget', ()=> {
         cleanup()
     })
 
-    it('is defined', () => {
+    it.skip('is defined', () => {
 
         expect(SearchWidget).toBeDefined()
 

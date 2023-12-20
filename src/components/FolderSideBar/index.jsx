@@ -60,6 +60,7 @@ const FolderSideBar = ({data}) => {
         }
             const response = await fetch(`http://localhost:3000/folders`, options);
           console.log("update happpend")
+          // window.location.reload()
               toast.success(`"${folderName}" has been added to your folders`, { autoClose: 2000 });
     } catch (error) {
         console.error("Error updating note:", error);
@@ -108,11 +109,5 @@ const FolderSideBar = ({data}) => {
 };
 
 
-
-
-
-
-
-
-
 export default FolderSideBar
+

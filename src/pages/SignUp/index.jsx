@@ -71,6 +71,8 @@ const SignUp = () => {
 
   return (
     <div style={activeStyle} id="registerdiv">
+      <div className='box'>
+
       <h1 className='registerh1'>Register</h1>
       <form aria-label='sign up' className='register'>
 
@@ -97,11 +99,12 @@ const SignUp = () => {
         </ul>
         
       </form> 
-      <footer className='footerLogin'>
+      <footer className='footer-Register'>
       <p>Already have an account?   
         <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Login</NavLink>
       </p>
       </footer>
+      </div>
 
     </div>
   )

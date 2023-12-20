@@ -31,7 +31,7 @@ const NavBar = () => {
       <nav>
        
         <ul className="nav-links">
-          <button class="button-4" role="button">
+          <button className="button-4" role="button">
             <li>
                 <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Home</NavLink>
             </li>
@@ -39,7 +39,7 @@ const NavBar = () => {
 
           {userInfo ? (
           <>
-            <button class="button-4" role="button">
+            <button className="button-4" role="button">
               <li title={userInfo.name} id="username">
               <NavLink to="/profile">
                 My profile
@@ -47,12 +47,12 @@ const NavBar = () => {
               </li>
             </button>
 
-            <button class="button-4" role="button">
+            <button className="button-4" role="button">
               <li>
                 <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
               </li>
             </button>
-            <button class="button-4" role="button" onClick={logoutHandler}>
+            <button className="button-4" role="button" onClick={logoutHandler}>
               <li>
                   Logout
               </li>
@@ -60,13 +60,13 @@ const NavBar = () => {
           </>
           ) : (
           <>
-            <button class="button-4" role="button">
+            <button className="button-4" role="button">
               <li>
                   <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Login</NavLink>
               </li>
             </button>
 
-            <button class="button-4" role="button">
+            <button className="button-4" role="button">
               <li>
                   <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Sign Up</NavLink>
               </li>
