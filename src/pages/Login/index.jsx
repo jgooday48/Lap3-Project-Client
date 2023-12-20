@@ -87,7 +87,7 @@ const Login = () => {
 
           <ul>
             <button onClick={handleSubmit} id="login">
-              Sign In
+              Login
             </button>
           </ul>
         </form>

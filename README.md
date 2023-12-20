@@ -14,3 +14,7 @@ This is the repo for the client side of our notes app. The server repo for our a
 - CSS
 - JavaScript
 - React
+
+## Future Features
+- Pomodoro feature
+- Flashcards feature

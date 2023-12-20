@@ -30,7 +30,7 @@ const NavBar = () => {
     <>
       <nav>
         <ul className="nav-links">
-          <button class="button-4" role="button">
+          <button className="button-4" role="button">
             <li>
               <NavLink
                 to="/"
@@ -42,6 +42,7 @@ const NavBar = () => {
           </button>
 
           {userInfo ? (
+<<<<<<< HEAD
             <>
               <button class="button-4" role="button">
                 <li title={userInfo.name} id="username">
@@ -93,6 +94,42 @@ const NavBar = () => {
                 </li>
               </button>
             </>
+=======
+          <>
+            <button className="button-4" role="button">
+              <li title={userInfo.name} id="username">
+              <NavLink to="/profile">
+                My profile
+              </NavLink>
+              </li>
+            </button>
+
+            <button className="button-4" role="button">
+              <li>
+                <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
+              </li>
+            </button>
+            <button className="button-4" role="button" onClick={logoutHandler}>
+              <li>
+                  Logout
+              </li>
+            </button>
+          </>
+          ) : (
+          <>
+            <button className="button-4" role="button">
+              <li>
+                  <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Login</NavLink>
+              </li>
+            </button>
+
+            <button className="button-4" role="button">
+              <li>
+                  <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Sign Up</NavLink>
+              </li>
+            </button>
+          </>
+>>>>>>> 3f74d740751142c5ac9f4156543a780f696545f0
           )}
         </ul>
       </nav>

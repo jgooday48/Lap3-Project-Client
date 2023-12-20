@@ -39,6 +39,7 @@ const FolderSideBar = ({data}) => {
       const response = await fetch(api)
     const data = await response.json()
     setNotesData(data)
+    setFolderId(folderId)
 
   }
 
@@ -59,6 +60,7 @@ const FolderSideBar = ({data}) => {
         }
             const response = await fetch(`http://localhost:3000/folders`, options);
           console.log("update happpend")
+          // window.location.reload()
               toast.success(`"${folderName}" has been added to your folders`, { autoClose: 2000 });
     } catch (error) {
         console.error("Error updating note:", error);
@@ -99,7 +101,7 @@ const FolderSideBar = ({data}) => {
         </div>
       </div>
       <div>
-        <NoteSideBar data={notesData}  />
+        <NoteSideBar data={notesData} getAllNotesByFolder={getAllNotesByFolder} folderId={folderId} />
         </div>
       
     </div>
@@ -107,11 +109,5 @@ const FolderSideBar = ({data}) => {
 };
 
 
-
-
-
-
-
-
-
 export default FolderSideBar
+
