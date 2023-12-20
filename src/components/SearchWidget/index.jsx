@@ -1,34 +1,34 @@
-// import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 
-// import { SearchBar } from '../'
-// const SearchWidget = () => {
+import { SearchBar } from '../'
+const SearchWidget = () => {
 
 
-//     const [searchString, setSearchString] = useState("")
-//     const [showFolder, setFolderData] = useState([])
+    const [searchString, setSearchString] = useState("")
+    const [showFolder, setFolderData] = useState([])
 
 
 
-//     function handleSearch(userInput){
-//         setSearchString(userInput);
-//     }
-//     useEffect(() => {
-//         const searchAPI = async () => {
-//             const { data }= await axios.get(`https://localhost:3000/folders?${searchString}`)
-//             const shows = data.map(s => s.folder)
-//             setFolderData(shows)
-//         }
-//         searchAPI()
+    function handleSearch(userInput){
+        setSearchString(userInput);
+    }
+    useEffect(() => {
+        const searchAPI = async () => {
+            const { data } = await axios.get(`https://localhost:3000/folders?${searchString}`)
+            const folders = data.map(s => s.folder)
+            setFolderData(folders)
+        }
+        searchAPI()
 
-//     }, [searchString])
+    }, [searchString])
 
-//   return (
-//     <>
-//         <SearchBar handleSearch={handleSearch} />
-//     </>
-//   )
-// }
+  return (
+    <>
+        <SearchBar handleSearch={handleSearch} />
+    </>
+  )
+}
 
-// export default SearchWidget
+export default SearchWidget
