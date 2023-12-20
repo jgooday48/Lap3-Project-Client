@@ -17,21 +17,20 @@ const HomePage = () => {
           <FolderSideBar/> 
           
               <RichTextEditor /> */}
-              <h1>Notes App</h1>
-              <p>Welcome to the notes app. Please log in or register to view and post notes</p>
-              <ul>
-                <li>
+            <h1>Notes App</h1>
+            <p>Welcome to the notes app. Please log in or register to view and post notes</p>
+            <ul>
+              <button className="button-4" role="button" id='homepageBtn1'>
                   <NavLink to="/login">Login</NavLink>
-                </li>
-
-                <li>
-                  <NavLink to="/register">Register</NavLink>
-                </li>
-              </ul>
+              </button>
+              <button className="button-4" role="button" id='homepageBtn2'>
+                  <NavLink to="/register">Sign Up</NavLink>
+              </button>
+            </ul>
       </div>
     
     ) : (    
-    <div>
+    <div className='homepage' style={activeStyle}>
       <h1>Notes App</h1>
           <p>Welcome to the notes app. You may view, edit and delete your notes</p>
     </div>
