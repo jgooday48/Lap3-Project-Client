@@ -75,7 +75,7 @@ const FolderSideBar = ({ data }) => {
         })
       
     }
-
+  }
 
   const deleteFolder = async(folderId) => {
    const isConfirmed = window.confirm("Are you sure you want to delete the folder?");
@@ -138,24 +138,5 @@ const FolderSideBar = ({ data }) => {
     </div>
   )
 }
-    
-        <ul className="sidebar-menu">
-        {data && data.map((folder, idx) =>
-          
-          <li className="menu-item" key={idx} onClick={() => getAllNotesByFolder(folder._id)}>{folder.Name}</li>
-          )}
-      
-      </ul>
-        </div>
-      </div>
-      <div>
-        <NoteSideBar data={notesData}  />
-        </div>
-      
-    </div>
-  );
-};
-
-
 
 export default FolderSideBar
