@@ -37,6 +37,17 @@
   top: 100px;
 }
 
+.login input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
+  background-color: #f8f8f8;
+}
+
 #login:hover {
   background-color: green;
   transition-duration: 0.5s;
