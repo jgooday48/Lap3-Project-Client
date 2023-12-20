@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FolderSideBar, RichTextEditor } from '../../components'
 import { NavLink} from 'react-router-dom'
 import './Home.css'
+
 const HomePage = () => {
   const { userInfo } =  useSelector(state => state.auth)
 

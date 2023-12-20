@@ -39,7 +39,8 @@
 .registerh1 {
     font-size: 50px;
     padding: 4px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+    margin-top: -25px;
 }
 
 .register {
