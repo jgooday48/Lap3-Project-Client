@@ -29,6 +29,16 @@ describe('Home display', ()=> {
         })
 
         expect(h1s.length).not.toBeGreaterThan(1)
-
     })
+
+    it('renders the Login link', () => {
+        const loginLink = screen.getByRole('link', { name: /login/i });
+        expect(loginLink).toBeInTheDocument();
+    });
+
+    it('renders the Register link', () => {
+        const registerLink = screen.getByRole('link', { name: /register/i });
+        expect(registerLink).toBeInTheDocument();
+    });
+    
 })
