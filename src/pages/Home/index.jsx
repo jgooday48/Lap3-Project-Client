@@ -6,16 +6,13 @@ import './Home.css'
 const HomePage = () => {
   const { userInfo } =  useSelector(state => state.auth)
 
-  const alt = (
-    <div>
-        <h1>Notes App</h1>
-        <p>Welcome to the notes app. You may view, edit and delete your notes</p>
-    </div>
-  )
+  const activeStyle = {
+    backgroundColor: "#30AB9C"
+  }
   return (
     <>
     {!userInfo ? (
-      <div className="homepage">
+      <div className="homepage" style={activeStyle}>
            {/* <FolderSideBar />
           <FolderSideBar/> 
           

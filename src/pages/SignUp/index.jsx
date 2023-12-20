@@ -11,7 +11,7 @@ import './signup.css'
 const SignUp = () => {
 
   const activeStyle = {
-    backgroundColor: "lightgrey"
+    backgroundColor: "#30AB9C"
   }
 
   const [name, setName] = useState('')

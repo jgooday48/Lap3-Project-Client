@@ -11,7 +11,7 @@ import './login.css'
 const Login = () => {
 
     const activeStyle = {
-      backgroundColor: "lightgrey"
+      backgroundColor: "#30AB9C"
     }
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
