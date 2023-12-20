@@ -11,6 +11,12 @@ import { logout } from '../../slices/authSlice'
 import './profile.css'
 
 const Profile = () => {
+
+
+  const activeStyle = {
+    backgroundColor: "#30AB9C"
+  }
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -74,9 +80,9 @@ const Profile = () => {
     }
 
   return (
-    <>
+    <div style={activeStyle}>
       <h1>Update profile</h1>
-      <form aria-label='sign up' className='update'>
+      <form aria-label='update' className='update'>
 
         <ul>
           <input type="text" id="name" autoComplete="off" value={name} placeholder='name' onChange={handleNameChange} ref={inputRef} required/>
@@ -101,7 +107,7 @@ const Profile = () => {
         </ul>
         
       </form> 
-    </>
+    </div>
   )
 }
 
