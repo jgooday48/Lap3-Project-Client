@@ -42,3 +42,16 @@
     height: 92vh;
 
 }
+
+.footerLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D04664;
+    padding: 20px; /* Adjust the padding as needed */
+    box-sizing: border-box;
+    width: 22%;
+    margin: 0 auto; /* Center the footer */
+}
+
+

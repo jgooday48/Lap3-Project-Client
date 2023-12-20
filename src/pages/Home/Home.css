@@ -18,4 +18,8 @@ h1 {
 .homepage {
     background-color: #B65F0E;
     height: 92vh;
+    background-image: url('../../../src/assets/img.jpg');
+    background-position: center top; 
+    background-repeat: no-repeat;
+    background-size: cover;
 }
