@@ -1,106 +1,39 @@
 import React, { useState } from 'react'
-import {
-    HtmlEditor,
-    Image,
-    Inject,
-    Link,
-    QuickToolbar,
-    RichTextEditorComponent,
-    Toolbar,
-    FileManager
-} from '@syncfusion/ej2-react-richtexteditor'
 import './index.css'
 import FolderSideBar from '../FolderSideBar'
 import { useRef, useEffect } from 'react'
+import JoditEditor from 'jodit-react'
+import { editorConfig } from './EditorConfig.'
 
-const RichTextEditor = () => {
+const RichTextEditor = ({ content, setContent, id, updateNote, updateContent }) => {
+ 
 
-    const customToolbar = {
-        items: [
-            'Bold',
-            'Italic',
-            'Underline',
-            'StrikeThrough',
-            'FontName',
-            'FontSize',
-            'FontColor',
-            'BackgroundColor',
-            'LowerCase',
-            'UpperCase',
-            '|',
-            'Formats',
-            'Alignments',
-            'OrderedList',
-            'UnorderedList',
-            'Outdent',
-            'Indent',
-            '|',
-            'CreateLink',
-            'Image',
-            '|',
-            'ClearFormat',
-            'Print',
-            'SourceCode',
-            'FullScreen',
-            '|',
-            'Undo',
-            'Redo'
-        ]
+
+    const [message, setMessage] = useState(content)
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        updateNote()
+
+     
+        updateContent(message)
+        setMessage(content)
     }
 
-    const [content, setContent] = useState('')
-    const [message, setMessage] = useState('')
 
-
-    const handleContentChange = (args) => {
-         setContent(args.value);
-    }
-    
-    useEffect(() => {
-console.log("content: ", content)
-})
-
-    const handleSave = () => {
-        if (content.length > 0) {
-                fetch('http://localhost:3000/notes', {
-                method: 'POST',
-                body: JSON.stringify({Title: "Hi", Content: {content}.toString(), IsImportant: false, Section: "Test"}),
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                    // 'Authorization': `Bearer ${user.token}`
-                },
-            })
-            .then((res) => res.json())
-            .then((data) => {
-                setMessage('Content added successfully.');
-                setTimeout(() => {
-                    setMessage('')
-                }, 5000)
-            })
-            .catch((err) => {
-                console.log(err.message);
-                setMessage('There was a problem in creating your note.');
-                setTimeout(() => {
-                    setMessage('')
-                }, 5000)
-            });
-        }
-    
-}
+ console.log("message line 20: ", message)
 
     return (
-        <div className="editor">
-            <RichTextEditorComponent toolbarSettings={customToolbar} height={1000} change={ handleContentChange}>
-            
-                    <Inject services={[Toolbar, Link, Image, HtmlEditor, FileManager, QuickToolbar]}></Inject>
-            
-                         
-    
-                <div>
-                  {content}
-                </div>
-            </RichTextEditorComponent>
-              <button onClick={handleSave}>Save to Backend</button>
+        <div className="editor" style={{ textAlign: 'left' }}>
+           <form onSubmit={handleSubmit}>
+            <JoditEditor config={editorConfig} value={message} onChange={(val) => setContent(val)} />
+                {/* <div dangerouslySetInnerHTML={{ __html: content }} ></div>*/}
+                <input type="submit" value="Save to backend"/>
+            </form>
+        
+            {/* <button onClick={handleClick}>Save to Backend</button> */}
+          
         </div>
     
     )
