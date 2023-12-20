@@ -52,6 +52,10 @@
   align-items: center;
   height: 100vh;
   justify-content: center;
+  background-image: url("../../../src/assets/img.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .box {
   background: rgb(255 255 255 / 34%);
