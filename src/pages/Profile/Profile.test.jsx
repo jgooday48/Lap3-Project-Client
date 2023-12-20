@@ -25,10 +25,10 @@ describe('Profile Component', ()=> {
 
 
     it.skip('is defined', () => {
-        const setName ='Joel'
         expect(Profile).toBeDefined()
     })
 
+ 
     
 
 

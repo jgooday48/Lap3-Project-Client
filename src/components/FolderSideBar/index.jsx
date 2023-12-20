@@ -43,24 +43,26 @@ const FolderSideBar = ({data}) => {
   }
 
 
-  async function createFolder(folderName) {
-    try {
-      const options = {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
 
-          //   'Authorization': `Bearer ${user.token}`
-        },
-        body: JSON.stringify({
-          Name: folderName,
-          User: userId
-        })
-      }
-      const response = await fetch(`http://localhost:3000/folders`, options);
-      console.log("update happpend")
-      toast.success(`"${folderName}" has been added to your folders`, { autoClose: 2000 });
-      
+        async function createFolder() {
+        try {
+            const options = {
+            method: "POST",
+              headers: {
+                  'Content-Type': 'application/json',
+            
+                //   'Authorization': `Bearer ${user.token}`
+              },
+            body: JSON.stringify({
+              Name: folderName,
+              User: userId
+            })
+        }
+            const response = await fetch(`http://localhost:3000/folders`, options);
+          console.log("update happpend")
+          // window.location.reload()
+              toast.success(`"${folderName}" has been added to your folders`, { autoClose: 2000 });
+
     } catch (error) {
       console.error("Error updating note:", error);
     }
@@ -107,13 +109,6 @@ const FolderSideBar = ({data}) => {
     </div>
   );
 };
-
-
-
-
-
-
-
 
 
 export default FolderSideBar
