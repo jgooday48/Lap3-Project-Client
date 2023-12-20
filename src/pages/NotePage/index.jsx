@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router'
 import { NoteTemplate } from '../../components'
 import './index.css'
 import axios from 'axios';
+import { toast } from 'react-toastify'
 
 
 
@@ -53,6 +54,9 @@ const NotePage = () => {
         },
       }
     );
+      toast.success(`Note updated successfully`, {
+        autoClose: 2000
+      })
 
     console.log('Update happened');
   } catch (error) {
@@ -91,7 +95,8 @@ const NotePage = () => {
         <NoteTemplate name={name} setName={setName} content={content} setContent={setContent} folderId={folderId} isImportant={isImportant} setIsImportant={setIsImportant} handleSubmit={updateNote} />
       </div>
       <div>
-        <button onClick={() => deleteNote()}> &#120;</button>
+        <button onClick={() => deleteNote()}>                   <i className="fa fa-trash-o"></i>
+</button>
       </div>
     </div>
   )

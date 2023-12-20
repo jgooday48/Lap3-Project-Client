@@ -5,6 +5,7 @@ import { resizeWidth } from '../../utils/WidthChanger'
 import { ToastContainer } from 'react-toastify'
 import { toast } from 'react-toastify'
 import NoteSection from '../NoteSection'
+import axios from 'axios'
 
 const FolderSideBar = ({ data }) => {
   const resizerRef = useRef(null)
@@ -66,6 +67,25 @@ const FolderSideBar = ({ data }) => {
     createFolder()
   }
 
+  const deleteFolder = async(folderId) => {
+   const isConfirmed = window.confirm("Are you sure you want to delete the folder?");
+
+    if (isConfirmed) {
+      try {
+        // Send the DELETE request
+        await axios.delete(`http://localhost:3000/folders/${folderId}`);
+        window.location.reload()
+        
+    
+      } catch (error) {
+        // Handle errors from the delete request
+        console.error('Error deleting note:', error);
+      }
+    }
+  }
+
+
+
   return (
     <div className='folderSideBar'>
       <ToastContainer />
@@ -93,7 +113,10 @@ const FolderSideBar = ({ data }) => {
                 key={folder._id}
                 onClick={() => getAllNotesByFolder(folder._id)}
               >
-                {folder.Name}
+                {folder.Name} &nbsp;
+                <button onClick={() => deleteFolder(folder._id)}>
+                  <i className="fa fa-trash-o"></i>
+                  </button>
 
               </li>
             ))}
