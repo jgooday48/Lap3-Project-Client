@@ -1,12 +1,11 @@
 nav {
     display: flex;
     padding: 6px;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
-    background: blueviolet;
+    background: #30AB9C;
     color: white;
 
-    /* margin-bottom: 60px; */
   }
   
   .nav-links {
@@ -22,7 +21,7 @@ nav {
   }
   
   .nav-links a {
-    color: white;
+    color: #4456B9;
     text-decoration: none;
   }
   

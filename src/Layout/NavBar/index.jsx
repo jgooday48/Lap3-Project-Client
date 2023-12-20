@@ -8,7 +8,7 @@ import { logout } from '../../slices/authSlice'
 const NavBar = () => {
     const activeStyle = {
       textDecoration: "underline",
-      color: "darkblue"
+      color: "green"
     }
 
     const { userInfo } =  useSelector(state => state.auth)
