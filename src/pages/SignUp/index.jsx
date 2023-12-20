@@ -73,7 +73,7 @@ const SignUp = () => {
     <div style={activeStyle} id="registerdiv">
       <div className='box'>
 
-      <h1 className='registerh1'>Sign Up</h1>
+      <h1 className='registerh1'>Register</h1>
       <form aria-label='sign up' className='register'>
 
         <ul>
