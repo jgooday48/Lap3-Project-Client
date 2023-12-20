@@ -28,6 +28,11 @@ describe('Profile Component', ()=> {
         expect(Profile).toBeDefined()
     })
 
+    //  it('renders the Register link', () => {
+    //     const registerLink = screen.getByRole('button', { name: /register/i });
+    //     expect(registerLink).toBeInTheDocument();
+    // });
+
  
     
 
