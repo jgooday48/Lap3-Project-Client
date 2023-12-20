@@ -1,39 +1,4 @@
 * {
-<<<<<<< HEAD
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#profileDiv {
-  background-color: rgb(42 42 42);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  justify-content: center;
-  background-image: url("../../../src/assets/img.jpg");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.update {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 30px;
-  border-radius: 8px;
-  margin: 0 auto;
-  background-color: #36343469;
-}
-
-h1 {
-  font-size: 50px;
-  padding: 4px;
-  margin-bottom: 20px;
-=======
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -66,7 +31,6 @@ h1 {
 #email, #password, #name, #confirmPassword {
     padding: 10px;
     width: 400px;
->>>>>>> 3f74d740751142c5ac9f4156543a780f696545f0
 }
 
 .update {
@@ -106,8 +70,6 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
-<<<<<<< HEAD
-=======
 
 .box {
     background: rgb(255 255 255 / 34%);
@@ -131,4 +93,3 @@ h1 {
     background-size: cover;
 
 }
->>>>>>> 3f74d740751142c5ac9f4156543a780f696545f0

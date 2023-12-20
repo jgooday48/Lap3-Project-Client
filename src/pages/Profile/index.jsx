@@ -80,12 +80,8 @@ const Profile = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div style={activeStyle} id="profileDiv">
-=======
     <div className='profilePage' style={activeStyle}>
       <div className='box'>
->>>>>>> 3f74d740751142c5ac9f4156543a780f696545f0
       <h1>Update profile</h1>
       <div className="box">
         <form aria-label="update" className="update">
@@ -143,14 +139,6 @@ const Profile = () => {
 
           {isLoading && <Loader />}
 
-<<<<<<< HEAD
-          <ul>
-            <button onClick={handleSubmit} id="updateb">
-              Update
-            </button>
-          </ul>
-        </form>
-=======
         {isLoading && <Loader />}
 
         <ul>
@@ -158,8 +146,8 @@ const Profile = () => {
         </ul>
         
       </form> 
->>>>>>> 3f74d740751142c5ac9f4156543a780f696545f0
       </div>
+    </div>
     </div>
   );
 };
