@@ -64,6 +64,7 @@ useEffect(() => {
 return (
   <div className="folderSideBar" ref={sidebarRef}>
     <div className="resizer" ref={resizerRef}></div>
+
     <ul className="sidebar-menu">
       {data && data.map((note) => (
         <React.Fragment key={note._id}>
@@ -71,14 +72,17 @@ return (
             {note.Name}
           </li>
           <li key={`${note._id}-delete`}>
-            <button>Delete</button>
+            <button>&#10005;</button>
           </li>
         </React.Fragment>
       ))}
     </ul>
+    <div>
     {noteId && (
       <RichTextEditor key={noteId} content={content} setContent={setContent} id={noteId} updateNote={updateNote} updateContent={updateContent} />
-    )}
+      )}
+    </div>
+
   </div>
 );
 
