@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">89.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>78/90</span>
+                <span class='fraction'>99/111</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">89.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>78/90</span>
+                <span class='fraction'>99/111</span>
             </div>
         
             
@@ -153,7 +153,28 @@
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
 <a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -163,8 +184,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -190,8 +209,6 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -241,98 +258,144 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-import React, { useState, useEffect, useRef, useContext } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from "react-redux"
-import { useLoginMutation } from '../../slices/usersApiSlice'
-import { setCredentials } from '../../slices/authSlice'
-import { toast } from 'react-toastify'
-import Loader from '../../components/Loader'
-import './login.css'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState, useEffect, useRef, useContext } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useLoginMutation } from "../../slices/usersApiSlice";
+import { setCredentials } from "../../slices/authSlice";
+import "./login.css";
+import { toast } from "react-toastify";
+import Loader from "../../components/Loader";
 &nbsp;
 const Login = () =&gt; {
+  const activeStyle = {
+    backgroundColor: "#30AB9C",
+  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const inputRef = useRef();
 &nbsp;
-    const activeStyle = {
-      backgroundColor: "#30AB9C"
-    }
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const inputRef = useRef()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 &nbsp;
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+  const [login, { isLoading }] = useLoginMutation();
 &nbsp;
-    const [login, { isLoading }] =  useLoginMutation();
+  const { userInfo } = useSelector((state) =&gt; state.auth);
 &nbsp;
-    const { userInfo } = useSelector(state =&gt; state.auth);
-&nbsp;
-    useEffect(() =&gt; {
-      if(userInfo)<span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        navigate("/");</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-    }, [navigate, userInfo]);
-&nbsp;
-    useEffect(() =&gt; {
-        inputRef.current.focus()
-      },[])
-&nbsp;
-&nbsp;
-    
-    const handleEmailChange = (e) =&gt; {
-      setEmail(e.target.value)
-    }
-&nbsp;
-    const handlePasswordChange = (e) =&gt; {
-      setPassword(e.target.value)
-    }
-&nbsp;
-    const handleSubmit = <span class="fstat-no" title="function not covered" >async (e) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      e.preventDefault()</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        const res = await login({email, password}).unwrap();</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem("jwt", res.token);</span>
-<span class="cstat-no" title="statement not covered" >        dispatch(setCredentials({...res}))</span>
-<span class="cstat-no" title="statement not covered" >        navigate("/")</span>
-<span class="cstat-no" title="statement not covered" >      } catch (err) {</span>
-<span class="cstat-no" title="statement not covered" >        toast.error(err?.data?.message || err.error)</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
+  useEffect(() =&gt; {
+    if (userInfo) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      navigate("/");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
+  }, [navigate, userInfo]);
 &nbsp;
-    return (
-      &lt;div style={activeStyle} id="registerdiv"&gt;
-        &lt;h1 className='loginh1'&gt;Login&lt;/h1&gt;
-        &lt;form aria-label='sign in' className='login'&gt;
+  useEffect(() =&gt; {
+    inputRef.current.focus();
+  }, []);
 &nbsp;
+  const handleEmailChange = (e) =&gt; {
+    setEmail(e.target.value);
+  };
+&nbsp;
+  const handlePasswordChange = (e) =&gt; {
+    setPassword(e.target.value);
+  };
+&nbsp;
+  const handleSubmit = <span class="fstat-no" title="function not covered" >async (e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      const res = await login({ email, password }).unwrap();</span>
+<span class="cstat-no" title="statement not covered" >      localStorage.setItem("jwt", res.token);</span>
+<span class="cstat-no" title="statement not covered" >      dispatch(setCredentials({ ...res }));</span>
+<span class="cstat-no" title="statement not covered" >      navigate("/");</span>
+<span class="cstat-no" title="statement not covered" >    } catch (err) {</span>
+<span class="cstat-no" title="statement not covered" >      toast.error(err?.data?.message || err.error);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
+&nbsp;
+  return (
+    &lt;div style={activeStyle} id="loginDiv"&gt;
+      &lt;div className="box"&gt;
+        &lt;h1 className="loginh1"&gt;Login&lt;/h1&gt;
+        &lt;form aria-label="sign in" className="login"&gt;
           &lt;ul&gt;
-&nbsp;
-            &lt;input type="email" id="email" autoComplete="off" placeholder='email' value={email} onChange={handleEmailChange} ref={inputRef} required/&gt;
+            &lt;input
+              type="email"
+              id="email"
+              autoComplete="off"
+              placeholder="email"
+              value={email}
+              onChange={handleEmailChange}
+              ref={inputRef}
+              required
+            /&gt;
           &lt;/ul&gt;
 &nbsp;
           &lt;ul&gt;
-&nbsp;
-            &lt;input type="password" id="password" autoComplete="off" placeholder='password' value={password} onChange={handlePasswordChange} ref={inputRef} required/&gt;
+            &lt;input
+              type="password"
+              id="password"
+              autoComplete="off"
+              placeholder="password"
+              value={password}
+              onChange={handlePasswordChange}
+              ref={inputRef}
+              required
+            /&gt;
           &lt;/ul&gt;
 &nbsp;
           {<span class="branch-0 cbranch-no" title="branch not covered" >isLoading &amp;&amp; &lt;Loader /&gt;}</span>
 &nbsp;
           &lt;ul&gt;
-            &lt;button onClick={handleSubmit} id="login"&gt;Sign In&lt;/button&gt;
+            &lt;button onClick={handleSubmit} id="login"&gt;
+              Sign In
+            &lt;/button&gt;
           &lt;/ul&gt;
-&nbsp;
-        &lt;/form&gt; 
-        &lt;footer&gt;
-        &lt;p&gt;
-          New User? &lt;NavLink to="/register" style={({ isActive }) =&gt; (<span class="branch-0 cbranch-no" title="branch not covered" >isActive ? activeStyle : u</span>ndefined)}&gt;  Register&lt;/NavLink&gt;
-        &lt;/p&gt;
+        &lt;/form&gt;
+        &lt;footer className="login-footer"&gt;
+          &lt;p&gt;
+            New User?{" "}
+            &lt;NavLink
+              to="/register"
+              style={({ isActive }) =&gt; (<span class="branch-0 cbranch-no" title="branch not covered" >isActive ? activeStyle : u</span>ndefined)}
+            &gt;
+              {" "}
+              Register
+            &lt;/NavLink&gt;
+          &lt;/p&gt;
         &lt;/footer&gt;
       &lt;/div&gt;
-    )
-}
+    &lt;/div&gt;
+  );
+};
 &nbsp;
-export default Login
+export default Login;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -340,7 +403,7 @@ export default Login
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-20T12:12:00.746Z
+                at 2023-12-20T14:42:27.082Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

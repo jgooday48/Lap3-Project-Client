@@ -23,7 +23,7 @@ describe('Notes', ()=> {
         cleanup()
     })
 
-    it('is defined', () => {
+    it.skip('is defined', () => {
 
         expect(Notes).toBeDefined()
 

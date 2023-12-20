@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.88% </span>
+                <span class="strong">13.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>15/108</span>
+                <span class='fraction'>15/114</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.88% </span>
+                <span class="strong">13.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/108</span>
+                <span class='fraction'>15/114</span>
             </div>
         
             
@@ -171,7 +171,13 @@
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -184,6 +190,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -292,6 +304,12 @@ import { logout } from '../../slices/authSlice'
 import './profile.css'
 &nbsp;
 const Profile = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >  const activeStyle = {</span>
+<span class="cstat-no" title="statement not covered" >    backgroundColor: "#30AB9C"</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  const [name, setName] = useState('')</span>
 <span class="cstat-no" title="statement not covered" >  const [email, setEmail] = useState('')</span>
 <span class="cstat-no" title="statement not covered" >  const [password, setPassword] = useState('')</span>
@@ -355,9 +373,9 @@ const Profile = <span class="fstat-no" title="function not covered" >() =&gt; {<
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;div style={activeStyle}&gt;</span>
 <span class="cstat-no" title="statement not covered" >      &lt;h1&gt;Update profile&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;form aria-label='sign up' className='update'&gt;</span>
+<span class="cstat-no" title="statement not covered" >      &lt;form aria-label='update' className='update'&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        &lt;ul&gt;</span>
 <span class="cstat-no" title="statement not covered" >          &lt;input type="text" id="name" autoComplete="off" value={name} placeholder='name' onChange={handleNameChange} ref={inputRef} required/&gt;</span>
@@ -382,7 +400,7 @@ const Profile = <span class="fstat-no" title="function not covered" >() =&gt; {<
 <span class="cstat-no" title="statement not covered" >        &lt;/ul&gt;</span>
 <span class="cstat-no" title="statement not covered" >        </span>
 <span class="cstat-no" title="statement not covered" >      &lt;/form&gt; </span>
-<span class="cstat-no" title="statement not covered" >    &lt;/&gt;</span>
+<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >  )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
@@ -394,7 +412,7 @@ export default Profile
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-12-20T12:12:00.746Z
+                at 2023-12-20T14:42:27.082Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
