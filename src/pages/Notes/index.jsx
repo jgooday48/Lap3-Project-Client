@@ -33,11 +33,7 @@ const Notes = () => {
 
 
     <FolderSideBar data={folderData} />
-      
-           {/* <FolderSideBar /> */}
-          {/* <FolderSideBar/> 
-          
-              <RichTextEditor /> */}
+    
     </div>
     
   )
