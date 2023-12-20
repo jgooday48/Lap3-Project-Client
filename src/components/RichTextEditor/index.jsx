@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './index.css'
 import JoditEditor from 'jodit-react';
-import { editorConfig } from './EditorConfig.';
+import { editorConfig } from '../NoteTemplate/EditorConfig.';
 
 const RichTextEditor = ({ content, setContent, updateNote, updateContent }) => {
   const handleSubmit = (e) => {

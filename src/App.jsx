@@ -29,7 +29,8 @@ function App() {
           <Route path="/register" element={<Pages.SignUp />} />
         
             <Route path="/folders" element={<Pages.FolderPage />} />
-            <Route path="/createNote/:folderId" element={<Pages.CreateNote/>}/>
+            <Route path="/createNote/:folderId" element={<Pages.CreateNote />} />
+            <Route path="/note/:noteId" element={<Pages.NotePage/>}/>
   
         {/* Private routes */}
         <Route path="" element={<PrivateRoute />}>

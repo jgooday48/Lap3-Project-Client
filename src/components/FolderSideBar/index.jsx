@@ -2,8 +2,6 @@ import React, { useEffect, useState, useRef } from 'react'
 import './index.css'
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import { resizeWidth } from '../../utils/WidthChanger'
-import NoteSideBar from '../NoteSideBar'
-import AddFolder from '../AddFolder'
 import { ToastContainer } from 'react-toastify'
 import { toast } from 'react-toastify'
 import NoteSection from '../NoteSection'
@@ -96,6 +94,7 @@ const FolderSideBar = ({ data }) => {
                 onClick={() => getAllNotesByFolder(folder._id)}
               >
                 {folder.Name}
+
               </li>
             ))}
         </ul>

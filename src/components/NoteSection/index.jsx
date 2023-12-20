@@ -7,10 +7,11 @@ const NoteSection = ({ notesData, folderId }) => {
   console.log("notesData:  ", notesData);
   const [searchNote, setSearchNote] = useState()
   const navigate = useNavigate()
+ 
 
   
-  const goToNotesPage = () => {
-    
+  const goToNotesPage = (noteId) => {
+    navigate('/note/' + noteId )
   }
   const goToCreatePage = () => {
     navigate('/createNote/' + folderId)
@@ -28,8 +29,17 @@ const NoteSection = ({ notesData, folderId }) => {
       <div className="all-notes">
         {notesData &&
           notesData.map((note) => (
-            <div key={note._id} className="note-card" onClick={() => goToNotesPage(note._id)}>
+            <div key={note._id} className="note-card" onClick={() => goToNotesPage(note._id)} style={{display: 'flex', flexDirection: 'column'}}>
               <h2>{note.Name}</h2>
+                  <p>
+          {new Date(note.updatedAt).toLocaleString('en-UK', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+          })}
+        </p>
             </div>
           ))}
       </div>

@@ -1,0 +1,7 @@
+
+
+.form-input{
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+}
