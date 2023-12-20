@@ -17,6 +17,8 @@ const FolderSideBar = ({data}) => {
     if (resizer && sidebar) {
       resizeWidth(resizer, sidebar);
     }
+
+    getAllNotesByFolder
   }, []);
 
 
@@ -43,7 +45,7 @@ const FolderSideBar = ({data}) => {
           <h3>La Fosse</h3>
         </div>
     
-      <ul className="sidebar-menu">
+        <ul className="sidebar-menu">
         {data && data.map((folder, idx) =>
           
           <li className="menu-item" key={idx} onClick={() => getAllNotesByFolder(folder._id)}>{folder.Name}</li>
@@ -51,6 +53,7 @@ const FolderSideBar = ({data}) => {
       </ul>
       </div>
       <div>
+        {console.log("notesData in FOlderSideBar: ", notesData)}
         <NoteSideBar data={notesData} />
         </div>
       

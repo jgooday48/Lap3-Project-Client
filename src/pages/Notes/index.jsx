@@ -9,16 +9,25 @@ const Notes = () => {
 
   
   
-  const getAllFoldersByUser = async () => {
-    const api = `http://localhost:3000/folders/user/${userId}`
-    const response = await fetch(api)
-    const data = await response.json()
-    setFolderData(data)
-  }
+ 
 
   useEffect(() => {
+
+     const getAllFoldersByUser = async () => {
+    const api =  `http://localhost:3000/folders/user/${userId}`
+    const response = await fetch(api)
+    const data = await response.json()
+    // console.log("data line 15 Notes component: ", data)
+       setFolderData(data)
+ 
+    }
+    
      getAllFoldersByUser()
-  }, [folderData])
+
+  }, [])
+
+    //  console.log("folderData line 29 Notes component: ", folderData)
+
   return (
     <div className="notesPage">
 
