@@ -11,7 +11,7 @@ import './signup.css'
 const SignUp = () => {
 
   const activeStyle = {
-    backgroundColor: "lightgrey"
+    backgroundColor: "#30AB9C"
   }
 
   const [name, setName] = useState('')
@@ -97,11 +97,12 @@ const SignUp = () => {
         </ul>
         
       </form> 
-      <footer>
+      <footer className='footerLogin'>
       <p>Already have an account?   
         <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Login</NavLink>
       </p>
       </footer>
+
     </div>
   )
 }

@@ -8,7 +8,7 @@ import { logout } from '../../slices/authSlice'
 const NavBar = () => {
     const activeStyle = {
       textDecoration: "underline",
-      color: "darkblue"
+      color: "green"
     }
 
     const { userInfo } =  useSelector(state => state.auth)
@@ -31,40 +31,49 @@ const NavBar = () => {
       <nav>
        
         <ul className="nav-links">
-          <li>
-            <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Home</NavLink>
-          </li>
-
+          <button class="button-4" role="button">
+            <li>
+                <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Home</NavLink>
+            </li>
+          </button>
 
           {userInfo ? (
           <>
-            <li title={userInfo.name} id="username">
+            <button class="button-4" role="button">
+              <li title={userInfo.name} id="username">
               <NavLink to="/profile">
                 My profile
               </NavLink>
-            </li>
-            <li>
-            <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
-          </li>
-            <li>
-              <button onClick={logoutHandler}>
-                Logout
-              </button>
-            </li>
+              </li>
+            </button>
+
+            <button class="button-4" role="button">
+              <li>
+                <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
+              </li>
+            </button>
+            <button class="button-4" role="button" onClick={logoutHandler}>
+              <li>
+                  Logout
+              </li>
+            </button>
           </>
           ) : (
           <>
-            <li>
-              <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Login</NavLink>
-            </li>
+            <button class="button-4" role="button">
+              <li>
+                  <NavLink to="/login" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Login</NavLink>
+              </li>
+            </button>
 
-            <li>
-              <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Sign Up</NavLink>
-            </li>
+            <button class="button-4" role="button">
+              <li>
+                  <NavLink to="/register" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Sign Up</NavLink>
+              </li>
+            </button>
           </>
           )}
           
-
 
 
 
