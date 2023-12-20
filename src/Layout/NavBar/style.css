@@ -1,48 +1,48 @@
 nav {
-    display: flex;
-    padding: 6px;
-    justify-content: right;
-    align-items: center;
-    background: #353434;
-    color: white;
+  display: flex;
+  padding: 6px;
+  justify-content: right;
+  align-items: center;
+  background: #353434;
+  color: white;
+}
 
-  }
-  
-  .nav-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    font-size: 19px;
-  }
-  
-  .nav-links li:hover{
-    background-color: #838486;
-  }
-  
-  .nav-links a {
-    color: #4456B9;
-    text-decoration: none;
-  }
-  
-  .nav-links a:hover {
-    margin-bottom: 1px;
-    text-decoration-thickness: 3px;
-  }
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  font-size: 19px;
+}
 
+.nav-links li:hover {
+  background-color: #838486;
+}
+
+.nav-links a {
+  color: #4456b9;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  margin-bottom: 1px;
+  text-decoration-thickness: 3px;
+}
 
 /* CSS */
 .button-4 {
   appearance: none;
-  background-color: #FAFBFC;
+  background-color: #fafbfc;
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   box-sizing: border-box;
-  color: #24292E;
+  color: #24292e;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
@@ -66,14 +66,14 @@ nav {
 }
 
 .button-4:disabled {
-  background-color: #FAFBFC;
+  background-color: #fafbfc;
   border-color: rgba(27, 31, 35, 0.15);
-  color: #959DA5;
+  color: #959da5;
   cursor: default;
 }
 
 .button-4:active {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
   transition: none 0s;
 }

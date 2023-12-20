@@ -9,18 +9,18 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0px;
+  padding-top: 20px;
+}
+
+ul li {
+  padding: 0;
+  list-style: none;
 }
 
 h1 {
   font-size: 50px;
   padding-top: 3%;
 }
-
-/* body {
-    background-color: #2a2a2a;
- 
-} */
 
 .homepage {
   background-color: #b65f0e;
@@ -47,6 +47,7 @@ h1 {
 .nav-links a:hover {
   margin-bottom: 1px;
   text-decoration-thickness: 3px;
+  color: #fff;
   background-color: #838486;
 }
 
@@ -80,6 +81,19 @@ h1 {
   margin-right: 20px;
 }
 
+/* .button-4 {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  height: 35px;
+  text-align: center;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+} */
+
 .button-4:hover {
   background-color: #838486;
   text-decoration: none;
@@ -93,6 +107,17 @@ h1 {
   cursor: default;
 }
 
+/* .button-4:hover {
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+} */
+
 .button-4:active {
   background-color: #edeff2;
   box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
@@ -100,7 +125,8 @@ h1 {
 }
 
 .button-4:focus {
-  outline: 1px transparent;
+  outline: none;
+  /* outline: 1px transparent; */
 }
 
 .button-4:before {
@@ -111,10 +137,83 @@ h1 {
   display: none;
 }
 
-#homepageBtn1 {
+/* btn styling */
+#homepageBtn1,
+#homepageBtn2 {
+  width: 15%;
   padding: 15px;
+  background-image: linear-gradient(
+    to left,
+    rgba(117, 40, 156, 0.412),
+    #764ba2,
+    #6b8dd6
+  );
+  height: 5vh;
+  border-radius: 15px;
+  font-size: 20px;
+  border: none;
+  transition: all 0.4s ease-in-out;
+}
+#homepageBtn1:hover {
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 5px 0 rgba(116, 79, 168, 0.75);
+  transition: all 0.4s ease-in-out;
+}
+#homepageBtn2:hover {
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 5px 0 rgba(116, 79, 168, 0.75);
+  transition: all 0.4s ease-in-out;
 }
 
-#homepageBtn2 {
-  padding: 15px;
+#homepageBtn1 a {
+  text-decoration: none;
+  color: #fff;
 }
+#homepageBtn2 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* cant apply now but in feuture
+.btn {
+  padding: 15px;
+  background-image: linear-gradient(
+    to left,
+    rgba(117, 40, 156, 0.412),
+    #764ba2,
+    #6b8dd6
+  );
+  height: 5vh;
+  border-radius: 15px;
+  font-size: 20px;
+  border: none;
+  transition: all 0.4s ease-in-out;
+}
+.btn:hover {
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 5px 0 rgba(116, 79, 168, 0.75);
+  transition: all 0.4s ease-in-out;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #fff;
+} */
