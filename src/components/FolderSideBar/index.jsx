@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from 'react'
 import './index.css'
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar'
 import { resizeWidth } from '../../utils/WidthChanger'
-import { ToastContainer } from 'react-toastify'
 import { toast } from 'react-toastify'
 import NoteSection from '../NoteSection'
 import axios from 'axios'
@@ -39,32 +38,43 @@ const FolderSideBar = ({ data }) => {
     setFolderId(folderId)
   }
 
-  async function createFolder () {
-    try {
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
+  async function createFolder() {
+   
+      try {
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
 
-          //   'Authorization': `Bearer ${user.token}`
-        },
-        body: JSON.stringify({
-          Name: folderName,
-          User: userId
-        })
+            //   'Authorization': `Bearer ${user.token}`
+          },
+          body: JSON.stringify({
+            Name: folderName,
+            User: userId
+          })
+        }
+        const response = await fetch(`http://localhost:3000/folders`, options)
+        console.log('update happpend')
+        // toast.success(`"${folderName}" has been added to your folders`, {
+        //   autoClose: 2000
+        // })
+        window.location.reload()
+      } catch (error) {
+        console.error('Error updating note:', error)
       }
-      const response = await fetch(`http://localhost:3000/folders`, options)
-      console.log('update happpend')
-      toast.success(`"${folderName}" has been added to your folders`, {
-        autoClose: 2000
-      })
-    } catch (error) {
-      console.error('Error updating note:', error)
-    }
+    
+      
   }
 
   const addFolder = () => {
-    createFolder()
+    if (folderName.length > 0) {
+      createFolder()
+    } else {
+        toast.error(`Folder name cannot be empty`, {
+          autoClose: 2000
+        })
+      
+    }
   }
 
   const deleteFolder = async(folderId) => {
@@ -88,7 +98,6 @@ const FolderSideBar = ({ data }) => {
 
   return (
     <div className='folderSideBar'>
-      <ToastContainer />
 
       <div className='sidebar' ref={sidebarRef}>
         <div className='resizer' ref={resizerRef}></div>
