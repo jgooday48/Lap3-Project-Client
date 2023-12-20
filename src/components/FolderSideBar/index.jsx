@@ -37,6 +37,7 @@ const FolderSideBar = ({ data }) => {
     const response = await fetch(api)
     const data = await response.json()
     setNotesData(data)
+    setFolderId(folderId)
   }
 
   async function createFolder () {
@@ -88,10 +89,10 @@ const FolderSideBar = ({ data }) => {
 
         <ul className='sidebar-menu'>
           {data &&
-            data.map((folder, idx) => (
+            data.map((folder) => (
               <li
                 className='menu-item'
-                key={idx}
+                key={folder._id}
                 onClick={() => getAllNotesByFolder(folder._id)}
               >
                 {folder.Name}
@@ -101,7 +102,7 @@ const FolderSideBar = ({ data }) => {
       </div>
 
       <div className='notes-section'>
-        <NoteSection />
+        <NoteSection notesData={notesData} folderId={folderId} />
       </div>
     </div>
   )
