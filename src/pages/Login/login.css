@@ -23,15 +23,22 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  
 }
 
 .login {
-  /* width: 400px; */
   padding: 30px;
-  /* box-shadow: 0 0 0 1.1em #b65f0e; */
   border-radius: 8px;
   margin: 0 auto;
   background-color: #36343469;
+  box-shadow: 14px 14px 20px rgba(54, 54, 54, 0.376)
+}
+
+
+
+input {
+  box-shadow: inset 6px 6px 6px #CBCED1, inset -6px -6px 6px white;
+  background: hwb(40 96% 0% / 0.973);
 }
 
 .loginh1 {
@@ -79,9 +86,12 @@
   min-width: 400px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+  box-shadow: 14px 14px 20px #CBCED1, -14px -14px 20px white;
 }
+
 
 .login-footer {
   font-size: 24px;
   margin-top: 20px;
 }
+

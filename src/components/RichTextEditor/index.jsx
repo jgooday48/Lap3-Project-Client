@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react'
 import JoditEditor from 'jodit-react'
 import { editorConfig } from './EditorConfig.'
 
-const RichTextEditor = ({ content, setContent, id, updateNote, updateContent }) => {
+const RichTextEditor = ({ content, setContent, id, updateNote, updateContent, getAllNotesByFolder, folderId}) => {
  
 
 
@@ -29,7 +29,7 @@ const RichTextEditor = ({ content, setContent, id, updateNote, updateContent }) 
            <form onSubmit={handleSubmit}>
             <JoditEditor config={editorConfig} value={message} onChange={(val) => setContent(val)} />
                 {/* <div dangerouslySetInnerHTML={{ __html: content }} ></div>*/}
-                <input type="submit" value="Save to backend"/>
+                <input type="submit" value="Save to backend" onClick={getAllNotesByFolder(folderId)}/>
             </form>
         
             {/* <button onClick={handleClick}>Save to Backend</button> */}

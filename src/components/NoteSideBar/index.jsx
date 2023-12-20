@@ -83,7 +83,7 @@ return (
     </div>
     <div>
     {noteId && (
-      <RichTextEditor key={noteId} content={content} setContent={setContent} id={noteId} updateNote={updateNote} updateContent={updateContent} />
+      <RichTextEditor key={noteId} content={content} setContent={setContent} id={noteId} updateNote={updateNote} updateContent={updateContent} getAllNotesByFolder={getAllNotesByFolder} folderId={folderId}/>
       )}
     </div>
 

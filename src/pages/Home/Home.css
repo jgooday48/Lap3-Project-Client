@@ -153,7 +153,9 @@ h1 {
   font-size: 20px;
   border: none;
   transition: all 0.4s ease-in-out;
+  padding-bottom: 35px;
 }
+
 #homepageBtn1:hover {
   background-image: linear-gradient(
     to right,

@@ -83,7 +83,6 @@ const Profile = () => {
     <div className='profilePage' style={activeStyle}>
       <div className='box'>
       <h1>Update profile</h1>
-      <div className="box">
         <form aria-label="update" className="update">
           <ul>
             <input
@@ -146,7 +145,6 @@ const Profile = () => {
         </ul>
         
       </form> 
-      </div>
     </div>
     </div>
   );

@@ -5,16 +5,17 @@
     /* font-family: "Poppins", sans-serif; */
   }
   
+  h1{
+    margin-bottom: 50px;
+    margin-top: -25px;
+  }
 
 .update {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30px;
-    border-radius: 8px;
-    margin: 0 auto;
-    background-color: #4456b9;
+  padding: 30px;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: #36343448;
+  box-shadow: 14px 14px 20px rgba(54, 54, 54, 0.376)
 }
 
 .update input {
@@ -49,18 +50,32 @@
 }
 
 #updateb {
+  color: #fff;
+  background-image: linear-gradient(
+    to left,
+    rgba(117, 40, 156, 0.412),
+    #764ba2,
+    #6b8dd6
+  );
   width: 420px;
   height: 5vh;
   border-radius: 15px;
   font-size: 20px;
   top: 100px;
-  background-color: white;
-  padding: 10px;
+  border: none;
 }
 
 #updateb:hover {
-  background-color: green;
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
   transition-duration: 0.5s;
+  color: aliceblue;
 }
 .box {
   background: rgb(255 255 255 / 34%);
@@ -70,15 +85,6 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
-
-.box {
-    background: rgb(255 255 255 / 34%);
-    backdrop-filter: blur(20px);
-    padding: 60px 80px;
-    min-width: 400px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-  }
 
 .profilePage {
     background-color: rgb(42 42 42);
