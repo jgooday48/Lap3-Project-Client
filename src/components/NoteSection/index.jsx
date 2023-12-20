@@ -16,7 +16,7 @@ const NoteSection = ({ notesData, folderId }) => {
     navigate('/createNote/' + folderId);
   };
 
-  // Filter notes based on the searchNote value
+
   const filteredNotes = notesData.filter((note) =>
     note.Name.toLowerCase().includes(searchNote.toLowerCase())
   );
