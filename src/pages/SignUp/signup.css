@@ -3,7 +3,17 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
 }
+
+.register {
+    width: 400px; 
+    padding: 20px; 
+    border: 4px solid #D04664; 
+    border-radius: 8px; 
+    margin: 0 auto; 
+    background-color: #4456B9;
+  }
 
 .registerh1 {
     font-size: 50px;
@@ -43,15 +53,6 @@
 
 }
 
-.footerLogin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #D04664;
-    padding: 20px; /* Adjust the padding as needed */
-    box-sizing: border-box;
-    width: 22%;
-    margin: 0 auto; /* Center the footer */
-}
+
 
 
