@@ -1,8 +1,12 @@
+ @import url('https://fonts.cdnfonts.com/css/library-records');
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 
 h1,
 p,
@@ -236,5 +240,6 @@ h1 {
 }
 
 .noteworthy {
-  font-weight:900;
+  font-family: 'Library Records', sans-serif;
+  color: gold;
 }
