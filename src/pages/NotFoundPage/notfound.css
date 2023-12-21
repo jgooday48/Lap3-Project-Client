@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 .head {
   display: flex;
   align-items: center;
@@ -15,4 +16,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+#notFoundBtn {
+  margin-top: 500px;
+  height: 50px;
 }
