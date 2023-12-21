@@ -39,12 +39,6 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   }, [importantNotes])
 
 
-
-
-  // Filter notes based on the searchNote value
-  const filteredNotes = notesData.filter((note) =>
-    note.Name.toLowerCase().includes(searchNote.toLowerCase())
-  );
   
   const stripHtmlTags = (html) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
