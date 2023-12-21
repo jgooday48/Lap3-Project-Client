@@ -21,6 +21,25 @@ const NoteSection = ({ notesData, folderId }) => {
     note.Name.toLowerCase().includes(searchNote.toLowerCase())
   );
 
+  const truncateContent = (content, maxLength) => {
+    // Split the content into words
+    const words = content.split(' ');
+  
+    // Take the first maxLength words and join them back into a string
+    const truncatedContent = words.slice(0, maxLength).join(' ');
+  
+    return truncatedContent;
+  };
+  
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const plainText = doc.body.textContent || '';
+  
+    // Replace <br> and <br /> with newline characters
+    const textWithLineBreaks = plainText.replace(/<br\s*\/?>/gi, '\n');
+  
+    return textWithLineBreaks;
+  };
   return (
     <section className="notes-section">
       <div>
@@ -46,6 +65,7 @@ const NoteSection = ({ notesData, folderId }) => {
             style={{ display: 'flex', flexDirection: 'column' }}
           >
             <h2>{note.Name}</h2>
+            <p>{stripHtmlTags(note.Content)}</p>
             <p>
               {new Date(note.updatedAt).toLocaleString('en-UK', {
                 day: 'numeric',
