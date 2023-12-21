@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { FolderSideBar, RichTextEditor } from '../../components'
 import { NavLink} from 'react-router-dom'
 import './Home.css'
-import logo from "../../../note.png"
-
 const HomePage = () => {
   const { userInfo } =  useSelector(state => state.auth)
 
@@ -16,12 +14,8 @@ const HomePage = () => {
           <FolderSideBar/> 
           
               <RichTextEditor /> */}
-
-             
-            <p>Welcome to the notes app!</p>
-            <div className={"homeLogo"}>
-              <img src={logo} alt="note logo" className='homeLogo1'></img>
-            </div>
+            <h1>Note-Worthy</h1>
+            <p>Welcome to the note app, please login to continue!</p>
             <ul>
               <button className="button-4" role="button" id='homepageBtn1'>
                   <NavLink to="/login">Login</NavLink>
@@ -34,10 +28,8 @@ const HomePage = () => {
     
     ) : (    
     <div className='homepage'>
-      <h3 id="thanksMessage">Thanks for joining us! This is our home page.</h3>
-      <div className={"homeLogo"}>
-        <img src={logo} alt="note logo" className='homeLogo1'></img>
-      </div>
+      <h1>Note-Worthy</h1>
+          <p>Thanks for joining! Checkout the nav bar to see where you need to go!</p>
     </div>
 
     )}
