@@ -3,19 +3,25 @@ import './index.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import ShowNotes from '../ShowNotes'
+import NotesInput from '../NotesInput'
 
 const NoteSection = ({ notesData, folderId, folderName }) => {
   const [searchNote, setSearchNote] = useState('')
   const navigate = useNavigate()
   const [importantNotes, setImportantNotes] = useState([])
-
-
+  const [sortOrder, setSortOrder] = useState('desc');
 
 
   const filteredNotes = (data, search) => {
-   return data.filter(note =>  note.Name.toLowerCase().includes(search.toLowerCase()))
+    const filtered = data.filter(note => note.Name && note.Name.toLowerCase().includes(search.toLowerCase()))
+    return filtered.sort((a, b) => {
+      const dateA = new Date(a.updatedAt);
+      const dateB = new Date(b.updatedAt);
 
+      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    });
   }
+
 
   let userId = '6581c22f67184ef3425c6b08'
 
@@ -37,6 +43,9 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   }, [importantNotes])
 
 
+  const handleSortChange = e => {
+    setSortOrder(e.target.value);
+  };
 
   return (
 
@@ -47,35 +56,24 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
         </div>
       ) : (
         <div>
-            <h2>All Important Notes</h2>
-              <div className='notes-input'>
-          <input
-            value={searchNote}
-            type='text'
-            onChange={e => setSearchNote(e.target.value)}
-            placeholder='Search notes'
-          />
+          <h2>All Important Notes</h2>
+          <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={false} />
 
-        </div>
 
-          {importantNotes.length > 0  && notesData.length == 0 && (
+          {importantNotes.length > 0 && notesData.length == 0 && (
             <div className='all-notes'>
               <ShowNotes notes={filteredNotes(importantNotes, searchNote)} />
             </div>
           )}
         </div>
       )}
-      {notesData.length > 0 && (
-        <div className='notes-input'>
-          <input
-            value={searchNote}
-            type='text'
-            onChange={e => setSearchNote(e.target.value)}
-            placeholder='Search notes'
-          />
-          <button onClick={goToCreatePage}>+</button>
-        </div>
-      )}
+      <div>
+        {notesData.length > 0 && (
+          <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={true} />
+        )}
+
+
+      </div>
       <ShowNotes notes={filteredNotes(notesData, searchNote)} />
     </section>
   )

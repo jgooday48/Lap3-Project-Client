@@ -18,6 +18,7 @@ const NavBar = () => {
 
     const logoutHandler = async () => {
       try {
+        localStorage.removeItem("jwt")
         await logoutApiCall().unwrap();
         dispatch(logout());
         navigate("/login");
