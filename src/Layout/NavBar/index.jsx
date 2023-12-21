@@ -85,7 +85,7 @@ const NavBar = () => {
       </nav>
   
       <Outlet/>
-
+       <div className="footer">Note-worthy&#169;</div>
       </>
     );
   }
