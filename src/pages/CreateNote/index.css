@@ -1,10 +1,15 @@
 .create-container{
     padding: 2em;
     background-color: #fee0fd;
+    border: 5px solid black;
+    
+   
 }
 
-.back {
-    display: flex;
-    justify-content: center;
+#back-button { 
+    padding: 1em 2em; 
 }
 
+.note-template{
+    background-color: #353434;
+}
