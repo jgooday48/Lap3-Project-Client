@@ -10,9 +10,8 @@ const NotFoundPage = () => {
          <NavLink to="/" id="return-home"><h1> &larr; Return Home</h1></NavLink>
         <div className='gifContainer'>
         <img src={notFoundGif} alt="404 Page not found" className='head' id="notFoundGif"></img>
-    
         </div>
-        
+
     </div>
   )
 }
