@@ -35,8 +35,9 @@
   background-color: pink;
 }
 
-.header h3 {
-  color: purple;
+.header input {
+  border-radius: 5px;
+  border: 1px #333;
 }
 
 .sidebar-content {
