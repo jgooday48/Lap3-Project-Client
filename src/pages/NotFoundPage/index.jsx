@@ -10,7 +10,7 @@ const NotFoundPage = () => {
         <div className='gifContainer'>
           <img src={notFoundGif} alt="404 Page not found" className='head' id="notFoundGif"></img>
         </div>
-        <button id="notFoundBtn" className="head"><NavLink to="/">Return Home</NavLink></button>
+        <button id="notFoundBtn" className="button-4"><NavLink to="/">Return Home</NavLink></button>
     </div>
   )
 }
