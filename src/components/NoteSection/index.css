@@ -1,72 +1,68 @@
 .notes-section {
-    margin: 1em;
-    /* border: 1px solid black; */
-    width: 100%;
+  margin: 1em;
+  /* border: 1px solid black; */
+  width: 100%;
 }
 
 .all-notes {
-    display: flex;
-    flex-wrap: wrap;
-    /* border: 1px solid blue; */
-    width: 97%;
-    justify-content: center;
-
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid blue; */
+  width: 97%;
+  justify-content: center;
 }
 
 .notes-input {
-    display: flex;
-    /* padding-right: 2em; */
+  display: flex;
+  margin-bottom: 40px;
+  /* padding-right: 2em; */
 }
 
-.notes-input input{
-    width: 500px;
-    margin-right: 2em;
-
+.notes-input input {
+  width: 500px;
+  margin-right: 2em;
 }
 
-.dropdown{
-    margin-right: 20em;
+.dropdown {
+  margin-right: 20em;
 }
-
-
 
 .note-card {
-    width: calc(40.33% - 20px);
-    height: 250px;
-    margin: 1em;
-    display: flex;
-    align-items: center;
-    /*justify-content: center; */
-    border: 10px solid white;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    border-radius: 20px; 
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    position: relative; 
+  width: calc(40.33% - 20px);
+  height: 250px;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  /*justify-content: center; */
+  border: 10px solid white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-
-#time{
-    position: absolute; 
-    bottom: 0; 
-    left: 10px;
+#time {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
 }
 
 .note-card:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
-.note-card:nth-child(3n+1) {
-    background-color: antiquewhite;
-    /* Applies to every 3rd card, starting from the first */
+.note-card:nth-child(3n + 1) {
+  background-color: antiquewhite;
+  /* Applies to every 3rd card, starting from the first */
 }
 
-.note-card:nth-child(3n+2) {
-    background-color: lightblue;
-    /* Applies to every 3rd card, starting from the second */
+.note-card:nth-child(3n + 2) {
+  background-color: lightblue;
+  /* Applies to every 3rd card, starting from the second */
 }
 
 .note-card:nth-child(3n) {
-    background-color: lightcoral;
-    /* Applies to every 3rd card, starting from the third */
+  background-color: lightcoral;
+  /* Applies to every 3rd card, starting from the third */
 }
