@@ -32,10 +32,10 @@ const Profile = () => {
   const [logoutApiCall] = useLogoutMutation();
   const [updateProfile, { isLoading }] = useUpdateUserMutation();
   
-  useEffect(() => {
-    setName(userInfo.name);
-    setEmail(userInfo.email)
-  }, [userInfo.setName, userInfo.setEmail]);
+  // useEffect(() => {
+  //   setName(userInfo.name);
+  //   setEmail(userInfo.email)
+  // }, [userInfo.setName, userInfo.setEmail]);
 
 
   const handleSubmit = async (e) => {
