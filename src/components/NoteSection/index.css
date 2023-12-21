@@ -14,11 +14,14 @@
 
 .notes-input {
     display: flex;
-    /* justify-content: space-between; */
-    /* Space elements evenly */
-    padding-right: 2em;
+    /* padding-right: 2em; */
 }
 
+.notes-input input{
+    width: 500px;
+    margin-right: 2em;
+
+}
 
 
 
