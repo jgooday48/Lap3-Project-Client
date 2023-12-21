@@ -3,6 +3,7 @@ import { NoteTemplate } from '../../components'
 import { useNavigate, useParams } from 'react-router'
 import './index.css'
 import axios from 'axios';
+import { useFolderData } from '../../context/FolderDataContext';
 
 const CreateNote = () => {
   const [name, setName] = useState()
@@ -11,7 +12,8 @@ const CreateNote = () => {
   const navigate = useNavigate()
   const [isImportant, setIsImportant] = useState(false)
 
-  let userId = "6581c22f67184ef3425c6b08"
+  const { userId } = useFolderData()
+  
 
   const createNewNote = () => {
     axios.post('http://localhost:3000/notes', {
