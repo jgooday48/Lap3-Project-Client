@@ -33,6 +33,7 @@ const navigate = useNavigate()
                     <h2>{note.Name}</h2>
                     <b>{stripHtmlTags(note.Content)}</b>
                     <p id="time"> 
+                       <b>Last updated:</b> &nbsp;
                         {new Date(note.updatedAt).toLocaleString('en-UK', {
                             day: 'numeric',
                             month: 'long',
