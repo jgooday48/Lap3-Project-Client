@@ -17,8 +17,11 @@ const FolderSideBar = ({ data }) => {
   const [add, setAdd] = useState(false);
   const [folderName, setFolderName] = useState("");
   const [name, setName] = useState("");
-  let userId = "6581c22f67184ef3425c6b08";
-    const [activeFolder, setActiveFolder] = useState(null);
+  // let userId = "6581c22f67184ef3425c6b08";
+  const [activeFolder, setActiveFolder] = useState(null);
+  const userInfo = localStorage.getItem('userInfo')
+  const userId = userInfo._id;
+  
   
 
   useEffect(() => {

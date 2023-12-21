@@ -17,6 +17,8 @@ const NotePage = () => {
   const { folderId } = useParams()
   const navigate = useNavigate()
   const [isImportant, setIsImportant] = useState(false)
+  const user = localStorage.getItem('user')
+  
   let userId = "6581c22f67184ef3425c6b08"
 
 

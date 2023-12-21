@@ -23,7 +23,10 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   }
 
 
-  let userId = '6581c22f67184ef3425c6b08'
+    const userInfo = localStorage.getItem('userInfo')
+  const userId = userInfo._id;
+  
+  // let userId = '6581c22f67184ef3425c6b08'
 
   const goToCreatePage = () => {
     navigate('/createNote/' + folderId)
