@@ -8,9 +8,7 @@ import { toast } from "react-toastify";
 import Loader from "../../components/Loader";
 
 const Login = () => {
-  const activeStyle = {
-    backgroundColor: "#30AB9C",
-  };
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const inputRef = useRef();
@@ -53,12 +51,13 @@ const Login = () => {
   };
 
   return (
-    <div style={activeStyle} id="loginDiv">
+    <div id="loginDiv">
       <div className="box">
         <h1 className="loginh1">Login</h1>
         <form aria-label="sign in" className="login">
           <ul>
             <input
+              className="input"
               type="email"
               id="email"
               autoComplete="off"
@@ -72,6 +71,7 @@ const Login = () => {
 
           <ul>
             <input
+              className="input"
               type="password"
               id="password"
               autoComplete="off"
