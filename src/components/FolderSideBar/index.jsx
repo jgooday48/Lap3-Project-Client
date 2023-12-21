@@ -105,7 +105,9 @@ const FolderSideBar = ({ data }) => {
               placeholder="Create a new folder"
             />
 
-            <button onClick={addFolder}>Add Folder</button>
+            <button className="addBtn" onClick={addFolder}>
+              Add Folder
+            </button>
           </div>
         </div>
 
