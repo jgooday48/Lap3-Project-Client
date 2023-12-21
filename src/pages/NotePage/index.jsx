@@ -88,10 +88,10 @@ const NotePage = () => {
       <div className='wholeForm'>
         <section className='optionSection'>
           <div>
-            <button className='formBtns' id="backBtn" onClick={() => navigate("/folders")}>&larr; Go back</button>
+            <button className='btn btn-warning' id="backBtn" onClick={() => navigate("/folders")}>&larr; Go back</button>
           </div>
           <div>
-            <button className='formBtns' id="deleteBtn" onClick={() => deleteNote()}><i className="fa fa-trash-o"></i></button>
+            <button className='btn btn-danger' id="deleteBtn" onClick={() => deleteNote()}><i className="fa fa-trash-o"></i></button>
           </div>
         </section>
         <div>
