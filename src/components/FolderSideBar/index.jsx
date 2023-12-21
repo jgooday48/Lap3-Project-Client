@@ -7,6 +7,7 @@ import NoteSection from "../NoteSection";
 import axios from "axios";
 import { useFolderData } from "../../context/FolderDataContext";
 import Swal from 'sweetalert2';
+import { useNavigate } from "react-router";
 
 
 const FolderSideBar = ({ data }) => {
@@ -14,13 +15,12 @@ const FolderSideBar = ({ data }) => {
   const sidebarRef = useRef(null);
   const [notesData, setNotesData] = useState([]);
   const [folderId, setFolderId] = useState();
-  const [add, setAdd] = useState(false);
   const [folderName, setFolderName] = useState("");
   const [name, setName] = useState("");
   // let userId = "6581c22f67184ef3425c6b08";
   const [activeFolder, setActiveFolder] = useState(null);
-  const userInfo = localStorage.getItem('userInfo')
-  const userId = userInfo._id;
+  const {userId} = useFolderData()
+ 
   
   
 
@@ -42,27 +42,56 @@ const FolderSideBar = ({ data }) => {
   };
 
   async function createFolder() {
-    try {
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+  console.log("ffileName", folderName);
+  try {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Name: folderName,
+        User: userId,
+      }),
+    };
+    const response = await fetch(`http://localhost:3000/folders`, options);
 
-          //   'Authorization': `Bearer ${user.token}`
-        },
-        body: JSON.stringify({
-          Name: folderName,
-          User: userId,
-        }),
-      };
-      const response = await fetch(`http://localhost:3000/folders`, options);
-      console.log("update happpend");
-
-      window.location.reload();
-    } catch (error) {
-      console.error("Error updating note:", error);
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message);
     }
+
+    console.log("Folder created successfully");
+    window.location.reload();
+  } catch (error) {
+    console.error("Error creating folder:", error);
   }
+}
+
+
+  // async function createFolder() {
+  //   console.log("ffileName", folderName)
+  //   try {
+  //     const options = {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+
+  //         //   'Authorization': `Bearer ${user.token}`
+  //       },
+  //       body: JSON.stringify({
+  //         Name: folderName,
+  //         User: userId,
+  //       }),
+  //     };
+  //     const response = await fetch(`http://localhost:3000/folders`, options);
+  //     console.log("update happpend");
+
+  //     window.location.reload();
+  //   } catch (error) {
+  //     console.error("Error updating note:", error);
+  //   }
+  // }
 
   const addFolder = () => {
     if (folderName.length > 0) {
@@ -87,13 +116,15 @@ const deleteFolder = async (folderId) => {
 
   if (result.isConfirmed) {
     try {
-      // Send the DELETE request
+  
       await axios.delete(`http://localhost:3000/folders/${folderId}`);
-      window.location.reload();
+      window.location.reload()
+     
     } catch (error) {
-      // Handle errors from the delete request
+      
       console.error("Error deleting note:", error);
     }
+
   }
 };
 

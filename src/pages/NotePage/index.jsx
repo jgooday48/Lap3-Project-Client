@@ -7,6 +7,7 @@ import './index.css'
 import axios from 'axios';
 import { toast } from 'react-toastify'
 import Swal from 'sweetalert2'
+import { useFolderData } from '../../context/FolderDataContext'
 
 
 
@@ -17,9 +18,8 @@ const NotePage = () => {
   const { folderId } = useParams()
   const navigate = useNavigate()
   const [isImportant, setIsImportant] = useState(false)
-  const user = localStorage.getItem('user')
+  const{userId} = useFolderData()
   
-  let userId = "6581c22f67184ef3425c6b08"
 
 
   useEffect(() => {
@@ -68,7 +68,7 @@ const NotePage = () => {
 
   };
   
-const deleteNote = async (noteId) => {
+const deleteNote = async () => {
   // Show a confirmation alert
   const isConfirmed = await Swal.fire({
     title: 'Are you sure?',
@@ -84,13 +84,12 @@ const deleteNote = async (noteId) => {
     try {
       // Send the DELETE request
       await axios.delete(`http://localhost:3000/notes/${noteId}`);
-      
-      // Navigate to the "/folders" route
-      navigate("/folders");
+  
     } catch (error) {
       // Handle errors from the delete request
       console.error('Error deleting note:', error);
     }
+        navigate("/folders");
   }
 };
 

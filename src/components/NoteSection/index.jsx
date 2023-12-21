@@ -4,12 +4,15 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import ShowNotes from '../ShowNotes'
 import NotesInput from '../NotesInput'
+import { useFolderData } from '../../context/FolderDataContext'
 
 const NoteSection = ({ notesData, folderId, folderName }) => {
   const [searchNote, setSearchNote] = useState('')
   const navigate = useNavigate()
   const [importantNotes, setImportantNotes] = useState([])
   const [sortOrder, setSortOrder] = useState('desc');
+    const {userId} = useFolderData()
+ 
 
 
   const filteredNotes = (data, search) => {
@@ -23,10 +26,7 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   }
 
 
-    const userInfo = localStorage.getItem('userInfo')
-  const userId = userInfo._id;
-  
-  // let userId = '6581c22f67184ef3425c6b08'
+
 
   const goToCreatePage = () => {
     navigate('/createNote/' + folderId)
