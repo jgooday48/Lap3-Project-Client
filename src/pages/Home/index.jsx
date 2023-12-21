@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FolderSideBar, RichTextEditor } from "../../components";
 import { NavLink } from "react-router-dom";
 import "./Home.css";
+// import logo1 from "../../../src/assets/logo1"
 
 const HomePage = () => {
   const { userInfo } = useSelector((state) => state.auth);
