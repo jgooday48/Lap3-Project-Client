@@ -32,7 +32,7 @@
 
 .note-card {
     width: calc(40.33% - 20px);
-    height: 300px;
+    height: 250px;
     margin: 1em;
     display: flex;
     align-items: center;
