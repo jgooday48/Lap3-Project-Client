@@ -8,12 +8,17 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   const [searchNote, setSearchNote] = useState('')
   const navigate = useNavigate()
   const [importantNotes, setImportantNotes] = useState([])
-
-
+ const [sortOrder, setSortOrder] = useState('desc');
 
 
   const filteredNotes = (data, search) => {
-   return data.filter(note =>  note.Name.toLowerCase().includes(search.toLowerCase()))
+     const filtered = data.filter(note => note.Name.toLowerCase().includes(search.toLowerCase()))
+       return filtered.sort((a, b) => {
+      const dateA = new Date(a.updatedAt);
+      const dateB = new Date(b.updatedAt);
+
+      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    });
 
   }
 
@@ -35,8 +40,13 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
     getAllNotesByUser()
     console.log("important Notes, ", importantNotes)
   }, [importantNotes])
+  // const toggleSortOrder = () => {
+  //   setSortOrder(order => (order === 'asc' ? 'desc' : 'asc'));
+  // };
 
-
+  const handleSortChange = e => {
+    setSortOrder(e.target.value);
+  };
 
   return (
     <section className='notes-section'>
@@ -53,7 +63,12 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
             type='text'
             onChange={e => setSearchNote(e.target.value)}
             placeholder='Search notes'
-          />
+              />
+                <label htmlFor='sortOrder'>Sort Order:</label>
+        <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
+          <option value='asc'>Ascending</option>
+          <option value='desc'>Descending</option>
+        </select>
 
         </div>
 
@@ -72,6 +87,11 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
             onChange={e => setSearchNote(e.target.value)}
             placeholder='Search notes'
           />
+          <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
+          <option value='asc'>Ascending</option>
+          <option value='desc'>Descending</option>
+        </select>
+
           <button onClick={goToCreatePage}>+</button>
         </div>
       )}
