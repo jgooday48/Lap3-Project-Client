@@ -16,7 +16,7 @@ const CreateNote = () => {
   
 
   const createNewNote = () => {
-    axios.post('http://localhost:3000/notes', {
+    axios.post('https://reddy-server-33.onrender.com/notes', {
       Name: name,
       Content: content,
       User: userId,

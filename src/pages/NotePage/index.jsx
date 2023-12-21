@@ -28,7 +28,7 @@ const NotePage = () => {
     
 
   const getANote = async() => {
-      await   fetch(`http://localhost:3000/notes/${noteId}`)
+      await   fetch(`https://reddy-server-33.onrender.com/${noteId}`)
           .then(res => res.json())
           .then(data => { console.log(data)
             setContent(data?.Content)
@@ -45,7 +45,7 @@ const NotePage = () => {
   e.preventDefault()
   try {
     const response = await axios.patch(
-      `http://localhost:3000/notes/${noteId}`,
+      `https://reddy-server-33.onrender.com/${noteId}`,
       {
         Content: content,
         Name: name,
@@ -83,7 +83,7 @@ const deleteNote = async () => {
   if (isConfirmed.isConfirmed) {
     try {
       // Send the DELETE request
-      await axios.delete(`http://localhost:3000/notes/${noteId}`);
+      await axios.delete(`https://reddy-server-33.onrender.com/notes/${noteId}`);
   
     } catch (error) {
       // Handle errors from the delete request

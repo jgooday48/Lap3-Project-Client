@@ -14,7 +14,7 @@ const FolderDataProvider = ({ children }) => {
 
   useEffect(() => {
     const getAllFoldersByUser = async () => {
-      const api = `http://localhost:3000/folders/user/${userId}`;
+      const api = `https://reddy-server-33.onrender.com/folders/user/${userId}`;
       const response = await fetch(api);
       const data = await response.json();
       setFolderData(data);

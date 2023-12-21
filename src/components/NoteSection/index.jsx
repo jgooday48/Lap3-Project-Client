@@ -33,7 +33,7 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   }
 
   const getAllNotesByUser = async () => {
-    const response = await fetch(`http://localhost:3000/notes/user/${userId}`)
+    const response = await fetch(`https://reddy-server-33.onrender.com/notes/user/${userId}`)
     const data = await response.json()
     if (data) {
       setImportantNotes(data.filter(note => note.IsImportant))

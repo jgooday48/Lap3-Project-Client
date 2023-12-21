@@ -50,7 +50,7 @@ const NoteSideBar = ({ data, folderId, getAllNotesByFolder }) => {
           Content: content,
         }),
       };
-      const response = await fetch(`http://localhost:3000/notes/${noteId}`, options);
+      const response = await fetch(`https://reddy-server-33.onrender.com/notes/${noteId}`, options);
       console.log('Update happened');
     } catch (error) {
       console.error('Error updating note:', error);

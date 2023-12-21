@@ -34,7 +34,7 @@ const FolderSideBar = ({ data }) => {
   }, []);
 
   const getAllNotesByFolder = async (folderId) => {
-    const api = `http://localhost:3000/notes/folder/${folderId}`;
+    const api = `https://reddy-server-33.onrender.com/notes/folder/${folderId}`;
     const response = await fetch(api);
     const data = await response.json();
     setNotesData(data);
@@ -54,7 +54,7 @@ const FolderSideBar = ({ data }) => {
         User: userId,
       }),
     };
-    const response = await fetch(`http://localhost:3000/folders`, options);
+    const response = await fetch(`https://reddy-server-33.onrender.com/folders`, options);
 
     if (!response.ok) {
       const error = await response.json();
@@ -117,7 +117,7 @@ const deleteFolder = async (folderId) => {
   if (result.isConfirmed) {
     try {
   
-      await axios.delete(`http://localhost:3000/folders/${folderId}`);
+      await axios.delete(`https://reddy-server-33.onrender.com/folders/${folderId}`);
       window.location.reload()
      
     } catch (error) {

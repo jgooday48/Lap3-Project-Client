@@ -16,7 +16,7 @@ const SearchWidget = () => {
     }
     useEffect(() => {
         const searchAPI = async () => {
-            const { data } = await axios.get(`https://localhost:3000/folders?${searchString}`)
+            const { data } = await axios.get(`https://reddy-server-33.onrender.com/folders?${searchString}`)
             const folders = data.map(s => s.folder)
             setFolderData(folders)
         }
