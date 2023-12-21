@@ -22,7 +22,7 @@ const NoteSection = ({ notesData, folderId }) => {
   );
 
   return (
-    <section className="notes-section">
+    <section className="notes--section">
       <div>
         <h2>All notes</h2>
       </div>
