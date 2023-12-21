@@ -8,19 +8,19 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   const [searchNote, setSearchNote] = useState('')
   const navigate = useNavigate()
   const [importantNotes, setImportantNotes] = useState([])
- const [sortOrder, setSortOrder] = useState('desc');
+  const [sortOrder, setSortOrder] = useState('desc');
 
 
   const filteredNotes = (data, search) => {
-     const filtered = data.filter(note => note.Name.toLowerCase().includes(search.toLowerCase()))
-       return filtered.sort((a, b) => {
-      const dateA = new Date(a.updatedAt);
-      const dateB = new Date(b.updatedAt);
+  const filtered = data.filter(note => note.Name && note.Name.toLowerCase().includes(search.toLowerCase()))
+  return filtered.sort((a, b) => {
+    const dateA = new Date(a.updatedAt);
+    const dateB = new Date(b.updatedAt);
 
-      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
-    });
+    return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+  });
+}
 
-  }
 
   let userId = '6581c22f67184ef3425c6b08'
 
@@ -40,9 +40,7 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
     getAllNotesByUser()
     console.log("important Notes, ", importantNotes)
   }, [importantNotes])
-  // const toggleSortOrder = () => {
-  //   setSortOrder(order => (order === 'asc' ? 'desc' : 'asc'));
-  // };
+
 
   const handleSortChange = e => {
     setSortOrder(e.target.value);
@@ -56,23 +54,36 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
         </div>
       ) : (
         <div>
-            <h2>All Important Notes</h2>
-              <div className='notes-input'>
-          <input
-            value={searchNote}
-            type='text'
-            onChange={e => setSearchNote(e.target.value)}
-            placeholder='Search notes'
-              />
-                <label htmlFor='sortOrder'>Sort Order:</label>
-        <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
-          <option value='asc'>Ascending</option>
-          <option value='desc'>Descending</option>
-        </select>
+          <h2>All Important Notes</h2>
+          <div className='notes-input'>
+            <input
+              value={searchNote}
+                type='text'
+              className="form-control"
+              onChange={e => setSearchNote(e.target.value)}
+                placeholder='Search notes'
+                style={{ width: '300px' }} 
+            />
+           
+            {/* <select id='sortOrder' className="dropdown" value={sortOrder} onChange={handleSortChange}>
+              <option value='asc'>Ascending</option>
+              <option value='desc'>Descending</option>
+            </select> */}
+              <div className="dropdown">
+                 <label htmlFor='sortOrder'>Sort Order:</label>
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="sortOrderDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          
+                  {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
+        </button>
+        <ul className="dropdown-menu" aria-labelledby="sortOrderDropdown">
+            <li><a className="dropdown-item" href="#" onClick={() => handleSortChange('asc')}>Ascending</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => handleSortChange('desc')}>Descending</a></li>
+        </ul>
+    </div>
 
-        </div>
+          </div>
 
-          {importantNotes.length > 0  && notesData.length == 0 && (
+          {importantNotes.length > 0 && notesData.length == 0 && (
             <div className='all-notes'>
               <ShowNotes notes={filteredNotes(importantNotes, searchNote)} />
             </div>
@@ -80,21 +91,22 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
         </div>
       )}
       <div>
-      {notesData.length > 0 && (
-        <div className='notes-input'>
-          <input
-            value={searchNote}
-            type='text'
-            onChange={e => setSearchNote(e.target.value)}
-            placeholder='Search notes'
-          />
-          <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
-          <option value='asc'>Ascending</option>
-          <option value='desc'>Descending</option>
-        </select>
-        </div>
-      )}
-  
+        {notesData.length > 0 && (
+          <div className='notes-input'>
+            <input
+              value={searchNote}
+              type='text'
+              className="form-control"
+              onChange={e => setSearchNote(e.target.value)}
+              placeholder='Search notes'
+            />
+            <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
+              <option value='asc'>Ascending</option>
+              <option value='desc'>Descending</option>
+            </select>
+          </div>
+        )}
+
         <button onClick={goToCreatePage}>+</button>
       </div>
       <ShowNotes notes={filteredNotes(notesData, searchNote)} />
