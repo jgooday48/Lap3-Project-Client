@@ -6,6 +6,7 @@ import { NoteTemplate } from '../../components'
 import './index.css'
 import axios from 'axios';
 import { toast } from 'react-toastify'
+import Swal from 'sweetalert2'
 
 
 
@@ -16,6 +17,8 @@ const NotePage = () => {
   const { folderId } = useParams()
   const navigate = useNavigate()
   const [isImportant, setIsImportant] = useState(false)
+  const user = localStorage.getItem('user')
+  
   let userId = "6581c22f67184ef3425c6b08"
 
 
@@ -65,23 +68,32 @@ const NotePage = () => {
 
   };
   
-  const deleteNote = async () => {
-    // Show a confirmation alert
-    const isConfirmed = window.confirm("Are you sure you want to delete the file?");
+const deleteNote = async (noteId) => {
+  // Show a confirmation alert
+  const isConfirmed = await Swal.fire({
+    title: 'Are you sure?',
+    text: 'You won\'t be able to revert this!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  });
 
-    if (isConfirmed) {
-      try {
-        // Send the DELETE request
-        await axios.delete(`http://localhost:3000/notes/${noteId}`);
-        
-        // Navigate to the "/folders" route
+  if (isConfirmed.isConfirmed) {
+    try {
+      // Send the DELETE request
+      await axios.delete(`http://localhost:3000/notes/${noteId}`);
+      
+      // Navigate to the "/folders" route
       navigate("/folders");
-      } catch (error) {
-        // Handle errors from the delete request
-        console.error('Error deleting note:', error);
-      }
+    } catch (error) {
+      // Handle errors from the delete request
+      console.error('Error deleting note:', error);
     }
   }
+};
+
 
   return (
     <div className="note-container">

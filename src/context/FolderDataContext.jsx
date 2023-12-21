@@ -5,7 +5,9 @@ const FolderDataContext = createContext();
 
 const FolderDataProvider = ({ children }) => {
   const [folderData, setFolderData] = useState([]);
-    const userId = "6581c22f67184ef3425c6b08";
+  const userId = "6581c22f67184ef3425c6b08";
+  //   const userInfo = localStorage.getItem('userInfo')
+  // const userId = userInfo._id;
 
 
   useEffect(() => {
