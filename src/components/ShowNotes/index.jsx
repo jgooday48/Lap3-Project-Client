@@ -9,15 +9,18 @@ const navigate = useNavigate()
   };
 
     const stripHtmlTags = html => {
-        const doc = new DOMParser().parseFromString(html, 'text/html')
-        const paragraphs = doc.body.getElementsByTagName('p')
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const paragraphs = doc.body.getElementsByTagName('p');
 
-        if (paragraphs.length > 0) {
-            return paragraphs[0].textContent+'...' || ''
-        }
-
-        return doc.body.textContent || ''
+    if (paragraphs.length > 0) {
+        const firstParagraphText = paragraphs[0].textContent || '';
+        const truncatedText = firstParagraphText.slice(0, 50); // Adjust the character limit as needed
+        return truncatedText + '...';
     }
+
+    return '';
+};
+
     return (
         <div className='all-notes'>
             {notes.map(note => (
@@ -25,11 +28,11 @@ const navigate = useNavigate()
                     key={note._id}
                     className='note-card'
                     onClick={() => goToNotesPage(note._id)}
-                    style={{ display: 'flex', flexDirection: 'column' }}
+                    style={{ display: 'flex', flexDirection: 'column', padding: '1em' }}
                 >
                     <h2>{note.Name}</h2>
-                    <p>{stripHtmlTags(note.Content)}</p>
-                    <p>
+                    <b>{stripHtmlTags(note.Content)}</b>
+                    <p id="time"> 
                         {new Date(note.updatedAt).toLocaleString('en-UK', {
                             day: 'numeric',
                             month: 'long',
