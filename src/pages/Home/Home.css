@@ -242,4 +242,6 @@ h1 {
 .noteworthy {
   font-family: 'Library Records', sans-serif;
   color: gold;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
 }

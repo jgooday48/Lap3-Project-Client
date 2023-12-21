@@ -5,7 +5,7 @@ nav {
     align-items: center;
     background: #353434;
     color: white;
-
+    position: relative; 
   }
   
   .nav-links {
@@ -91,4 +91,16 @@ nav {
 
 .noteworthy1{
   display:flex;
+}
+
+#noteworthy{
+    font-family: 'Library Records', sans-serif;
+  color: gold;
+}
+
+
+.noteworthy-div{
+  position: absolute; 
+  left: 100px;
+  cursor: pointer;
 }
