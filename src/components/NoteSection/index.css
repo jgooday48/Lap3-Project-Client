@@ -1,37 +1,33 @@
-.notes-section{
+.notes-section {
     margin: 1em;
     border: 1px solid black;
-    width: 100%; 
+    width: 100%;
 }
 
-.all-notes{
-    display: flex; 
-  flex-wrap: wrap; 
-  border: 1px solid blue;
-  width: 97%;
-  justify-content: center;
+.all-notes {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid blue;
+    width: 97%;
+    justify-content: center;
 }
 
 .notes-input {
     display: flex;
-    justify-content: space-between; /* Space elements evenly */
+    /* justify-content: space-between; */
+    /* Space elements evenly */
     padding-right: 2em;
 }
 
-.notes-input button{
-    width: 100px;
-    padding: 10px;
-    background-color: red;
-    cursor: pointer;
-}
 
 
 
-.note-card{
-        width: calc(33.33% - 20px); 
+
+.note-card {
+    width: calc(33.33% - 20px);
     height: 300px;
-      margin: 1em;
-    display: flex; 
+    margin: 1em;
+    display: flex;
     align-items: center;
     justify-content: center;
     border: 10px solid white;
@@ -39,18 +35,21 @@
     transition: 0.2s ease-in-out;
 }
 
-.note-card:hover{
+.note-card:hover {
     transform: scale(1.02);
 }
 
 .note-card:nth-child(3n+1) {
-    background-color: antiquewhite; /* Applies to every 3rd card, starting from the first */
+    background-color: antiquewhite;
+    /* Applies to every 3rd card, starting from the first */
 }
 
 .note-card:nth-child(3n+2) {
-    background-color: lightblue; /* Applies to every 3rd card, starting from the second */
+    background-color: lightblue;
+    /* Applies to every 3rd card, starting from the second */
 }
 
 .note-card:nth-child(3n) {
-    background-color: lightcoral; /* Applies to every 3rd card, starting from the third */
+    background-color: lightcoral;
+    /* Applies to every 3rd card, starting from the third */
 }
