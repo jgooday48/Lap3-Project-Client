@@ -1,4 +1,22 @@
-
 .note-container{
     padding: 2em;
+
+    background-color: #fee0fd;
+    /* background-image: url("../../../src/assets/img.jpg"); */
+}
+
+.optionSection {
+    display: flex;
+    justify-content: center;
+}
+
+#backBtn {
+    width: 100px;
+}
+
+#deleteBtn {
+    width: 50px;
+    margin-left: 20px;
+
+
 }

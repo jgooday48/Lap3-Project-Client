@@ -85,19 +85,18 @@ const NotePage = () => {
 
   return (
     <div className="note-container">
-      <div>
-        <button onClick={() => navigate("/folders")}>&larr; Go back</button>
-      </div>
-      <div>
-        <h2>NOTE DETAILS</h2>
-      </div>
+      <section className='optionSection'>
+        <div>
+          <button className='formBtns' id="backBtn" onClick={() => navigate("/folders")}>&larr; Go back</button>
+        </div>
+        <div>
+          <button className='formBtns' id="deleteBtn" onClick={() => deleteNote()}><i className="fa fa-trash-o"></i></button>
+        </div>
+      </section>
       <div>
         <NoteTemplate name={name} setName={setName} content={content} setContent={setContent} folderId={folderId} isImportant={isImportant} setIsImportant={setIsImportant} handleSubmit={updateNote} />
       </div>
-      <div>
-        <button onClick={() => deleteNote()}>                   <i className="fa fa-trash-o"></i>
-</button>
-      </div>
+      
     </div>
   )
 }

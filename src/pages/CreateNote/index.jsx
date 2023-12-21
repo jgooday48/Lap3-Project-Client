@@ -42,6 +42,9 @@ const CreateNote = () => {
   return (
     <div className="create-container">
       <div>
+        <button onClick={() => navigate("/folders")}>&larr; Go back</button>
+      </div>
+      <div>
         <h2>NOTE DETAILS</h2>
 
       </div>
