@@ -24,8 +24,7 @@ h1 {
 }
 
 .homepage {
-  background-color: #b65f0e;
-  height: 92vh;
+  height: 100vh;
   background-image: url("../../../src/assets/img.jpg");
   background-position: center top;
   background-repeat: no-repeat;
@@ -228,11 +227,14 @@ h1 {
 
 .homeLogo {
   margin-left: 800px;
-
 }
 
 #thanksMessage {
   display: flex;
   justify-content: center;
   padding-top: 50px;
+}
+
+.noteworthy {
+  font-weight:900;
 }
