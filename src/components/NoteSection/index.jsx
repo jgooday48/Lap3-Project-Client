@@ -41,6 +41,26 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
 
 
 
+  // Filter notes based on the searchNote value
+  const filteredNotes = notesData.filter((note) =>
+    note.Name.toLowerCase().includes(searchNote.toLowerCase())
+  );
+  
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const paragraphs = doc.body.getElementsByTagName('p');
+  
+
+
+    if (paragraphs.length > 0) {
+      return paragraphs[0].textContent || '';
+    }
+  
+
+    return doc.body.textContent || '';
+  };
+
+  
   return (
     <section className="notes-section">
       {folderName.length > 0 ? (
@@ -95,6 +115,7 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
             style={{ display: 'flex', flexDirection: 'column' }}
           >
             <h2>{note.Name}</h2>
+            <p>{stripHtmlTags(note.Content)}</p>
             <p>
               {new Date(note.updatedAt).toLocaleString('en-UK', {
                 day: 'numeric',
@@ -111,4 +132,8 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   );
 };
 
-export default NoteSection;
+
+
+
+export default NoteSection
+

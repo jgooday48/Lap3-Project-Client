@@ -49,7 +49,7 @@ const NavBar = () => {
 
             <button className="button-4" role="button">
               <li>
-                <NavLink to="/notes" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
+                <NavLink to="/folders" style={({ isActive }) => (isActive ? activeStyle : undefined)}>Notes</NavLink>
               </li>
             </button>
             <button className="button-4" role="button" onClick={logoutHandler}>

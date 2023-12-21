@@ -41,9 +41,8 @@ const CreateNote = () => {
 
   return (
     <div className="create-container">
-      <div>
-        <h2>NOTE DETAILS</h2>
-
+      <div className='back'>
+        <button className='formBtns' id="backBtn" onClick={() => navigate("/folders")}>&larr; Go back</button>
       </div>
       <div>
         <NoteTemplate name={name} setName={setName} content={content} setContent={setContent} folderId={folderId} isImportant={isImportant} setIsImportant={setIsImportant} handleSubmit={createNewNote} />

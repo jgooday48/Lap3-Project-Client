@@ -32,10 +32,10 @@ const Profile = () => {
   const [logoutApiCall] = useLogoutMutation();
   const [updateProfile, { isLoading }] = useUpdateUserMutation();
   
-  useEffect(() => {
-    setName(userInfo.name);
-    setEmail(userInfo.email)
-  }, [userInfo.setName, userInfo.setEmail]);
+  // useEffect(() => {
+  //   setName(userInfo.name);
+  //   setEmail(userInfo.email)
+  // }, [userInfo.setName, userInfo.setEmail]);
 
 
   const handleSubmit = async (e) => {
@@ -81,6 +81,7 @@ const Profile = () => {
 
   return (
     <div className='profilePage' style={activeStyle}>
+      <div>
       <h1>Update profile</h1>
       <form aria-label='update' className='update'>
 
@@ -107,6 +108,7 @@ const Profile = () => {
         </ul>
         
       </form> 
+      </div>
     </div>
   )
 }
