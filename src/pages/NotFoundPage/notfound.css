@@ -19,10 +19,10 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
+  position: relative;
 }
 
 
-#notFoundBtn {
-  margin-top: 500px;
-  height: 50px;
+#return-home{
+position: absolute;
 }
