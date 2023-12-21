@@ -12,14 +12,14 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
 
 
   const filteredNotes = (data, search) => {
-  const filtered = data.filter(note => note.Name && note.Name.toLowerCase().includes(search.toLowerCase()))
-  return filtered.sort((a, b) => {
-    const dateA = new Date(a.updatedAt);
-    const dateB = new Date(b.updatedAt);
+    const filtered = data.filter(note => note.Name && note.Name.toLowerCase().includes(search.toLowerCase()))
+    return filtered.sort((a, b) => {
+      const dateA = new Date(a.updatedAt);
+      const dateB = new Date(b.updatedAt);
 
-    return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
-  });
-}
+      return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    });
+  }
 
 
   let userId = '6581c22f67184ef3425c6b08'
@@ -58,28 +58,28 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
           <div className='notes-input'>
             <input
               value={searchNote}
-                type='text'
+              type='text'
               className="form-control"
               onChange={e => setSearchNote(e.target.value)}
-                placeholder='Search notes'
-                style={{ width: '300px' }} 
+              placeholder='Search notes'
+              style={{ width: '300px' }}
             />
-           
+
             {/* <select id='sortOrder' className="dropdown" value={sortOrder} onChange={handleSortChange}>
               <option value='asc'>Ascending</option>
               <option value='desc'>Descending</option>
             </select> */}
-              <div className="dropdown">
-                 <label htmlFor='sortOrder'>Sort Order:</label>
-        <button className="btn btn-secondary dropdown-toggle" type="button" id="sortOrderDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          
-                  {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
-        </button>
-        <ul className="dropdown-menu" aria-labelledby="sortOrderDropdown">
-            <li><a className="dropdown-item" href="#" onClick={() => handleSortChange('asc')}>Ascending</a></li>
-            <li><a className="dropdown-item" href="#" onClick={() => handleSortChange('desc')}>Descending</a></li>
-        </ul>
-    </div>
+            <div className="dropdown">
+                <b htmlFor='sortOrder'>Sort Order:</b>&nbsp;
+              <button className="btn btn-secondary dropdown-toggle" type="button" id="sortOrderDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="sortOrderDropdown">
+                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('asc')}>Ascending</a></li>
+                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('desc')}>Descending</a></li>
+              </ul>
+            </div>
 
           </div>
 
@@ -100,14 +100,26 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
               onChange={e => setSearchNote(e.target.value)}
               placeholder='Search notes'
             />
-            <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
+            {/* <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
               <option value='asc'>Ascending</option>
               <option value='desc'>Descending</option>
-            </select>
+            </select> */}
+            <div className="dropdown">
+              <b htmlFor='sortOrder'>Sort Order:</b>&nbsp;
+              <button className="btn btn-secondary dropdown-toggle" type="button" id="sortOrderDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+
+                {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
+              </button>
+              <ul className="dropdown-menu" aria-labelledby="sortOrderDropdown">
+                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('asc')}>Ascending</a></li>
+                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('desc')}>Descending</a></li>
+              </ul>
+            </div>
+              <button className="btn btn-warning" onClick={goToCreatePage}>+ Create a new note</button>
           </div>
         )}
 
-        <button onClick={goToCreatePage}>+</button>
+      
       </div>
       <ShowNotes notes={filteredNotes(notesData, searchNote)} />
     </section>
