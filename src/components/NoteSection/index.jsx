@@ -3,6 +3,7 @@ import './index.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import ShowNotes from '../ShowNotes'
+import NotesInput from '../NotesInput'
 
 const NoteSection = ({ notesData, folderId, folderName }) => {
   const [searchNote, setSearchNote] = useState('')
@@ -55,33 +56,8 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
       ) : (
         <div>
           <h2>All Important Notes</h2>
-          <div className='notes-input'>
-            <input
-              value={searchNote}
-              type='text'
-              className="form-control"
-              onChange={e => setSearchNote(e.target.value)}
-              placeholder='Search notes'
-              style={{ width: '300px' }}
-            />
+          <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={false} />
 
-            {/* <select id='sortOrder' className="dropdown" value={sortOrder} onChange={handleSortChange}>
-              <option value='asc'>Ascending</option>
-              <option value='desc'>Descending</option>
-            </select> */}
-            <div className="dropdown">
-                <b htmlFor='sortOrder'>Sort Order:</b>&nbsp;
-              <button className="btn btn-secondary dropdown-toggle" type="button" id="sortOrderDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-
-                {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="sortOrderDropdown">
-                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('asc')}>Ascending</a></li>
-                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('desc')}>Descending</a></li>
-              </ul>
-            </div>
-
-          </div>
 
           {importantNotes.length > 0 && notesData.length == 0 && (
             <div className='all-notes'>
@@ -92,34 +68,10 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
       )}
       <div>
         {notesData.length > 0 && (
-          <div className='notes-input'>
-            <input
-              value={searchNote}
-              type='text'
-              className="form-control"
-              onChange={e => setSearchNote(e.target.value)}
-              placeholder='Search notes'
-            />
-            {/* <select id='sortOrder' value={sortOrder} onChange={handleSortChange}>
-              <option value='asc'>Ascending</option>
-              <option value='desc'>Descending</option>
-            </select> */}
-            <div className="dropdown">
-              <b htmlFor='sortOrder'>Sort Order:</b>&nbsp;
-              <button className="btn btn-secondary dropdown-toggle" type="button" id="sortOrderDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-
-                {sortOrder === 'asc' ? 'Ascending' : 'Descending'}
-              </button>
-              <ul className="dropdown-menu" aria-labelledby="sortOrderDropdown">
-                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('asc')}>Ascending</a></li>
-                <li><a className="dropdown-item" href="#" onClick={() => setSortOrder('desc')}>Descending</a></li>
-              </ul>
-            </div>
-              <button className="btn btn-warning" onClick={goToCreatePage}>+ Create a new note</button>
-          </div>
+          <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={true} />
         )}
 
-      
+
       </div>
       <ShowNotes notes={filteredNotes(notesData, searchNote)} />
     </section>

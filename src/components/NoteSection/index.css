@@ -30,15 +30,25 @@
 
 
 .note-card {
-    width: calc(33.33% - 20px);
+    width: calc(40.33% - 20px);
     height: 300px;
     margin: 1em;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center; */
     border: 10px solid white;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    border-radius: 20px; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative; 
+}
+
+
+#time{
+    position: absolute; 
+    bottom: 0; 
+    left: 10px;
 }
 
 .note-card:hover {
