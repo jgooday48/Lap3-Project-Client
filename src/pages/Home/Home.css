@@ -220,3 +220,19 @@ h1 {
   text-decoration: none;
   color: #fff;
 } */
+
+.homeLogo1 {
+  width: 300px;
+  height: 300px;
+}
+
+.homeLogo {
+  margin-left: 800px;
+
+}
+
+#thanksMessage {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
