@@ -167,9 +167,12 @@ ul li:hover {
 
 .deleteBtn {
   width: 24px;
+  height: 24px;
   background-color: transparent;
 }
 
 #trashEmoji {
   color: white;
+  display: flex;
+  justify-content: center;
 }
