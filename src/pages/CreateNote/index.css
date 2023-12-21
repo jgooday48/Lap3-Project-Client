@@ -1,0 +1,17 @@
+.create-container{
+    padding: 2em;
+    background-color: #fee0fd;
+    border: 5px solid black;
+    
+   
+}
+
+#back-button { 
+    padding: 1em 2em; 
+    margin-bottom: 1em;
+}
+
+.note-template{
+    background-color: #353434;
+    border-radius: 15px; 
+}

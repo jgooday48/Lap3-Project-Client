@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,16 +12,27 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
     "@syncfusion/ej2-react-buttons": "^20.1.55",
     "@syncfusion/ej2-react-dropdowns": "^23.2.7",
     "@syncfusion/ej2-react-richtexteditor": "^20.1.56",
+    "@tiptap/extension-underline": "^2.1.13",
+    "@tiptap/pm": "^2.1.13",
+    "@tiptap/react": "^2.1.13",
+    "@tiptap/starter-kit": "^2.1.13",
     "axios": "^1.6.2",
+    "bootstrap": "^5.3.2",
+    "html-react-parser": "^5.0.10",
+    "jodit-react": "^1.3.39",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
-
+    "react-icons": "^4.12.0",
     "react-pro-sidebar": "^1.1.0-alpha.1",
-
-    "react-router-dom": "^6.21.0"
+    "react-redux": "^9.0.4",
+    "react-router-dom": "^6.21.0",
+    "react-toastify": "^9.1.3",
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",

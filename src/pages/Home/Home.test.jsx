@@ -3,7 +3,8 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { screen, render, cleanup } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
-
+import store from "../../store.js"
+import { Provider } from "react-redux"
 import * as matchers from '@testing-library/jest-dom/matchers';
 expect.extend(matchers);
 
@@ -15,7 +16,9 @@ describe('Home display', ()=> {
     beforeEach(() => {
         render(
             <MemoryRouter>
+                <Provider store={store}>
                 <Home />
+                </Provider>
             </MemoryRouter>
         );
     });
@@ -29,6 +32,21 @@ describe('Home display', ()=> {
         })
 
         expect(h1s.length).not.toBeGreaterThan(1)
-
     })
+
+    it('renders the Login link', () => {
+        const loginLink = screen.getByRole('button', { name: /login/i });
+        expect(loginLink).toBeInTheDocument();
+    });
+
+    // it('renders the Register link', () => {
+    //     const registerLink = screen.getByRole('button', { name: /register/i });
+    //     expect(registerLink).toBeInTheDocument();
+    // });
+    
 })
+
+
+  
+ 
+
