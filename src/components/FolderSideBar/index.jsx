@@ -13,6 +13,7 @@ const FolderSideBar = ({ data }) => {
   const [folderId, setFolderId] = useState();
   const [add, setAdd] = useState(false);
   const [folderName, setFolderName] = useState([]);
+  const [selectedFolder, setSelectedFolder] = useState(null); // 追加
   let userId = "6581c22f67184ef3425c6b08";
 
   useEffect(() => {

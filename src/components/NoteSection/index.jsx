@@ -1,7 +1,7 @@
-import React from 'react'
-import './index.css'
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import React from "react";
+import "./index.css";
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const NoteSection = ({ notesData, folderId }) => {
   console.log("notesData:  ", notesData);
@@ -9,11 +9,11 @@ const NoteSection = ({ notesData, folderId }) => {
   const navigate = useNavigate();
 
   const goToNotesPage = (noteId) => {
-    navigate('/note/' + noteId);
+    navigate("/note/" + noteId);
   };
 
   const goToCreatePage = () => {
-    navigate('/createNote/' + folderId);
+    navigate("/createNote/" + folderId);
   };
 
   // Filter notes based on the searchNote value
@@ -26,7 +26,7 @@ const NoteSection = ({ notesData, folderId }) => {
       <div>
         <h2>All notes</h2>
       </div>
-      {notesData.length> 0 && 
+      {notesData.length > 0 && (
         <div className="notes-input">
           <input
             value={searchNote}
@@ -36,23 +36,23 @@ const NoteSection = ({ notesData, folderId }) => {
           />
           <button onClick={goToCreatePage}>+</button>
         </div>
-      }
+      )}
       <div className="all-notes">
         {filteredNotes.map((note) => (
           <div
             key={note._id}
             className="note-card"
             onClick={() => goToNotesPage(note._id)}
-            style={{ display: 'flex', flexDirection: 'column' }}
+            style={{ display: "flex", flexDirection: "column" }}
           >
             <h2>{note.Name}</h2>
             <p>
-              {new Date(note.updatedAt).toLocaleString('en-UK', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
+              {new Date(note.updatedAt).toLocaleString("en-UK", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+                hour: "numeric",
+                minute: "numeric",
               })}
             </p>
           </div>
@@ -62,6 +62,4 @@ const NoteSection = ({ notesData, folderId }) => {
   );
 };
 
-
-
-export default NoteSection
+export default NoteSection;
