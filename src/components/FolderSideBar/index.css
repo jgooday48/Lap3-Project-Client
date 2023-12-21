@@ -9,16 +9,22 @@
   width: 100%;
   background-color: #fee0fd;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
 }
 
 .sidebar {
   width: 20vw;
   /* border: 1px solid lightpink; */
-  position: relative;
+  position: sticky;
+  top: 0;
   background-color: #363434;
 }
 
+.notes-section{
+  flex: 1; 
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 .resizer {
   width: 5px;
   top: 0;
@@ -174,4 +180,28 @@ ul li:hover {
   color: white;
   display: flex;
   justify-content: center;
+}
+
+
+/* For Webkit browsers like Chrome or Safari */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+}
+
+
+*::-ms-scrollbar {
+  width: 5px;
+}
+
+*::-ms-scrollbar-thumb {
+  background-color: #888;
 }

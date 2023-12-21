@@ -1,16 +1,17 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { FolderSideBar, RichTextEditor } from '../../components'
-import { NavLink} from 'react-router-dom'
-import './Home.css'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { FolderSideBar, RichTextEditor } from "../../components";
+import { NavLink } from "react-router-dom";
+import "./Home.css";
+
 const HomePage = () => {
-  const { userInfo } =  useSelector(state => state.auth)
+  const { userInfo } = useSelector((state) => state.auth);
 
   return (
     <>
-    {!userInfo ? (
-      <div className="homepage">
-           {/* <FolderSideBar />
+      {!userInfo ? (
+        <div className="homepage">
+          {/* <FolderSideBar />
           <FolderSideBar/> 
           
               <RichTextEditor /> */}
@@ -34,8 +35,7 @@ const HomePage = () => {
 
     )}
     </>
-  )
-}
+  );
+};
 
-export default HomePage
-
+export default HomePage;

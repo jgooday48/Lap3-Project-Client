@@ -7,7 +7,7 @@ const NotFoundPage = () => {
   return (
     <div className='notfound'>
       {/* <h1 className="head">404 Page not found</h1> */}
-         <NavLink to="/" id="return-home"><h1> &larr; Return Home</h1></NavLink>
+         <NavLink to="/" id="return-home"><h1 style={{fontFamily: 'Times New Roman '}}> &larr; Return Home</h1></NavLink>
         <div className='gifContainer'>
         <img src={notFoundGif} alt="404 Page not found" className='head' id="notFoundGif"></img>
         </div>
