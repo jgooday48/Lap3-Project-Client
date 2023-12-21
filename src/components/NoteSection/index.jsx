@@ -79,6 +79,7 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
           )}
         </div>
       )}
+      <div>
       {notesData.length > 0 && (
         <div className='notes-input'>
           <input
@@ -91,10 +92,11 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
           <option value='asc'>Ascending</option>
           <option value='desc'>Descending</option>
         </select>
-
-          <button onClick={goToCreatePage}>+</button>
         </div>
       )}
+  
+        <button onClick={goToCreatePage}>+</button>
+      </div>
       <ShowNotes notes={filteredNotes(notesData, searchNote)} />
     </section>
   )
