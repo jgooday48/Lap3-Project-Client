@@ -5,6 +5,7 @@ import { resizeWidth } from '../../utils/WidthChanger'
 import { toast } from 'react-toastify'
 import NoteSection from '../NoteSection'
 import axios from 'axios'
+import { useFolderData } from '../../context/FolderDataContext'
 
 const FolderSideBar = ({ data }) => {
   const resizerRef = useRef(null)
@@ -12,8 +13,10 @@ const FolderSideBar = ({ data }) => {
   const [notesData, setNotesData] = useState([])
   const [folderId, setFolderId] = useState()
   const [add, setAdd] = useState(false)
-  const [folderName, setFolderName] = useState([])
+  const [folderName, setFolderName] = useState('')
+  const [name, setName] = useState('')
   let userId = '6581c22f67184ef3425c6b08'
+
 
   useEffect(() => {
     const resizer = resizerRef.current
@@ -23,12 +26,8 @@ const FolderSideBar = ({ data }) => {
       resizeWidth(resizer, sidebar)
     }
 
-    getAllNotesByFolder
   }, [])
 
-  useEffect(() => {
-    getAllNotesByFolder
-  }, [notesData])
 
   const getAllNotesByFolder = async folderId => {
     const api = `http://localhost:3000/notes/folder/${folderId}`
@@ -36,7 +35,11 @@ const FolderSideBar = ({ data }) => {
     const data = await response.json()
     setNotesData(data)
     setFolderId(folderId)
+  
   }
+
+
+
 
   async function createFolder() {
    
@@ -55,10 +58,9 @@ const FolderSideBar = ({ data }) => {
         }
         const response = await fetch(`http://localhost:3000/folders`, options)
         console.log('update happpend')
-        // toast.success(`"${folderName}" has been added to your folders`, {
-        //   autoClose: 2000
-        // })
-        window.location.reload()
+  
+         window.location.reload()
+    
       } catch (error) {
         console.error('Error updating note:', error)
       }
@@ -120,7 +122,7 @@ const FolderSideBar = ({ data }) => {
               <li
                 className='menu-item'
                 key={folder._id}
-                onClick={() => getAllNotesByFolder(folder._id)}
+                onClick={() => { getAllNotesByFolder(folder._id); setName(folder.Name) }}
               >
                 {folder.Name} &nbsp;
                 <button onClick={() => deleteFolder(folder._id)}>
@@ -133,7 +135,7 @@ const FolderSideBar = ({ data }) => {
       </div>
 
       <div className='notes-section'>
-        <NoteSection notesData={notesData} folderId={folderId} />
+        <NoteSection notesData={notesData} folderId={folderId} folderName={name} />
       </div>
     </div>
   )
