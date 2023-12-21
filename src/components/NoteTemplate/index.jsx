@@ -6,6 +6,7 @@ import JoditEditor from 'jodit-react';
 const NoteTemplate = (props) => {
     
     const { name, setName, content, setContent, folderId ,isImportant, setIsImportant, handleSubmit} = props
+    console.log(isImportant)
     
   return (
     <form action="" onSubmit={handleSubmit}>

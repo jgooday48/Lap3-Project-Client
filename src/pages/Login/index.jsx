@@ -57,6 +57,7 @@ const Login = () => {
         <form aria-label="sign in" className="login">
           <ul>
             <input
+              className="input"
               type="email"
               id="email"
               autoComplete="off"
@@ -70,6 +71,7 @@ const Login = () => {
 
           <ul>
             <input
+              className="input"
               type="password"
               id="password"
               autoComplete="off"
