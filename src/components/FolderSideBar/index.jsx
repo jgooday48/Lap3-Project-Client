@@ -91,17 +91,15 @@ const FolderSideBar = ({ data }) => {
         <div className="header">
           {/* <h3>La Fosse</h3> */}
 
-          <div>
-            <input
-              type="text"
-              value={folderName}
-              onChange={(e) => setFolderName(e.target.value)}
-              placeholder="Create a new folder"
-            />
-            <button className="addBtn" onClick={addFolder}>
-              Add Folder
-            </button>
-          </div>
+          <input
+            type="text"
+            value={folderName}
+            onChange={(e) => setFolderName(e.target.value)}
+            placeholder="Create a new folder"
+          />
+          <button className="addBtn" onClick={addFolder}>
+            Add Folder
+          </button>
         </div>
         <ul className="sidebar-menu">
           {data &&
