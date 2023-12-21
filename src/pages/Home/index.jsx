@@ -19,6 +19,8 @@ const HomePage = () => {
           <FolderSideBar/> 
           
               <RichTextEditor /> */}
+            <img src={logo2} alt="Logo">
+            </img>
             <h1 className='noteworthy'>Note-Worthy</h1>
               
             <p>Welcome to the note app, please login to continue!</p>
