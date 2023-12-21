@@ -20,29 +20,21 @@ const NoteSection = ({ notesData, folderId }) => {
   const filteredNotes = notesData.filter((note) =>
     note.Name.toLowerCase().includes(searchNote.toLowerCase())
   );
-
-  const truncateContent = (content, maxLength) => {
-    // Split the content into words
-    const words = content.split(' ');
-  
-    // Take the first maxLength words and join them back into a string
-    const truncatedContent = words.slice(0, maxLength).join(' ');
-  
-    return truncatedContent;
-  };
   
   const stripHtmlTags = (html) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     const paragraphs = doc.body.getElementsByTagName('p');
   
-    // If there's at least one paragraph, return its text content
+
     if (paragraphs.length > 0) {
       return paragraphs[0].textContent || '';
     }
   
-    // If there are no paragraphs, return the entire text content
+
     return doc.body.textContent || '';
   };
+
+  
   return (
     <section className="notes-section">
       <div>
