@@ -89,7 +89,7 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
             </div>
             </div>
       )}
-      {notesData.length > 0 && (
+      {notesData.length >= 0 && (
         <div className="notes-input">
           <input
             value={searchNote}
