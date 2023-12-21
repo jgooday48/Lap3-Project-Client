@@ -16,6 +16,8 @@ const FolderSideBar = ({ data }) => {
   const [folderName, setFolderName] = useState("");
   const [name, setName] = useState("");
   let userId = "6581c22f67184ef3425c6b08";
+    const [activeFolder, setActiveFolder] = useState(null);
+  
 
   useEffect(() => {
     const resizer = resizerRef.current;
@@ -106,11 +108,12 @@ const FolderSideBar = ({ data }) => {
           {data &&
             data.map((folder) => (
               <li
-                className="menu-item"
+                className={`menu-item ${activeFolder === folder._id ? 'active-folder' : ''}`}
                 key={folder._id}
                 onClick={() => {
                   getAllNotesByFolder(folder._id);
                   setName(folder.Name);
+                  setActiveFolder(folder._id)
                 }}
               >
                 {folder.Name} &nbsp;
