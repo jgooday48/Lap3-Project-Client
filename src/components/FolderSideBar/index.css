@@ -32,11 +32,12 @@
 .header {
   padding: 1em;
   text-align: center;
-  background-color: pink;
+  background-color: #fee0fd;
 }
 
-.header h3 {
-  color: purple;
+.header input {
+  border-radius: 5px;
+  border: 1px #333;
 }
 
 .sidebar-content {
@@ -167,9 +168,12 @@ ul li:hover {
 
 .deleteBtn {
   width: 24px;
+  height: 24px;
   background-color: transparent;
 }
 
 #trashEmoji {
   color: white;
+  display: flex;
+  justify-content: center;
 }
