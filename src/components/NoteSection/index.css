@@ -64,6 +64,7 @@
 }
 
 .note-card:nth-child(3n) {
-  background-color: lightcoral;
-  /* Applies to every 3rd card, starting from the third */
+    background-color: lightcoral;
+    /* Applies to every 3rd card, starting from the third */
+
 }

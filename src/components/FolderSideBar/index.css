@@ -7,7 +7,7 @@
 .folderSideBar {
   height: 100vh;
   width: 100%;
-  background-color: #eee;
+  background-color: #FEE0FD;
   display: flex;
   flex-direction: row;
 }
@@ -26,13 +26,16 @@
   cursor: col-resize;
   height: 100%;
   position: absolute;
-  background-color: lightpink;
+  /* background-color: lightpink; */
+  background-color: #353434;
 }
 
 .header {
   padding: 1em;
   text-align: center;
-  background-color: #fee0fd;
+
+  /* background-color: pink; */
+  background-color: #353434;
 }
 
 .header input {

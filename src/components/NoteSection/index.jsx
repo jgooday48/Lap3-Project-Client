@@ -53,13 +53,22 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
       {folderName.length > 0 ? (
         <div>
           <h2>Notes for {folderName} </h2>
+                <div>
+        {notesData.length > 0 ? (
+
+          <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={true} />
+           
+        ): (
+         <button className="btn btn-warning" onClick={goToCreatePage}>+ Create a new note</button>
+          )}
+        </div>
+
         </div>
       ) : (
         <div>
           <h2>All Important Notes</h2>
-          <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={false} />
-
-
+            <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={false} />
+          
           {importantNotes.length > 0 && notesData.length == 0 && (
             <div className='all-notes'>
               <ShowNotes notes={filteredNotes(importantNotes, searchNote)} />
@@ -68,10 +77,8 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
         </div>
       )}
       <div>
-        {notesData.length > 0 && (
-          <NotesInput searchNote={searchNote} setSearchNote={setSearchNote} sortOrder={sortOrder} setSortOrder={setSortOrder} goToCreatePage={goToCreatePage} eachFolder={true} />
-        )}
 
+  
 
       </div>
       <ShowNotes notes={filteredNotes(notesData, searchNote)} />
