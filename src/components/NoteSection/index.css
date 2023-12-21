@@ -5,6 +5,10 @@
     background-color: #FEE0FD;
 }
 
+.notes-section {
+    background-color: #FEE0FD;
+}
+
 .all-notes{
     display: flex; 
   flex-wrap: wrap; 
