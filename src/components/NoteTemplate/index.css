@@ -147,7 +147,7 @@ input:checked + .slider:before {
 
 
  .vertical-line {
-      border-left: 3px solid #000; /* You can change the color as needed */
+      border-left: 3px solid navy; /* You can change the color as needed */
       height: 100%;
     }
 

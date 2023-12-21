@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 import NoteSection from "../NoteSection";
 import axios from "axios";
 import { useFolderData } from "../../context/FolderDataContext";
+import Swal from 'sweetalert2';
+
 
 const FolderSideBar = ({ data }) => {
   const resizerRef = useRef(null);
@@ -15,7 +17,12 @@ const FolderSideBar = ({ data }) => {
   const [add, setAdd] = useState(false);
   const [folderName, setFolderName] = useState("");
   const [name, setName] = useState("");
-  let userId = "6581c22f67184ef3425c6b08";
+  // let userId = "6581c22f67184ef3425c6b08";
+  const [activeFolder, setActiveFolder] = useState(null);
+  const userInfo = localStorage.getItem('userInfo')
+  const userId = userInfo._id;
+  
+  
 
   useEffect(() => {
     const resizer = resizerRef.current;
@@ -67,22 +74,31 @@ const FolderSideBar = ({ data }) => {
     }
   };
 
-  const deleteFolder = async (folderId) => {
-    const isConfirmed = window.confirm(
-      "Are you sure you want to delete the folder?"
-    );
+const deleteFolder = async (folderId) => {
+  const result = await Swal.fire({
+    title: 'Are you sure?',
+    text: 'You won\'t be able to revert this!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  });
 
-    if (isConfirmed) {
-      try {
-        // Send the DELETE request
-        await axios.delete(`http://localhost:3000/folders/${folderId}`);
-        window.location.reload();
-      } catch (error) {
-        // Handle errors from the delete request
-        console.error("Error deleting note:", error);
-      }
+  if (result.isConfirmed) {
+    try {
+      // Send the DELETE request
+      await axios.delete(`http://localhost:3000/folders/${folderId}`);
+      window.location.reload();
+    } catch (error) {
+      // Handle errors from the delete request
+      console.error("Error deleting note:", error);
     }
-  };
+  }
+};
+
+
+
 
   return (
     <div className="folderSideBar">
@@ -94,6 +110,7 @@ const FolderSideBar = ({ data }) => {
           <input
             type="text"
             value={folderName}
+            className="form-control"
             onChange={(e) => setFolderName(e.target.value)}
             placeholder="Create a new folder"
           />
@@ -105,11 +122,12 @@ const FolderSideBar = ({ data }) => {
           {data &&
             data.map((folder) => (
               <li
-                className="menu-item"
+                className={`menu-item ${activeFolder === folder._id ? 'active-folder' : ''}`}
                 key={folder._id}
                 onClick={() => {
                   getAllNotesByFolder(folder._id);
                   setName(folder.Name);
+                  setActiveFolder(folder._id)
                 }}
               >
                 {folder.Name} &nbsp;

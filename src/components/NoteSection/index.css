@@ -2,7 +2,6 @@
   margin: 1em;
   /* border: 1px solid black; */
   width: 100%;
-
 }
 
 .all-notes {
@@ -11,6 +10,7 @@
   /* border: 1px solid blue; */
   width: 97%;
   justify-content: center;
+  padding-top: 30px;
 }
 
 .notes-input {
@@ -30,7 +30,7 @@
 
 .note-card {
   width: calc(40.33% - 20px);
-  height: 250px;
+  height: 300px;
   margin: 1em;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@
 }
 
 .note-card:nth-child(3n) {
-    background-color: lightcoral;
-    /* Applies to every 3rd card, starting from the third */
+  background-color: lightcoral;
+  /* Applies to every 3rd card, starting from the third */
 
 }

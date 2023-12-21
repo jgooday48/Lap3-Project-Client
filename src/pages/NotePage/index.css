@@ -1,7 +1,7 @@
 .note-container{
     padding: 2em;
 
-    background-color: #fee0fd;
+    background-color: #353434;
     /* background-image: url("../../../src/assets/img.jpg"); */
 }
 
@@ -13,16 +13,26 @@
 
 .optionSection {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    border: 1px solid; 
+    padding: 1em 6em;
+    /* display: flex;
+    justify-content: center; */
 }
 
-#backBtn {
-    width: 100px;
+
+
+#backBtn, #deleteBtn {
+height: 50px; 
 }
 
 #deleteBtn {
-    width: 50px;
-    margin-left: 20px;
+    width: 100px;
+    
 
 
+}
+
+.active-folder {
+  background-color: green;
 }

@@ -7,18 +7,24 @@
 .folderSideBar {
   height: 100vh;
   width: 100%;
-  background-color: #FEE0FD;
+  background-color: #fee0fd;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
 }
 
 .sidebar {
   width: 20vw;
   /* border: 1px solid lightpink; */
-  position: relative;
+  position: sticky;
+  top: 0;
   background-color: #363434;
 }
 
+.notes-section{
+  flex: 1; 
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 .resizer {
   width: 5px;
   top: 0;
@@ -124,9 +130,7 @@ ul li:hover {
   flex: 1;
 }
 
-.menu-item:nth-child(1):before,
-.menu-item:nth-child(7):before,
-.menu-item:nth-child(13):before {
+.menu-item:nth-child(1):before {
   background-color: #d04664;
 }
 
@@ -175,6 +179,4 @@ ul li:hover {
 
 #trashEmoji {
   color: white;
-  display: flex;
-  justify-content: center;
 }
