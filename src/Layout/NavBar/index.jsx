@@ -30,6 +30,9 @@ const NavBar = () => {
     return (
       <>
       <nav>
+        {/* <p className='noteworthy1'>
+          Note-Worthy
+        </p> */}
        
         <ul className="nav-links">
           <button className="button-4" role="button">

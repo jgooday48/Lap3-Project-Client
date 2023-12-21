@@ -14,7 +14,7 @@ const HomePage = () => {
           <FolderSideBar/> 
           
               <RichTextEditor /> */}
-            <h1>Note-Worthy</h1>
+            <h1 className='noteworthy'>Note-Worthy</h1>
             <p>Welcome to the note app, please login to continue!</p>
             <ul>
               <button className="button-4" role="button" id='homepageBtn1'>
@@ -28,7 +28,7 @@ const HomePage = () => {
     
     ) : (    
     <div className='homepage'>
-      <h1>Note-Worthy</h1>
+      <h1 className='noteworthy'>Note-Worthy</h1>
           <p>Thanks for joining! Checkout the nav bar to see where you need to go!</p>
     </div>
 
