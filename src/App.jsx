@@ -4,7 +4,6 @@ import React,{ useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import { NavBar } from './Layout'
 import PrivateRoute from './components/PrivateRoute';
@@ -13,48 +12,57 @@ import * as Pages from './pages'
 import { FolderDataProvider } from './context/FolderDataContext';
 
 
-function App() {
-
-
-
+const App = () => {
   return (
     <>
-
       <ToastContainer />
-      <FolderDataProvider>
-    <Routes>
-    
-      <Route path="/" element={<NavBar />}>
-        <Route path="/" element={<Pages.Home />}/>
-        <Route path="/login" element={<Pages.Login />}/>
+
+      <Routes>
+        <Route path="/" element={<NavBar />}>
+          <Route path="/" element={<Pages.Home />} />
+          <Route path="/login" element={<Pages.Login />} />
           <Route path="/register" element={<Pages.SignUp />} />
-        
-            <Route path="/folders" element={<Pages.FolderPage />} />
-            <Route path="/createNote/:folderId" element={<Pages.CreateNote />} />
-            <Route path="/note/:noteId" element={<Pages.NotePage/>}/>
-  
-        {/* Private routes */}
-        <Route path="" element={<PrivateRoute />}>
-          <Route path="/profile" element={<Pages.Profile />}/>
+          <Route path="" element={<PrivateRoute />}>
+            <Route
+              path="/profile"
+              element={
+                <FolderDataProvider>
+                  <Pages.Profile />
+                </FolderDataProvider>
+              }
+            />
+            <Route
+              path="/folders"
+              element={
+                <FolderDataProvider>
+                  <Pages.FolderPage />
+                </FolderDataProvider>
+              }
+            />
+            <Route
+              path="/createNote/:folderId"
+              element={
+                <FolderDataProvider>
+                  <Pages.CreateNote />
+                </FolderDataProvider>
+              }
+            />
+            <Route
+              path="/note/:noteId"
+              element={
+                <FolderDataProvider>
+                  <Pages.NotePage />
+                </FolderDataProvider>
+              }
+            />
+          </Route>
 
-          {/* <Route path="/folders" element={<Pages.FolderPage />} />
-          <Route path="/createNote/:folderId" element={<Pages.CreateNote />} />
-          <Route path="/note/:noteId" element={<Pages.NotePage/>}/> */}
-
-          
+          <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
-        <Route path="*" element={<Pages.NotFoundPage />} />
-
-        </Route>
-
-
-        </Routes>
-        </FolderDataProvider>
-    
-
+      </Routes>
     </>
+  );
+};
 
-  )
-}
+export default App;
 
-export default App
