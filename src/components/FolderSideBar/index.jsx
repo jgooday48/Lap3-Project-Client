@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 import NoteSection from "../NoteSection";
 import axios from "axios";
 import { useFolderData } from "../../context/FolderDataContext";
+import Swal from 'sweetalert2';
+
 
 const FolderSideBar = ({ data }) => {
   const resizerRef = useRef(null);
@@ -69,22 +71,31 @@ const FolderSideBar = ({ data }) => {
     }
   };
 
-  const deleteFolder = async (folderId) => {
-    const isConfirmed = window.confirm(
-      "Are you sure you want to delete the folder?"
-    );
+const deleteFolder = async (folderId) => {
+  const result = await Swal.fire({
+    title: 'Are you sure?',
+    text: 'You won\'t be able to revert this!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  });
 
-    if (isConfirmed) {
-      try {
-        // Send the DELETE request
-        await axios.delete(`http://localhost:3000/folders/${folderId}`);
-        window.location.reload();
-      } catch (error) {
-        // Handle errors from the delete request
-        console.error("Error deleting note:", error);
-      }
+  if (result.isConfirmed) {
+    try {
+      // Send the DELETE request
+      await axios.delete(`http://localhost:3000/folders/${folderId}`);
+      window.location.reload();
+    } catch (error) {
+      // Handle errors from the delete request
+      console.error("Error deleting note:", error);
     }
-  };
+  }
+};
+
+
+
 
   return (
     <div className="folderSideBar">
