@@ -13,7 +13,7 @@ const navigate = useNavigate()
         const paragraphs = doc.body.getElementsByTagName('p')
 
         if (paragraphs.length > 0) {
-            return paragraphs[0].textContent || ''
+            return paragraphs[0].textContent+'...' || ''
         }
 
         return doc.body.textContent || ''
