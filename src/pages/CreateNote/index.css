@@ -8,8 +8,10 @@
 
 #back-button { 
     padding: 1em 2em; 
+    margin-bottom: 1em;
 }
 
 .note-template{
     background-color: #353434;
+    border-radius: 15px; 
 }

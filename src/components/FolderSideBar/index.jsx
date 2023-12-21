@@ -94,6 +94,7 @@ const FolderSideBar = ({ data }) => {
           <input
             type="text"
             value={folderName}
+            className="form-control"
             onChange={(e) => setFolderName(e.target.value)}
             placeholder="Create a new folder"
           />
