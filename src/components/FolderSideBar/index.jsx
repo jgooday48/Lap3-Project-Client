@@ -104,7 +104,7 @@ const FolderSideBar = ({ data }) => {
       <div className='sidebar' ref={sidebarRef}>
         <div className='resizer' ref={resizerRef}></div>
         <div className='header'>
-          <h3>La Fosse</h3>
+          {/* <h3>La Fosse</h3> */}
         </div>
         <div>
           <input
@@ -113,7 +113,7 @@ const FolderSideBar = ({ data }) => {
             onChange={e => setFolderName(e.target.value)}
             placeholder='Create a new folder'
           />
-          <button onClick={addFolder}>Add Folder</button>
+          <button className="addBtn" onClick={addFolder}>Add Folder</button>
         </div>
 
         <ul className='sidebar-menu'>
@@ -125,9 +125,12 @@ const FolderSideBar = ({ data }) => {
                 onClick={() => { getAllNotesByFolder(folder._id); setName(folder.Name) }}
               >
                 {folder.Name} &nbsp;
-                <button onClick={() => deleteFolder(folder._id)}>
-                  <i className="fa fa-trash-o"></i>
-                  </button>
+                <button
+                  className="deleteBtn"
+                  onClick={() => deleteFolder(folder._id)}
+                >
+                  <i className="fa fa-trash-o" id="trashEmoji"></i>
+                </button>
 
               </li>
             ))}
