@@ -48,6 +48,7 @@ const NoteSection = ({ notesData, folderId, folderName }) => {
   };
 
   return (
+
     <section className='notes-section'>
       {folderName.length > 0 ? (
         <div>
