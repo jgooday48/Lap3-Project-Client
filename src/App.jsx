@@ -35,6 +35,12 @@ function App() {
         {/* Private routes */}
         <Route path="" element={<PrivateRoute />}>
           <Route path="/profile" element={<Pages.Profile />}/>
+
+          {/* <Route path="/folders" element={<Pages.FolderPage />} />
+          <Route path="/createNote/:folderId" element={<Pages.CreateNote />} />
+          <Route path="/note/:noteId" element={<Pages.NotePage/>}/> */}
+
+          
         </Route>
         <Route path="*" element={<Pages.NotFoundPage />} />
 
