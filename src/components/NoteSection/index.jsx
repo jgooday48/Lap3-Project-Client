@@ -33,12 +33,15 @@ const NoteSection = ({ notesData, folderId }) => {
   
   const stripHtmlTags = (html) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
-    const plainText = doc.body.textContent || '';
+    const paragraphs = doc.body.getElementsByTagName('p');
   
-    // Replace <br> and <br /> with newline characters
-    const textWithLineBreaks = plainText.replace(/<br\s*\/?>/gi, '\n');
+    // If there's at least one paragraph, return its text content
+    if (paragraphs.length > 0) {
+      return paragraphs[0].textContent || '';
+    }
   
-    return textWithLineBreaks;
+    // If there are no paragraphs, return the entire text content
+    return doc.body.textContent || '';
   };
   return (
     <section className="notes-section">
