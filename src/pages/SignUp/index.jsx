@@ -10,10 +10,6 @@ import './signup.css'
 
 const SignUp = () => {
 
-  const activeStyle = {
-    backgroundColor: "#30AB9C"
-  }
-
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -23,7 +19,6 @@ const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-
   const [register, { isLoading }] = useRegisterMutation();
   const { userInfo } = useSelector(state => state.auth);
   
@@ -32,7 +27,6 @@ const SignUp = () => {
       navigate("/");
     }
   }, [navigate, userInfo]);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -70,7 +64,7 @@ const SignUp = () => {
     }
 
   return (
-    <div style={activeStyle} id="registerdiv">
+    <div id="registerdiv">
       <div className='box'>
       <h1 className='registerh1'>Register</h1>
       <form aria-label='sign up' className='register'>
