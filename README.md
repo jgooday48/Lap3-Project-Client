@@ -1,4 +1,4 @@
-# Notes App Client
+# Note-Worthy Client
 
 This is the repo for the client side of our notes app. The server repo for our app can be found [here](https://github.com/jgooday48/Lap3-Project-Server).
 The website can be found [here](https://reddy-client-33.onrender.com/).
